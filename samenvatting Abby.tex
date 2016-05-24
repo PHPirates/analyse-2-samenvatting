@@ -305,7 +305,7 @@
         \subsection{Totale differentieerbaarheid}
             \define Zij $D \subset \mathbb{R}^d$ open, $f:D \rightarrow \mathbb{R}$ heet d'baar (\textit{totaal d'baar, Fr\`echet'-d'baar}) in $a \in D$ als
             \[\text{Er is een lineaire afbeelding } L_a:\mathbb{R}^d \rightarrow \mathbb{R} \text{ z.d.d. } f(a+h)=f(a)+L_a h +\mathrm{o}(h)\text{, oftewel}\]
-            \[\lim_{h \rightarrow 0}\frac{|f(a+h)-f(a)L_a h|}{|h|} = 0\]
+            \[\lim_{h \rightarrow 0}\frac{|f(a+h)-f(a)-L_a h|}{|h|} = 0\]
             Dan heet $L_a$ \textbf{afgeleide van $f$ bij $a$}.
             \nota $L_a = f'(a)$
             \define De functie $ p: \mathbb{R}^d \rightarrow \mathbb{R} $ gegeven door $ p(x)=f(a)+f(a)(x-a) $ heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
@@ -415,8 +415,6 @@
 		\subsubsection{Taylor in multi-indexnotatie}
 			\[ T_{x_0} (x_0 + h) = \sum_{|\alpha|\le n} \frac{1}{\alpha !} \partial^\alpha f(x_0)h^\alpha \] met $ \alpha ! = \alpha_1 ! \cdot ... \cdot \alpha_d !$ .
 			
-		
-		
 		\includepdf[pages={-}]{Aart.pdf}
 		
 \end{document} 
