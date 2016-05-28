@@ -547,4 +547,69 @@
 					
 		\includepdf[pages={-}]{Aart.pdf}
 		
+		
+		\section{Appendix: LaTeX tips}
+		
+		\subsection{Beste allemaal}
+		
+		Mijn complimenten -- dit is de eerste keer dat ``m'n'' studenten alle lecture notes in \LaTeX typen.
+		Prima job!
+		
+		\ \\
+		Ik heb leesbare tekst toegevoegd (in \blu{blauw}).
+		
+		\ \\
+		Ik heb in het \verb$.tex$ bestand definities toegevoegd -- geen aktie noodzakelijk -- tussen
+		``start nieuwe macros'' en ``einde nieuwe macros'' die het
+		typewerk sterk kunnen vergemakkelijken. ``Makkelijk'' is smaakafhankelijk.
+		
+		\ \\
+		Ik stel voor -- maar dat hoeft vanzelfsprekend niet -- dat ``jullie'' de typografie aanpassen aan wat in de Analyse/Calculus gebruikelijk is -- een deel heb ik al als voorbeeld voorgedaan in de brontekst van dit bestand:
+		\begin{itemize}
+			\item In plaats van de letter x, y en z \textbf{die vectoren zijn in dit} \verb$.tex$ \textbf{bestand}, type
+			\verb$\x$, \verb$\y$ en \verb$\z$: $\x, \y, \z$
+			\item Voor alle vectoren zoals $\mathbf{a}$, $\mathbf{b}$ etc: Type \verb$\a$, \verb$\b$, etc
+			\item Ditto voor vectorwaardige functies \verb$\f\colon\reals^d\mapsto\reals$: $\f\colon\reals^d\mapsto\reals$: Type \verb$\f$
+			\item In plaats van de letter 0 type voor nulvectoren \verb$\zero$: $\zero$
+			\item In plaats van \verb$|x|$ type \verb$\abs{x}$: $\abs{x}$
+			\item In plaats van \verb$|\x|$ type \verb$\abs{\x}$: $\abs{\x}$
+			\item In plaats van \verb$x^{(n)}$ type \verb$x\up{n}$: $x\up{n}$
+			\item In plaats van \verb$\x^{(n)}$ type \verb$\x\up{n}$: $\x\up{n}$
+			\item In plaats van \verb$\Leftrightarrow$ type \verb$\iff$: $\iff$
+			\item In plaats van \verb$\Rightarrow$ type \verb$\implies$: $\implies$
+			\item In plaats van \verb$\mathbb{R}$ type \verb$\reals$: $\reals$ (heb ik al vervangen)
+			\item In plaats van \verb$\mathbb{N}$ type \verb$\naturals$: $\naturals$ (heb ik al vervangen)
+			\item In plaats van \verb$:$ type \verb$\colon$: $x\colon y$
+			\item Voor verzamelingen type bv \verb$\set{1,2,3}$: $\set{1,2,3}$
+			\item Voor rode tekst gebruik \verb$\red{word 1 and 2}$ type \verb$\red{word 1 and 2}$: \red{word 1 and 2}
+			\item Voor groene tekst gebruik \verb$\grn{word 1 and 2}$ type \verb$\grn{word 1 and 2}$: \grn{word 1 and 2}
+			\item Voor blauwe tekst gebruik \verb$\blu{word 1 and 2}$ type \verb$\blu{word 1 and 2}$: \blu{word 1 and 2}
+			\item \blu{Het} \verb$\blu{...}$ \blu{kleuren commando kan geen} \verb#\verb$...$# \blu{constructie bevatten.}
+			\item De langere variant \verb$\{\color{blue}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
+			\item De langere variant \verb$\{\color{red}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
+			\item De langere variant \verb$\{\color{green}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
+			\item In plaats van \verb$\define$ type \verb$\begin{define}[onderwerp] ..... \end{define}$: zie voorbeelden in dit \verb$.tex$ bestand
+			\item Om een \verb$woord$ in de index te plaatsen, type \verb$\indx{woord}$ -- het verschijnt dan ``slanted'' in de \verb$.pdf$
+			\item In \LaTeX\ zijn de braces \verb${...}$ de \LaTeX\ groep-open en \LaTeX\ groep-sluit operatoren -- en daarom niet zichtbaar in de tekst. Om ze zichtbaar te maken moet je \verb$\lbrace$ resp.{} \verb$\rbrace$ typen of -- minder slim als je \LaTeX\ beter kent type je \verb$\{$ resp.{} \verb$\}$.
+			\item Als je zulke braces (\verb$\{\}$, \verb$()$, \verb$[]$) groot genoeg wilt hebben dan type je \verb$\left\lbrace ... \right\rbrace$:
+			\[
+			\left\lbrace \int_0^1 f(x) \text{d}x \right\rbrace.
+			\]
+			Een minder alternatief -- alleen te snappen met meer \LaTeX\ kennis is \verb$\big\{$ ipv.{} \verb$\left\rbrace$.
+			\item Als je in het \verb$.pdf$ wilt kunnen klikken op secties om daarnaar toe te springen includeer dan
+			\verb$\usepackage{hyperref}$ -- heb ik al gedaan -- dit package was al wel geincludeerd maar het automatisch springen was uitgeschakeld.
+			\item De definities van \verb$\intr$ en \verb$\distr$ heb ik aangepast -- dat valt niet op maar daar komt later voordeel van
+			\item De \verb$\AA$ geeft niet de gewenst ``interior'' notatie -- daarom heb ik \verb$\AA$ aangepast aan de \LaTeX\ standaard
+			om $\mathring{A}$ te geven
+			\item In plaats van \verb$\lim_{n\rightarrow\infty}$ type de kortere \LaTeX\ standaard \verb$\lim_{n\to\infty}$: $\lim_{n\to\infty}$
+			\item De bold -- vetgedrukte -- vectoren veranderen in underline vectoren door 1 regel te wijzigen!
+			\item In math mode -- tussen dollars en \verb$\[\]$ gebruik \verb$\ldots$ voor enumeraties zoals \verb$1,2,\ldots,d$: $1,2,\ldots,d$ -- gebruik \verb$\dots$ alleen in text mode.
+		\end{itemize}
+		Ik stel voor dat jullie deze tips verhuizen naar de appendix voor de volgende generatie -- die appendix heb ik toegevoegd.
+		
+		\ \\
+		Groet,
+		
+		Jos.
+		
 \end{document} 
