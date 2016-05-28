@@ -20,19 +20,16 @@
 \RequirePackage{bookmark}
 \RequirePackage{pdfpages}
 \RequirePackage{hyperref} 
-\RequirePackage{makeidx} 
+\RequirePackage{imakeidx} 
 \RequirePackage[makeroom]{cancel}
 
 \title{\textbf{Samenvatting Analyse 2}}
 \author{Abby Berkers \\ Thomas Schouten \\ Verbeteringen door Jos Maubach}
 \date{\today}
 
-\newtheorem*{voorbeeld}{Voorbeeld}
-
-\makeatletter
 \renewcommand\@seccntformat[1]{}
-\makeatother
 
+\newtheorem*{voorbeeld}{Voorbeeld}
 \theoremstyle{definition}
 \newtheorem*{define}{Definitie}
 \newtheorem*{theorem}{Stelling}
@@ -61,7 +58,7 @@
 \renewcommand{\indent}{\hspace*{\tindent}}
 
 \stackMath
-\makeatletter\renewcommand\TAB@delim[1]{\displaystyle#1}\makeatother
+\renewcommand\TAB@delim[1]{\displaystyle#1}
 \setstackEOL{\cr}% ROW DELIMITER FOR STACKS
 \renewcommand\stackalignment{l}% LEFT ALIGNMENT OF STACKS
 \setstackgap{S}{8pt}% INTER-ROW PADDING OF SHORT STACKS
@@ -75,7 +72,7 @@
 %Macro's Maubach
 \def\set#1{\lbrace#1\rbrace}
 \def\abs#1{{\left|#1\right|}}
-\def\vectorstat#1{{\textbf{#1}}}
+\def\vectorstat#1{{\textbf{#1}}} % vectors are defined as bold
 \protected\def\a{\vectorstat{a}}
 \protected\def\b{\vectorstat{b}}
 \protected\def\c{\vectorstat{c}}
