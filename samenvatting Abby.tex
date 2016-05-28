@@ -5,266 +5,392 @@
 	\thispagestyle{empty}
 	\newpage
 	
-\section{College 15}
-    \subsection{Eigenschappen van de norm}
-    \begin{enumerate}[(i)]
-      \item \Longunderstack{\forall x\in \mathbb{R}^d:|x| \geq 0 \cr |x|=0 \Leftrightarrow x=0}
-      \item $|cx|=|c||x|$ ($|$norm$|$ = $|$absolute waarde$||$norm$|$)
-      \item ongelijkheid van \textbf{Cauchy-Schwartz}
-        \[\forall x,y \in \mathbb{R}^d: \sum_{i=1}^{d}x_i y_i = (x,y)\]
-        \[|(x,y)| \leq |x||y|\]
-      \item driehoeksongelijkheid
-        \[\forall x,y \in \mathbb{R}^d: |x+y|\leq |x|+|y|\]
-    \end{enumerate}
-    \subsection{Afstand in $\mathbb{R}^d$ $\dist(x,y):=|x-y|$}
-        Eigenschappen:
-            \begin{align*}
-              |x-y| & \geq 0 \\
-              |x-y| & =0 \Leftrightarrow x=y \\
-              |x-y| & \leq |x-z| + |z-y|
-            \end{align*}
-        \define Zij $x \in \mathbb{R}^d, R>0$.
-              $B(x,r)={y \in \mathbb{R}^d | |y-x|<r }$ (open) \underline{bol} rond $x$ met straal $r$.
-		\define Zij $x \in \mathbb{R}^d, A \subset \mathbb{R}^d$. $x$ heet \textbf{inwendig punt} (\textit{interior point}) van $A$ als $\exists _{r>0}:B(x,r) \subset A$. $A$ heet dan een \textbf{omgeving} (\textit{neighbourhood}) van $x$.
-
-              \textbf{Inwendige van $A$, open kern van $A$}
-              \[\intr A=\AA=\big\{x \in A \bigm| x \text{ inwendig punt van } A\big\}\]
-              $A$ heet \textbf{open verzameling} als $A=\AA$, oftewel: $\forall _{x \in A} \exists _{R \in (0,\infty)}: B(x,R) \subset A$, oftewel elk punt van $A$ is een inwendig punt.
-        \theorem
-          \begin{enumerate}[(1)]
-                \item Zij $\big\{A_\alpha \bigm| \alpha \in I \big\}$ een familie van open verzamelingen $A_\alpha \subset \mathbb{R}^d$. Dan $\bigcup_{\alpha \in I}A_\alpha$ open.
-                \item Zij $A_1,A_2,\dots,A_n \in \mathbb{R}^d$ open. Dan $\bigcap_{i=1}^{n}A_i$ open.
-          \end{enumerate}
-
-        \theorem
-          \begin{enumerate}[(i)]
-            \item $\intr A=\bigcup_{C \subset A, C \text{ open} }C=\bigcup \big\{C \bigm| C \subset A, C \text{ open} \big\}$
-            \item $\intr A$ open. Volgt uit $(i)$ en 10.1.4
-          \end{enumerate}
-
-        \define \textbf{Rand van $A \subset \mathbb{R}^d$}
-            \[\partial A:= \mathbb{R}^d\backslash (\intr A \cup \intr (\mathbb{R}^d\backslash A))\]
-              d.w.z: $x$ is een randpunt van $A \Leftrightarrow x$ geen inwendig punt van $A$ en geen inwendig punt van het complement $\mathbb{R}^d\backslash A$.
-
-        \lemma
-        	Elke $x \in \mathbb{R}$ hoort precies 1 van de drie verzamelingen $\intr A, \intr (\mathbb{R}^d\backslash A), \partial A$.
-
-  	\subsection{Stellingen uit het huiswerk}
-        \theorem $x \in \mathbb{R}^d, r>0$, dan $B(x,r) open$.
-\newpage
-\section{College 16}
-	\subsection{Convergentie in $\mathbb{R}^d$}
-		\define Zij $(\underline{x}^{(n)}) = ((x^{(1)},\dots ,x^{(1)}),(x^{(2)},\dots ,x^{(2)}),\dots )$ een rij in $\mathbb{R}^d$, en $\underline{a}=(a_1, \dots ,a_d ) \in \mathbb{R}^d$. $(x^{(n)}) $ heet convergent naar $\underline{a}$ als
-			\begin{enumerate}[(i)]
-				\item $|x^{(n)}-a|\stackrel{n\rightarrow \infty}{\longrightarrow} 0$
-				\item $\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon)}: \forall _{n\geq n_0} : |x^{(n)} - a| < \varepsilon$.
-				\item $\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon)}: \forall _{n\geq n_0} : x^n \in B(a,\varepsilon )$
-			\end{enumerate}
-		
-		\theorem $\lim_{n\rightarrow\infty}\underline{x}^{(n)}=\underline{a} \Leftrightarrow \lim_{n\rightarrow\infty} x_{i}^{(n)} = a_i$ voor $i=1,\dots ,d$.
-		
-		\define Zij $A \subset \mathbb{R}^d$. Een punt $x \in \mathbb{R}^d$ heet \textbf{verdichtingspunt} van $A$ als \[\forall _{R>0}:B(x,R)\cap  A \backslash\{x\} \neq \emptyset.\]
-			Dan $A':=\big\{ x \in \mathbb{R}^d \bigm| x \text{ verdichtingspunt van } A\big\}$.
-		
-		\lemma Zij $A \subset \mathbb{R}^d$. Dan $\partial A \subset A\cup A'$.
-		\define $A \subset \mathbb{R}^d$ heet \textbf{gesloten} als haar \underline{complement open} is.
-		\valkuil Een niet open/gesloten verzameling is in het algemeen niet gesloten/open.
-		
-		\theorem[Karakterisering voor geslotenheid] Zij $A \subset \mathbb{R}^d$. De volgende beweringen zijn equivalent:
-			\begin{enumerate}[(i)]
-				\item $A$ gesloten
-				\item $A'\subset A$
-				\item $\partial A \subset A$
-				\item voor elke convergente rij in $A$ ligt de limiet in $A$. (limiet convergente rij blijft in $A$)
-			\end{enumerate}
-		
-		\theorem $\left[\text{K}\right]$ 10.1.6
-			\begin{enumerate}[(i)]
-				\item Zij $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ een familie gesloten verzamelingen $A_\alpha \subset \mathbb{R}^d$. Dan $\bigcap_{\alpha \in I}A_\alpha$ gesloten.
-				\item Zij $A_1, \dots ,A_n$ gesloten. Dan $\bigcup_{i=1}^n A_i$ gesloten.
-			\end{enumerate}
-		
-		\define Zij $A \subset \mathbb{R}^d$. De verzameling $\overline{A}:= \mathbb{R}^d \backslash (\intr (\mathbb{R}^d \backslash A))$ heet de \textbf{afsluiting} (\textit{closure}) van $A$.
-		\theorem[Karakterisering voor de afsluiting]
-			  Zij $A \subset \mathbb{R}^d$. Dan
-			\[\overline{A}= A \cup \partial A = A \cup A'= \big\{z \in \mathbb{R}^d \bigm| \exists _{\text{rij } (x^{(n)}) \text{ in } A \text{ met } x^{(n)} \rightarrow z} \big\}\]
+	\section{Inleiding}
+	We nemen aan dat $d\in\naturals_+$.
 	
-	\subsection{Stellingen uit het huiswerk}
-		\theorem Zij $(x^{(n)})$ een rij in $\mathbb{R}^d, a \in \mathbb{R}^d$. Dan $x^{(n)}\rightarrow a \Rightarrow |x^{(n)}|\rightarrow |a|.$
-		\theorem Zij $z \in \mathbb{R}^d, A \subset \mathbb{R}^d, A \neq \emptyset, \text{dist}(z,A) := \text{inf}_{x\in A}|x-z|$.
-		  Dan $\overline{A}=\big\{z\in \mathbb{R}^d \bigm| \text{dist}(z,A)=0\big\}$.
-\newpage
-\section{College 17}
-	\subsection{Compacte verzamelingen in $\mathbb{R}^d$}
-		\define Een verzameling binnen $\mathbb{R}^d$ heet \textbf{begrensd} als \[\exists _{R>0}: A \subset B(0,R)\]
-		\[\forall _{x\in A}: \|x\|<R.\]
-		
-		\theorem $\left[\text{K}\right]$ 10.1.7 (andere formulering)
-			  Zij $A \subset \mathbb{R}^d$. De volgende beweringen zijn equivalent:
-			\begin{enumerate}[(i)]
-				\item Elke rij $x^{(n)}$ in $A$ heeft een convergente deelrij met limiet $x^* \in A$.
-				\item $A$ begrensd en gesloten
-			\end{enumerate}
-		
-		\define Zij $K \subset \mathbb{R}^d$. Een familie $\big\{A_\alpha \bigm| \alpha \in I \big\}$ van verzamelingen $A_\alpha \subset \mathbb{R}^d$ heet een \textbf{overdekking} (\textit{cover, covering}) van $K$ als \[K \subset \bigcup_{\alpha \in I}A_\alpha\]
-		
-		\begin{itemize}
-			\item Een overdekking $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ heet \underline{open} als alle $A_\alpha$ open zijn in $\mathbb{R}^d$.
-			\item Een overdekking $\mathcal{B}:=\big\{ A_\beta \bigm| \beta \in J\big\}$ heet een \textbf{deeloverdekking} van $\mathcal{A}:=\big\{ A_\alpha \bigm| \alpha \in I \big\}$ als $\mathcal{B} \subset \mathcal{A}$.
-		\end{itemize}
-		
-		\define $K \subset \mathbb{R}^d$ heet \textbf{compact} als elke open overdekking van $K$ een eindige deeloverdekking bevat.
-		\note Niet-lege open verzamelingen zijn NOOIT compact.
-		
-		\theorem[Heine-Borel]
-			Zij $K \subset \mathbb{R}^d$. Dan \[K \text{ compact}\Leftrightarrow K \text{ begrensd en gesloten.}\]
-			
-		\theorem Zij $A,B$ gesloten, niet leeg, $A\cap B = \emptyset$, $A$ compact.
-			  Dan $\text{dist}(A,B) = \text{inf}\big\{ |a-b| \bigm| a \in A, b \in B \big\} > 0$.
-			\opm $A \subset \mathbb{R}^d$ relatief compact $\Leftrightarrow \overline{A}$ compact.
-
-	\subsection{Stellingen uit het huiswerk}
-		\theorem Zij $A \subset \mathbb{R}^d$. Equivalente beweringen:
-			\begin{enumerate}[(i)]
-				\item $A$ is begrensd
-				\item $\exists _{x \in \mathbb{R}^d} \exists _{R>0}: A \subset B(x,R)$
-      			\item $\forall _{x \in \mathbb{R}^d} \exists _{R>0}: A \subset B(x,R)$
-      			\item De verzamelingen $\{ x_i | x \in A \}, i=1,\dots,d$ zijn begrensde deelverzamelingen van $\mathbb{R}$
-      			\item De verzameling $\big\{|x-y| \bigm| x,y \in A \big\}$ is begrensd.
-			\end{enumerate}
-		
-		\theorem Zij $A \subset \mathbb{R}^d$. Dan \[A \text{ begrensd} \Leftrightarrow \overline{A} \text{ begrensd} \Leftrightarrow \overline{A}\text{ compact}.\]
-		
-		\theorem Elke Cauchyrij $(x^{(n)})$ in $\mathbb{R}^d$  \[\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon )\in \mathbb{N}}:\forall _{n,m \geq n_0}: |x^{(n)}-x^{(m)}| < \varepsilon.\] is convergent in $\mathbb{R}^d$.
-	
-\newpage
-\section{College 18}
-	\subsection{Functies $\mathbb{R}^d \rightarrow \mathbb{R}$: limieten en continu\"iteit}
-		Zij $D \subset \mathbb{R}^d, f: D\rightarrow \mathbb{R}, a \in D'$.
-		  Beschrijf lokaal gedrag dicht bij $a$:
-		\[ \lim_{x\rightarrow a}f(x)=L \Leftrightarrow \forall _{\varepsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \Rightarrow |f(x)-L|<\varepsilon\]
-		
-		\theorem Zij $D \subset \mathbb{R}^d, f:D\rightarrow \mathbb{R}, a \in D', L \in \mathbb{R}$. Dan geldt
-		\[ \lim_{x \rightarrow a} f(x)=L \Leftrightarrow \text{voor elke rij } (x^{(n)}) \text{ in } D\backslash\{a\} \text{ met } x^{(n)}\rightarrow a \text{ geldt } f(x^{(n)}) \rightarrow L.\]
-		
-		\opm $\left[\text{K}\right]$ 10.2.5 limietstellingen analoog aan 1D.
-		
-		\define Zij $D \subset \mathbb{R}^d, a\in D\cap D',f:D\rightarrow \mathbb{R}$. $f$ heet \textbf{continu bij $a$} als \[\lim_{x\rightarrow a}f(x)=f(a) \text{ oftewel}\]
-		\[\forall _{\varepsilon >0} \exists _{\delta >0}: x \in B(a,\delta)\cap D \Rightarrow |f(x)-f(a)|<\varepsilon.\]
-		
-		\theorem $\left[\text{K}\right]$ 10.2.7
-			  $f$ continu bij $a \Leftrightarrow$ voor elke rij $(x^{(n)})$ in $D: x^{(n)}\rightarrow a \Rightarrow f(x^{(n)}) \rightarrow f(a).$
-		
-		\theorem Behoud van continu\"iteit
-			  $D \subset \mathbb{R}^d, a \in D\cap D', f,g:D\rightarrow \mathbb{R}$, beide continu bij $a$. $0 \not \in R(g)$.
-			  Dan $f+g, fg, \frac{f}{g}$ continu bij $a$.
-		
-        \textbf{Algemener.} Vectorwaardige functies
-		  Zij $D \subset \mathbb{R}^d, f:D\rightarrow \mathbb{R}^m, m \in \mathbb{N}_+$. Dat wil zeggen
-		\[f(x)=f(x_1,\dots , x_d) =
-				\begin{bmatrix}
-					f_1(x_1,\dots , x_d) \\
-					\vdots \\
-					f_m(x_1,\dots , x_d) \\
-				\end{bmatrix}, f_i:D\rightarrow \mathbb{R}.\]
-				
-		\define Zij $a \in D'$.
-			\begin{align*}
-				\lim_{x\rightarrow a}f(x)=L \in \mathbb{R}^m  &\Leftrightarrow \lim_{x\rightarrow a}f_i(x)=L_i (i=1,\dots ,m) \\
-				&\Leftrightarrow \forall _{\varepsilon >0} \exists _{\delta >0}: 0<|x-a|<\delta, x\in D \Rightarrow |f(x)-L|<\varepsilon.
-			\end{align*}
-		
-		\define Zij $a \in D \cap D'$.
-		  $f$ heet \textbf{continu} bij $a$:
+	\section{College 15}
+	\subsection{Eigenschappen van de norm}
+	Voor alle $\x\in \reals^d$ en $c\in\reals$ moet gelden
+	\begin{enumerate}[(i)]
+		\item $|\x| \geq 0$
+		\item $\abs{\x=0 \Leftrightarrow \x=\zero}$
+		\item $|c\x|=|c||\x|$ ($|$norm$|$ = $|$absolute waarde$||$norm$|$)
+	\end{enumerate}
+	Als \verb#|.|# een norm is dan geldt voor alle $\x,\y\in \reals^d$ de:
+	\begin{enumerate}[(i)]
+		\item ongelijkheid van \indx{Cauchy-Schwartz}
+		\[\forall \x,\y \in \reals^d: \sum_{i=1}^{d}\x_i \y_i = (\x,\y)\]
+		\[|(\x,\y)| \leq |\x||\y|\]
+		\item \indx{driehoeksongelijkheid}
+		\[\forall \x,\y \in \reals^d: |\x+\y|\leq |\x|+|\y|\]
+	\end{enumerate}
+	\subsection{Afstand in $\reals^d$}
+	\begin{define}
+		Een afstands functie $(\x,\y)\mapsto\dist(\x,\y)\in\reals$ heeft de eigenschap dat voor alle $\x,\y\in\reals^d$:
 		\begin{align*}
-			\forall _{\varepsilon >0} \exists _{\delta >0}: x\in B(a,\delta) &\Rightarrow |f(x)-f(a)|<\varepsilon \\
-			&\Rightarrow f(x) \in B(f(a),\varepsilon).
+		\dist(\x,\y) & \geq 0 \\
+		\dist(\x,\y) & =0 \Leftrightarrow \x=\y \\
+		\dist(\x,\y) & \leq \dist(\x,\z) + \dist(\z,\y)
 		\end{align*}
+	\end{define}
+	De meest gebruikte afstandsfunctie in $\reals^d$ is $\dist(\x,\y):=|\x-\y|$
+	
+	\begin{define}[Bol]
+		Laat $\x\in\reals^d$ en laat $0<r\in\reals$. Dan is de \indx{bol\ om $\x$ met straal $r$ de verzameling}
+		\[
+		B(x,r)=\set{y \in \reals^d \colon \abs{y-x}<r}.
+		\]
 		
-		\define De volgende beweringen zijn equivalent:
-			\begin{enumerate}[(i)]
-				\item $f$ continu bij $a$
-				\item $f_i$ continu bij $a$ voor $i=1,\dots ,m$
-				\item voor elke rij $(x^{(n)})$ in $D$ met $x^{(n)}\rightarrow a$ geldt $f_i(x^{(n)}) \rightarrow f_i(a), i=1,\dots ,m$ ($f(x^{(n)}\rightarrow f(a)$)
-			\end{enumerate}
-		
-		\subsection{Continue functies op verzamelingen}
-			$D \subset \mathbb{R}^d. D \rightarrow \mathbb{R}^m$ continu. $f$ continu bij elke $a \in D\cap D'$.
-			\opm Zij $f:D\rightarrow \mathbb{R}^m$ continu en $(x_n)$ rij in $D$ met $x_n \rightarrow x^* \in D$.
-			  Dan $f(x_n) \rightarrow f(x^*).$
-	   \subsection{Stellingen uit het huiswerk}
-            \theorem Zij $D \subset \mathbb{R}^d, a \in D', L \in \mathbb{R}, f:D \rightarrow \mathbb{R}$. Dan
-            \[\lim{x \rightarrow a}f(x)=L \Leftrightarrow \text{ elke rij } (x^{(n)}) \text{ in } D \backslash \{a\} \text{ met } x^{(n)} \rightarrow a \text{ geldt } f(x^{(n)}) \rightarrow L.\]
-            Zij ook $a \in D \cap D'$. Dan
-            \[f \text{ continu bij } a \Leftrightarrow \text{ elke rij }(x^{(n)}) \text{ in } D \text{ met } x^{(n)} \rightarrow a \text{ geldt } f(x^{(n)}) \rightarrow a\]
+	\end{define}
+	\begin{define}[Inwendig punt] Zij $\x \in \reals^d$ and $A \subset \reals^d$. Dan is $\x$ een
+		\indx{inwendig punt}/(\textit{interior point}) van $A$
+		als er $\exists_{r>0}\colon B(\x,r) \subset A$.
+		In dat geval heten $A$ en $\B(\x,r)$ een \indx{omgeving}/(\textit{neighbourhood}) van $\x$.
+	\end{define}
+	\begin{define}[Inwendige $\mathring{A}$, open verzameling $A$]
+		Het inwendige van $A$ is
+		\[\intr A=\mathring{A}=\left\lbrace x \in A \colon \x \text{ inwendig punt van } A\right\rbrace\]
+		$A$ heet \indx{open verzameling}\ als $A=\mathring{A}$ oftewel als
+		\[
+		\forall _{x \in A} \exists _{R \in (0,\infty)}\colon B(x,R) \subset A,
+		\]
+		oftewel elk punt van $A$ is een inwendig punt.
+	\end{define}
+	\begin{theorem}
+		\begin{enumerate}[(1)]
+			\item Zij $\left\lbrace A_\alpha \bigm| \alpha \in I \right\rbrace$ een familie van open verzamelingen $A_\alpha \subset \reals^d$. Dan is
+			\[
+			\bigcup_{\alpha \in I}A_\alpha
+			\]
+			open.
+			\item Zij $A_1,A_2,\dots,A_n \in \reals^d$ open. Dan is
+			\[
+			\bigcap_{i=1}^{n}A_i
+			\]
+			open.
+		\end{enumerate}
+	\end{theorem}
+	\begin{theorem}[Open]
+		Zij $A\in\reals^d$. Dan is
+		\item \[\intr A=\bigcup_{C \subset A, C \text{ open} }C=\bigcup \left\lbrace C \colon C \subset A \wedge C \text{ is open}\right\rbrace\]
+		open. Volgt uit Kosmala 10.1.4
+	\end{theorem}
+	\begin{define}[Rand]
+		Zij $A \subset \reals^d$. Dan
+		\[\partial A:= \reals^d\backslash (\intr A \cup \intr (\reals^d\backslash A))\]
+		d.w.z: $x$ is een randpunt van $A \iff x$ is geen inwendig punt van $A$ en geen inwendig punt van het complement $\reals^d\backslash A$.
+		Equivalente definitie: Als $\x$ een randpunt is dan geldt voor alle $0<r\in\reals$ dat
+		$B(\x,r)$ zowel een punt van $A$ als van $\reals\backslash A$ bevat.
+	\end{define}
+	\begin{lemma}
+		Zij $A\in\reals^d$.
+		Elke $x \in \reals$ hoort precies in 1 (exclusive or) van de drie verzamelingen
+		\begin{enumerate}
+			\item $\intr A$
+			\item $\intr (\reals^d\backslash A)$
+			\item $\partial A$.
+		\end{enumerate}
+	\end{lemma}
+	\begin{voorbeeld}
+		Zij $A = [0,1]$ dan is $\intr A=(0,1)$, $\intr (\reals^d\backslash A)=(-\infty,0)\cup(1,\infty)$
+		and $\partial A = \set{0,1}$.
+	\end{voorbeeld}
+	
+	\subsection{Stellingen uit het huiswerk}
+	\begin{theorem}
+		$\x \in \reals^d$, $0<r\in\reals$, dan is $B(\x,r)$ open.
+	\end{theorem}
+	\newpage
+	\section{College 16}
+	\subsection{Convergentie in $\reals^d$}
+	\begin{define}
+		Zij $(\x\up{n}) = (x\up{1}_1,x\up{1}_2,\ldots,x\up{1}_d), (x\up{2}_1,x\up{2}_2,\ldots,x\up{2}_d), \ldots$
+		een rij in $\reals^d$en $\a =(a_1, \dots ,a_d ) \in \reals^d$. Dan heet $(\x^{(n)})$ convergent naar $\a$ als
+		\begin{enumerate}[(i)]
+			\item $\abs{\x\up{n}-\a}\stackrel{n\rightarrow \infty}{\longrightarrow} 0$
+			\item $\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon)}: \forall _{n\geq n_0} : \abs{\x\up{n} - a} < \varepsilon$.
+			\item $\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon)}: \forall _{n\geq n_0} : \x\up{n} \in B(\a,\varepsilon )$
+		\end{enumerate}
+	\end{define}		
+	\begin{theorem}
+		$\lim_{n\rightarrow\infty}\x\up{n}=\a \iff \lim_{n\to\infty} x\up{n}_{i} = a_i$ voor alle $i=1,\ldots ,d$.
+	\end{theorem}
+	
+	\define[verdichtingspunt] Zij $A \subset \reals^d$. Een punt $x \in \reals^d$ heet \indx{verdichtingspunt} van $A$ als \[\forall _{R>0}:B(x,R)\cap  A \backslash\{x\} \neq \emptyset.\]
+	Dan $A':=\big\{ x \in \reals^d \bigm| x \text{ verdichtingspunt van } A\big\}$ is de verzameling van
+	alle verdichtingspunten van $A$.
+	
+	\lemma Zij $A \subset \reals^d$. Dan $\partial A \subset A\cup A'$.
+	\define $A \subset \reals^d$ heet \textbf{gesloten} als haar \underline{complement open} is.
+	\valkuil Een niet open/gesloten verzameling is in het algemeen niet gesloten/open.
+	Niet alle verzamelingen zijn open en of gesloten. Sommige verzamelingen zoals $[0,1)$ zijn geen van beide
+	en sommige andere verzamelingen zoals $\reals$ zijn zowel open als gesloten.
+	
+	\theorem[Karakterisering voor geslotenheid] Zij $A \subset \reals^d$. De volgende beweringen zijn equivalent:
+	\begin{enumerate}[(i)]
+		\item $A$ gesloten
+		\item $A'\subset A$
+		\item $\partial A \subset A$
+		%\item voor elke convergente rij in $A$ ligt de limiet in $A$. (limiet convergente rij blijft in $A$)
+		\item voor elke convergente rij $(\x\up{n})\to\x$ met $\set{\x\up{n}}\subset A$ geldt dat de limiet in $\x\in A$.% (limiet convergente rij blijft in $A$)
+	\end{enumerate}
+	
+	\theorem $\left[\text{K}\right]$ 10.1.6
+	\begin{enumerate}[(i)]
+		\item Zij $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ een familie gesloten verzamelingen $A_\alpha \subset \reals^d$. Dan $\bigcap_{\alpha \in I}A_\alpha$ gesloten.
+		\item Zij $A_1, \dots ,A_n$ gesloten. Dan $\bigcup_{i=1}^n A_i$ gesloten.
+	\end{enumerate}
+	
+	\define[afsluiting] Zij $A \subset \reals^d$. De verzameling $\overline{A}:= \reals^d \backslash (\intr (\reals^d \backslash A))$ heet de \indx{afsluiting} (\textit{closure}) van $A$.
+	\theorem[Karakterisering  van de afsluiting]
+	Zij $A \subset \reals^d$. Dan
+	\[\overline{A}= A \cup \partial A = A \cup A'= \big\{\z \in \reals^d \bigm| \exists _{\text{rij } (\x\up{n}) \text{ in } A \text{ met } \x\up{n} \to \z} \big\}\]
+	
+	\subsection{Stellingen uit het huiswerk}
+	\theorem Zij $(\x\up{n})$ een rij in $\reals^d, \a \in \reals^d$. Dan $\x\up{n}\rightarrow \a \Rightarrow |\x\up{n}|\rightarrow |a|.$
+	\theorem Zij $z \in \reals^d, A \subset \reals^d, A \neq \emptyset, \text{dist}(z,A) := \text{inf}_{x\in A}|x-z|$.
+	Dan $\overline{A}=\big\{z\in \reals^d \bigm| \text{dist}(z,A)=0\big\}$.
+	\newpage
+	\section{College 17}
+	\subsection{Compacte verzamelingen in $\reals^d$}
+	\define Een verzameling $A\subset\reals^d$ heet \textbf{begrensd} als \[\exists _{R>0}: A \subset B(0,R)\]
+	\[\forall _{x\in A}: \|x\|<R.\]
+	
+	\theorem $\left[\text{K}\right]$ 10.1.7 (andere formulering)
+	Zij $A \subset \reals^d$. De volgende beweringen zijn equivalent:
+	\begin{enumerate}[(i)]
+		\item Elke rij $\x\up{n}$ in $A$ heeft een convergente deelrij met limiet $\x^* \in A$.
+		\item $A$ begrensd en gesloten
+	\end{enumerate}
+	
+	\define[overdekking] Zij $A \subset \reals^d$. Een familie $\big\{A_\alpha \bigm| \alpha \in I \big\}$ van verzamelingen $A_\alpha \subset \reals^d$ heet een \indx{overdekking}/(\textit{cover, covering}) van $A$ als \[A \subset \bigcup_{\alpha \in I}A_\alpha\]
+	
+	\begin{itemize}
+		\item Een overdekking $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ heet \underline{open} als alle $A_\alpha$ open zijn in $\reals^d$.
+		\item Een overdekking $B:=\big\{ A_\beta \bigm| \beta \in J\big\}$ heet een \textbf{deeloverdekking} van $A:=\big\{ A_\alpha \bigm| \alpha \in I \big\}$ als $B \subset A$.
+	\end{itemize}
+	
+	\define[compact] $K \subset \reals^d$ heet \indx{compact} als elke open overdekking van $K$ een eindige deeloverdekking bevat.
+	\note Niet-lege open verzamelingen zijn NOOIT compact.
+	
+	\theorem[Heine-Borel]
+	Zij $K \subset \reals^d$. Dan \[K \text{ compact}\Leftrightarrow K \text{ begrensd en gesloten.}\]
+	
+	\theorem Zij $A,B$ gesloten, niet leeg, $A\cap B = \emptyset$, $A$ compact.
+	Dan $\text{dist}(A,B) = \text{inf}\big\{ |a-b| \bigm| a \in A, b \in B \big\} > 0$.
+	\define[relatief compact] $A \subset \reals^d$ heet relatief compact $\iff \overline{A}$ compact.
+	
+	\subsection{Stellingen uit het huiswerk}
+	\theorem Zij $A \subset \reals^d$. Equivalente beweringen:
+	\begin{enumerate}[(i)]
+		\item $A$ is begrensd
+		\item $\exists _{x \in \reals^d} \exists _{R>0}: A \subset B(x,R)$
+		\item $\forall _{x \in \reals^d} \exists _{R>0}: A \subset B(x,R)$
+		\item De verzamelingen $\{ x_i | x \in A \}, i=1,\dots,d$ zijn begrensde deelverzamelingen van $\reals$
+		\item De verzameling $\big\{|x-y| \bigm| x,y \in A \big\}$ is begrensd.
+	\end{enumerate}
+	
+	\theorem Zij $A \subset \reals^d$. Dan \[A \text{ begrensd} \Leftrightarrow \overline{A} \text{ begrensd} \Leftrightarrow \overline{A}\text{ compact}.\]
+	
+	\define[Cauchyrij] Een Cauchyrij $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon )\in \naturals}:\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \varepsilon.\]
+	\theorem Elke Cauchyrij $(\x\up{n})\subset\reals^d$ is convergent in $\reals^d$.
+	
+	\newpage
+	\section{College 18}
+	\subsection{Functies $\reals^d \rightarrow \reals$: limieten en continu\"{\i}teit}
+	\define[Limiet] Zij $D \subset \reals^d, f: D\rightarrow \reals, \a \in D', L\in\reals$.
+	De \indx{limiet}/(\textit{limit}) van $f(\x)$ voor $\x\to\a$:
+	\[ \lim_{x\rightarrow a}f(x)=L \Leftrightarrow \forall _{\varepsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \Rightarrow |f(x)-L|<\varepsilon\]
+	
+	\theorem Zij $D \subset \reals^d, f:D\rightarrow \reals, \a \in D', L \in \reals$. Dan geldt
+	\[ \lim_{x \rightarrow a} f(x)=L \Leftrightarrow \text{voor elke rij } (\x\up{n}) \text{ in } D\backslash\{a\} \text{ met } \x\up{n}\rightarrow \a \text{ geldt } f(\x\up{n}) \rightarrow L.\]
+	
+	\opm $\left[\text{K}\right]$ 10.2.5 limietstellingen analoog aan 1D.
+	
+	\define[continu te $\a$ voor $f$] Zij $D \subset \reals^d, \a\in D\cap D',f:D\rightarrow \reals$. $f$ heet \indx{continu te$\a$} als \[\lim_{x\rightarrow a}f(\x)=f(\a) \text{ oftewel als}\]
+	\[\forall _{\varepsilon >0} \exists _{\delta >0}: \x \in B(\a,\delta)\cap D \Rightarrow |f(\x)-f(\a)|<\varepsilon.\]
+	
+	\theorem $\left[\text{K}\right]$ 10.2.7
+	$f$ continu te $\a\Leftrightarrow$ voor elke rij $(\x\up{n})$ in $D: \x\up{n}\rightarrow \a \Rightarrow f(\x\up{n}) \rightarrow f(\a).$
+	
+	\theorem Betreffende de continu\"iteit van samengestelde functies. Zij
+	$D \subset \reals^d, \a \in D\cap D', f,g:D\rightarrow \reals$, beide continu te $\a$ en $\zero \not \in R(g)$.
+	Dan zijn
+	\begin{itemize}
+		\item $f+g$
+		\item $fg$
+		\item $\dfrac{f}{g}$
+	\end{itemize}
+	continu te $a$.
+	
+	\define[Vectorwaardige functies]
+	Zij $D \subset \reals^d, \f:D\rightarrow \reals^m, m \in \naturals_+$. Dat wil zeggen
+	\[\f(x)=\f(x_1,\dots , x_d) =
+	\begin{bmatrix}
+	f_1(x_1,\dots , x_d) \\
+	\vdots \\
+	f_m(x_1,\dots , x_d) \\
+	\end{bmatrix}\in\reals^d, \qquad f_i:D\rightarrow \reals.\]
+	
+	\define Zij $\a \in D'$.
+	\begin{align*}
+	\lim_{\x\to\a}\f(\x)=L \in \reals^m  &\iff \lim_{\x\to\a}f_i(\x)=L_i (i=1,\ldots ,m) \\
+	&\Leftrightarrow \forall _{\varepsilon >0} \exists _{\delta >0}: 0<|\x-\a|<\delta, \x\in D \Rightarrow \abs{\f(\x)-L}<\varepsilon.
+	\end{align*}
+	
+	\define[continu te $\a$ voor $\f$] Zij $D \subset \reals^d$ en $\a \in D \cap D'$.
+	Dan is $\f$ \indx{continu}/(\textit{continuous}) te $\a$ als:
+	\begin{align*}
+	\forall _{\varepsilon >0} \exists _{\delta >0}: \x\in B(\a,\delta)\backslash\set{\a} &\Rightarrow |\f(\x)-\f(\a)|<\varepsilon \\
+	&\Rightarrow \f(\x) \in B(\f(\a),\varepsilon).
+	\end{align*}
+	
+	\define De volgende beweringen zijn equivalent: Zij $D\subset\reals^d$ het domein van $\f$.
+	\begin{enumerate}[(i)]
+		\item $\f$ continu te $\a$
+		\item $f_i$ continu te $\a$ voor $i=1,\ldots,m$
+		\item voor elke rij $(\x\up{n})$ in $D$ met $\x\up{n}\to\a$ geldt $f_i(\x\up{n}) \to f_i(\a),\quad\forall i=1,\ldots,m$
+		\item voor elke rij $(\x\up{n})$ in $D$ met $\x\up{n}\to\a$ geldt $\f(\x\up{n})\to\f(\a)$
+	\end{enumerate}
+	
+	\define[continue te $D\subset\reals^d$ voor $\f$]
+	Laat $D \subset \reals^d$. Dan is $\f\colon D \mapsto \reals^m$ continu $\iff$ $\f$ is continu te elke $\a\in D\cap D'$.
+	\opm Zij $\f\colon D\mapsto \reals^m$ continu en $(\x\up{n})$ rij in $D$ met $\x^{(n)} \to \x^* \in D$.
+	Dan $\f(\x\up{n}) \to \f(\x^*).$
+	\subsection{Stellingen uit het huiswerk}
+	\theorem Zij $D \subset \reals^d, \a \in D', L \in \reals, f:D \rightarrow \reals$. Dan
+	\[
+	\lim_{\x\to\a}f(x)=L \iff
+	\]
+	voor elke rij $(\x\up{n})$ in $D\backslash\set{\a}$ met $\x\up{n}\to\a$ geldt dat
+	\[
+	\lim_{n\to\infty f(\x\up{n}) = L}.
+	\]
+	Zij ook $\a \in D \cap D'$. Dan
+	\[f \text{ continu te } \a \iff \text{ elke rij }(\x\up{n}) \text{ in } D \text{ met } \x\up{n}\to\a \text{ geldt } f(\x\up{n}) \to\a\]
+	
 	\newpage
 	\section{College 19}
-		\subsection{Eigenschappen van continue functies in $\mathbb{R}^d$}
-			\theorem Zij $D \subset \mathbb{R}^d$ compact, $f:D\rightarrow\mathbb{R}^m$ continu. Dan
-				\begin{enumerate}[(1)]
-					\item $f(D)$ compact (continue functies beelden compacte verzamelingen af op compacte verzamelingen)
-					\item $f$ uniform continu, dwz \[\forall _{\varepsilon >0} \exists _{\delta = \delta (\varepsilon)}: \begin{array}{lr}
-						|x-z|<\delta \\
-						x,z\in D
-					\end{array}\bigg\}  \Rightarrow |f(x)-f(z)|<\varepsilon.\]
-				\end{enumerate}
-			\gevolg[1] $m=1, f:D\rightarrow \mathbb{R}$ continu. Dan $f$ begrensd en $\exists _{x^* \in D}:f(x^*)=\max_{x\in D}f(x)$.
-			
-		\subsection{Compositie van continue functies}
-			\theorem Zij $f:D\rightarrow \mathbb{R}^k$ continu, $g:E\rightarrow \mathbb{R}^l$ continu ($f(D) \subset E$). Dan $g \circ f: D\rightarrow \mathbb{R}^l$ continu.
+	\subsection{Eigenschappen van continue functies in $\reals^d$}
+	\begin{theorem}[continue functies en compacte verzamelingen]
+		Zij $D \subset \reals^d$ compact, $\f:D\rightarrow\reals^m$ continu. Dan is
+		\begin{enumerate}[(1)]
+			\item $\f(D)$ compact (continue functies beelden compacte verzamelingen af op compacte verzamelingen)
+			\item $\f$ uniform continu, dwz
+			\[\forall_{\varepsilon > 0} \exists_{\delta = \delta(\varepsilon)}\forall_{\x,\z\in D}\colon
+			\abs{\x-\z}<\delta \implies |\f(\x)-\f(\z)|<\varepsilon.
+			\]
+		\end{enumerate}
+	\end{theorem}
+	\gevolg[continue functies op compacte verzamelingen nemen een minimum en maximum aan]
+	Stel $f\colon D\subset\reals\mapsto\reals$ is continu
+	en $D$ is compact. Dan is $f$ begrensd en $\exists_{\x^* \in D}:f(\x^*)=\max_{\x\in D}\set{f(\x)}$.
+	
+	\subsection{Compositie van continue functies}
+	\theorem Zij $\f\colon D\subset\reals^d\rightarrow \reals^k$ continu, $\g\colon E\subset\reals^k\rightarrow \reals^l$ continu en $\f(D) \subset E$. Dan $\g \circ \f\colon D\rightarrow \reals^l$ continu.
+	
+	\subsection{De vastepuntstelling van Banach}
+	\begin{theorem}
+		Zij $D \subset \reals^d$.
+		Een afbeelding $\F:D \rightarrow \reals^d$ heet \indx{contraherend} (\textit{contracting}) als
+		\[\forall _{x,y\in D}\exists _{q \in (0,1)}:\abs{F(x)-F(y)}_{\reals^d} \leq q\abs{x-y}_{\reals^d}. \]
+	\end{theorem}
+	
+	
+	\gevolg $F$ contraherend of $D\subset\reals^d\implies\F$ continu op $D$.
+	
+	
+	\begin{define}[iteratierij]
+		Stel $\F:D\rightarrow D$, oftewel $\F(D) \subset D$. Kies \indx{startbenadering} $\x\up{0} \in D$.
+		Dan bestaat de rij $(\x\up{n})$ gedefinieerd door
+		\[
+		\x\up{n+1} := \F(\x\up{n})
+		\]
+		en heet~\indx{iteratierij}.
+	\end{define}
+	
+	
+	%			Stel $F:D\rightarrow D$, oftewel $F(D) \subset D$. Elke rij $(x_n)$ met $F(x_n) = x_{n+1}$ heet \textbf{iteratierij} (met startvoorwaarde $x_0 \in D$).
+	
+	\theorem[vastepuntstelling van Banach]
+	Zij $D \subset \reals^d, \F\colon D\rightarrow \reals^d$. Veronderstel
+	\begin{enumerate}[(i)]
+		\item $D$ gesloten
+		\item $\F\colon D \rightarrow D$ ($\F(D) \subset D$)
+		\item $\F$ contraherend
+	\end{enumerate}
+	Dan
+	\begin{enumerate}[(1)]
+		\item $\exists_{\text{precies \'e\'en } \x^* \in D}$ met $\F(\x^*)=\x^*$.
+		\item Voor elke $\x_0 \in D$ convergeert de iteratierij naar $\x^*$.
+	\end{enumerate}
+	
+	\subsection{Differentieerbare functies van meerdere variabelen}
+	\subsubsection{Parti\"ele functies en parti\"ele afgeleiden}
+	
+	\begin{define}[parti\"ele functies]
+		Zij $D \subset \reals^2$ open. $F:D \rightarrow \reals$, $(a,b) \in D$.
+		De functies
+		\begin{enumerate}
+			\item $p_b\colon S_b \rightarrow \reals$, $p_b(x):=f(x,b)$
+			\item $q_a\colon T_a \rightarrow \reals$, $q_a(y):=f(a,y)$
+		\end{enumerate}
+		heten \indx{parti\"ele functies}.
+		Alternatieve notatie:
+		\begin{enumerate}
+			\item $p_b:=f(\cdot, b)$
+			\item $q_a:=f(\red{a},\cdot)$
+		\end{enumerate}
 		
-		\subsection{De vastepuntstelling van Banach}
-			Zij $D \subset \mathbb{R}^d$. Een afbeelding $F:D \rightarrow \mathbb{R}^d$ heet contraherend (\textit{contracting}) als
-			\[\forall _{x,y\in D}\exists _{q \in (0,1)}:|F(x)-F(y)| \leq q|x-y|. \]
-			\opm $F$ contraherend $\Rightarrow F$ continu.
-			
-			Stel $F:D\rightarrow D$, oftewel $F(D) \subset D$. Elke rij $(x_n)$ met $F(x_n) = x_{n+1}$ heet \textbf{iteratierij} (met startvoorwaarde $x_0 \in D$).
-			\theorem[vastepuntstelling van Banach]
-			
-			Zij $D \subset \mathbb{R}^d, F:D\rightarrow \mathbb{R}^d$. Veronderstel
-			\begin{enumerate}[(i)]
-				\item $D$ gesloten
-				\item $F:D \rightarrow D$ ($F(D) \subset D$)
-				\item $F$ contraherend
-			\end{enumerate}
-			Dan
-			\begin{enumerate}[(1)]
-				\item $\exists _{\text{precies een } x^* \in D \text{ met } F(x^*)=x^*}$.
-				\item Voor elke $x_0 \in D$ convergeert de iteratierij naar $x^*$.
-			\end{enumerate}
+	\end{define}
+	\red{Let op: $S_b$ en $T_a$ zijn niet gedefinieerd. Voor de hand ligt $S_b = \set{b\in\reals\colon(x,b)\in D}$.}
+	
+	\begin{define}[parti\"eel differentieerbaar]
+		Als $p_b, q_a$ differentieerbaar is in $x=a,y=b$ dan heet $f$ \indx{partieel d'baar} naar $x,y$ in $(a,b)$
 		
-		\subsection{Differentieerbare functies van meerdere variabelen}
-		\subsubsection{Parti\"ele functies en parti\"ele afgeleiden}
-			Zij $D \subset \mathbb{R}^2$ open. $F:D \rightarrow \mathbb{R}$, $(a,b) \in D$.
-			
-			De functies $p_b:S_b \rightarrow \mathbb{R}, q_a:T_a \rightarrow \mathbb{R}$ gegeven door $p_b(x)=f(x,b), q_a(y)=f(a,y)$ heten \textbf{parti\"ele functies} (voor $f$ met $x=a, y=b$)
-			\nota $p_b=f(\cdot, b), q_a=f(x,\cdot)$.
-			
-			Als $p_b, q_a$ differentieerbaar is in $x=a,y=b$ dan heet $f$ partieel d'baar naar $x,y$ in $(a,b)$.
-			\nota $p_b'(a)=\partial_x f(a,b), q_a'(b)=\partial_y f(a,b)$. Dus \[\partial_x f(a,b)=\lim_{h \rightarrow 0} \frac{f(a+h,b)-f(a,b)}{h}\]\[\partial_y f(a,b)=\lim_{k \rightarrow 0} \frac{f(a,b+k)-f(a,b)}{k}\]
-        \subsection{Stellingen uit het huiswerk}
-			\theorem Zij $D \subset \mathbb{R}^d$. Een functie $f:D \rightarrow \mathbb{R}^m$ heet Lipschitz continu als er een $L>0$ is zodanig dat
-            \[\forall _{x,y \in D}: |f(x)-f(y)|_{\mathbb{R}^m} \leq L|x-y|_{\mathbb{R}^d}.\]
-            Elke Lipschitz continue functie is uniform continu op $D$.
-    \newpage
-    \section{College 20}
-        \subsection{Hogere orde parti\"ele afgeleiden}
-            \define[inductief] parti\"ele afgeleiden van orde $k+1$ zijn de p.a. van de p.a. van orde $k$.
-            \theorem[Schwarz of Clairaut] Neem $D \subset \mathbb{R}^d$ open, $f:D \rightarrow \mathbb{R}$ twee keer continu partieel d'baar, $a \in D$. Dan $\partial_i \partial_j f(a) = \partial_j \partial_i f(a) \quad i,j=1,\dots ,d$.
-        \subsection{Totale differentieerbaarheid}
-            \define Zij $D \subset \mathbb{R}^d$ open, $f:D \rightarrow \mathbb{R}$ heet d'baar (\textit{totaal d'baar, Fr\`echet'-d'baar}) in $a \in D$ als
-            \[\text{Er is een lineaire afbeelding } L_a:\mathbb{R}^d \rightarrow \mathbb{R} \text{ z.d.d. } f(a+h)=f(a)+L_a h +\mathrm{o}(h)\text{, oftewel}\]
-            \[\lim_{h \rightarrow 0}\frac{|f(a+h)-f(a)-L_a h|}{|h|} = 0\]
-            Dan heet $L_a$ \textbf{afgeleide van $f$ bij $a$}.
-            \nota $L_a = f'(a)$
-            \define De functie $ p: \mathbb{R}^d \rightarrow \mathbb{R} $ gegeven door $ p(x)=f(a)+f(a)(x-a) $ heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
-      	\subsection{De gradi\"ent}
-      		\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \mathbb{R}^d$ open, $f: D \rightarrow \mathbb{R}^d$, d'baar bij $a \in D$. Dan $f$ partieel d'baar bij $a$, en $\nabla f(a)= \begin{bmatrix}
-      			\partial_1 f(a) \\
-      			\vdots \\
-      			\partial_d f(a)
-      		\end{bmatrix}$.
-      		\theorem Zij $D \subset \mathbb{R}^d$, $D$ open. Als $f: D \rightarrow \mathbb{R}$ d'baar bij $a \in D$, dan $f$ continu bij $a$.
+		en definieren we
+		\begin{itemize}
+			\item $\partial_x f(a,b) := p_b'(a)$
+			\item $\partial_y f(a,b) := q_a'(b)$
+		\end{itemize}
+		
+	\end{define}
+	
+	\begin{gevolg}[parti\"eel differentieerbaar (2)]
+		
+		Deze definitie is equivalent met
+		\begin{itemize}
+			\item $\displaystyle\partial_x f(a,b)=\lim_{h \rightarrow 0} \frac{f(a+h,b)-f(a,b)}{h}$
+			\item $\displaystyle\partial_y f(a,b)=\lim_{k \rightarrow 0} \frac{f(a,b+k)-f(a,b)}{k}$
+		\end{itemize}
+		
+	\end{gevolg}
+	
+	
+	
+	\subsection{Stellingen uit het huiswerk}
+	\theorem Zij $D \subset \reals^d$. Een functie $f:D \rightarrow \reals^m$ heet Lipschitz continu als er een $L>0$ is zodanig dat
+	\[\forall _{x,y \in D}: |f(x)-f(y)|_{\reals^m} \leq L|x-y|_{\reals^d}.\]
+	Elke Lipschitz continue functie is uniform continu op $D$.
+	\newpage
+	\section{College 20}
+	\subsection{Hogere orde parti\"ele afgeleiden}
+	\define[inductief] parti\"ele afgeleiden van orde $k+1$ zijn de p.a. van de p.a. van orde $k$.
+	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open, $f:D \rightarrow \reals$ twee keer continu partieel d'baar, $a \in D$. Dan $\partial_i \partial_j f(a) = \partial_j \partial_i f(a) \quad i,j=1,\dots ,d$.
+	\subsection{Totale differentieerbaarheid}
+	\define Zij $D \subset \reals^d$ open, $f:D \rightarrow \reals$ heet d'baar (\textit{totaal d'baar, Fr\`echet'-d'baar}) in $a \in D$ als
+	\[\text{Er is een lineaire afbeelding } L_a:\reals^d \rightarrow \reals \text{ z.d.d. } f(a+h)=f(a)+L_a h +\mathrm{o}(h)\text{, oftewel}\]
+	\[\lim_{h \rightarrow 0}\frac{|f(a+h)-f(a)-L_a h|}{|h|} = 0\]
+	Dan heet $L_a$ \textbf{afgeleide van $f$ te $a$}.
+	\nota $L_a = f'(a)$
+	\define De functie $ p: \reals^d \rightarrow \reals $ gegeven door $ p(x)=f(a)+f(a)(x-a) $ heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
+	\subsection{De gradi\"ent}
+	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $f: D \rightarrow \reals^d$, d'baar te $a \in D$. Dan $f$ partieel d'baar te $a$, en $\nabla f(a)= \begin{bmatrix}
+	\partial_1 f(a) \\
+	\vdots \\
+	\partial_d f(a)
+	\end{bmatrix}$.
+	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f: D \rightarrow \reals$ d'baar te $a \in D$, dan $f$ continu te $a$.
       		
 	\newpage	
 	\section{College 21}
