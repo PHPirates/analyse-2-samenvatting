@@ -1,62 +1,10 @@
-\documentclass[a4paper]{exam}
-\usepackage[english]{babel}
-\usepackage[fleqn]{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{enumerate}
-\usepackage{tabstackengine}
-\usepackage{thmtools}
-\usepackage{xcolor}
-\usepackage[bookmarks=true, hidelinks]{hyperref}
-\usepackage{bookmark}
-\usepackage{pdfpages}
-
-\makeatletter
-\renewcommand\@seccntformat[1]{}
-\makeatother
-
-\theoremstyle{definition}
-\newtheorem*{define}{Definitie}
-\newtheorem*{theorem}{Stelling}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{opm}{Opmerking}
-\newtheorem*{gevolg}{Gevolg}
-\newtheorem*{nota}{Notatie}
-\newtheorem*{valkuil}{\textcolor{red}{Valkuil}}
-\newtheorem*{note}{\textcolor{red}{Note}}
-
-\DeclareMathOperator{\intr}{int}
-\DeclareMathOperator{\dist}{dist}
-
-%--------------------Make usable space all of page
-\setlength{\oddsidemargin}{0in}
-\setlength{\evensidemargin}{0in}
-\setlength{\topmargin}{0in}
-\setlength{\headsep}{-.25in}
-\setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8.5in}
-
-%--------------------Indention
-\newlength\tindent
-\setlength{\tindent}{\parindent}
-\setlength{\parindent}{0pt}
-\renewcommand{\indent}{\hspace*{\tindent}}
-
-\stackMath
-\makeatletter\renewcommand\TAB@delim[1]{\displaystyle#1}\makeatother
-\setstackEOL{\cr}% ROW DELIMITER FOR STACKS
-\renewcommand\stackalignment{l}% LEFT ALIGNMENT OF STACKS
-\setstackgap{S}{8pt}% INTER-ROW PADDING OF SHORT STACKS
-
-% Number sets
-\newcommand{\naturals}{\mathbb{N}}
-\newcommand{\reals}{\mathbb{R}}
-\newcommand{\complex}{\mathbb{C}}
-\newcommand{\rationals}{\mathbb{Q}}
+\documentclass{2wa40summary}
 
 \begin{document}
+	\maketitle
+	\thispagestyle{empty}
+	\newpage
+	
 \section{College 15}
     \subsection{Eigenschappen van de norm}
     \begin{enumerate}[(i)]
@@ -440,7 +388,7 @@
 			\[ ((x,y) \in U \wedge F(x,y)=0) \Leftrightarrow y=g(x) \]
 			
 			
-			\subsubsection{"Implicite functies" in meer variabelen}
+			\subsubsection{'Impliciete functies' in meer variabelen}
 				Los stelsen van $m$ vergelijkingen op naar $m$ variabelen $(y_1, \dots ,y_m) = y \in \reals^m$ afhankelijk van $ (x_1, \dots , x_n) = x \in \reals^n $.
 				\[
 				\begin{rcases*}
@@ -459,8 +407,8 @@
 				\end{itemize}
 				z.d.d. $ ((\underline{x},\underline{y}) \in U \wedge F(\underline{x},\underline{y})=0) \Leftrightarrow \underline{y}=\varphi (\underline{x}). $
 				
-			\subsubsection{"Impliciet differentieren"}
-				$ F(x,\varphi(x))=0 $. Differentieren naar $ x\in \reals^n $:
+			\subsubsection{'Impliciet differenti\"eren'}
+				$ F(x,\varphi(x))=0 $. Differenti\"eren naar $ x\in \reals^n $:
 				\[ D_x F(x,\varphi(x)) + D_y (x,\varphi(x))D_x \varphi(x) = 0 \Rightarrow D_x \varphi(x) = -(D_y F(x,\varphi(x)))^{-1} D_x F(x,\varphi(x)). \]
 				
 		\subsection{Stellingen uit het huiswerk}

@@ -1,204 +1,6 @@
-\documentclass[a4paper]{exam}
-\usepackage[english]{babel}
-\usepackage[fleqn]{amsmath}
-\usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{enumerate}
-\usepackage{tabstackengine}
-\usepackage{thmtools}
-\usepackage{xcolor}
-\usepackage{bookmark}
-\usepackage{pdfpages}
-% start maubach toegevoegd
-\usepackage{hyperref} % deze regel is veranderd, stond hierboven
-\usepackage{makeidx} % deze regel is toegevoegd.
-\usepackage[makeroom]{cancel} % deze regel is toegevoegd.
-\newtheorem*{voorbeeld}{Voorbeeld}
-% einde maubach toegevoegd
-
-\makeatletter
-\renewcommand\@seccntformat[1]{}
-\makeatother
-
-\theoremstyle{definition}
-\newtheorem*{define}{Definitie}
-\newtheorem*{theorem}{Stelling}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{opm}{Opmerking}
-\newtheorem*{gevolg}{Gevolg}
-\newtheorem*{nota}{Notatie}
-\newtheorem*{valkuil}{\textcolor{red}{Valkuil}}
-\newtheorem*{note}{\textcolor{red}{Note}}
-
-%\DeclareMathOperator{\intr}{int}
-%\DeclareMathOperator{\dist}{dist}
-\DeclareMathOperator{\intr}{\mathop{int}}
-\DeclareMathOperator{\dist}{\mathop{dist}}
-
-%--------------------Make usable space all of page
-\setlength{\oddsidemargin}{0in}
-\setlength{\evensidemargin}{0in}
-\setlength{\topmargin}{0in}
-\setlength{\headsep}{-.25in}
-\setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8.5in}
-
-%--------------------Indention
-\newlength\tindent
-\setlength{\tindent}{\parindent}
-\setlength{\parindent}{0pt}
-\renewcommand{\indent}{\hspace*{\tindent}}
-
-\stackMath
-\makeatletter\renewcommand\TAB@delim[1]{\displaystyle#1}\makeatother
-\setstackEOL{\cr}% ROW DELIMITER FOR STACKS
-\renewcommand\stackalignment{l}% LEFT ALIGNMENT OF STACKS
-\setstackgap{S}{8pt}% INTER-ROW PADDING OF SHORT STACKS
-
-% Number sets
-\newcommand{\naturals}{\mathbb{N}}
-\newcommand{\reals}{\mathbb{R}}
-\newcommand{\complex}{\mathbb{C}}
-\newcommand{\rationals}{\mathbb{Q}}
-%start nieuwe macros
-\def\set#1{\lbrace#1\rbrace}
-\def\abs#1{{\left|#1\right|}}
-\def\vectorstat#1{{\textbf{#1}}}
-\protected\def\a{\vectorstat{a}}
-\protected\def\b{\vectorstat{b}}
-\protected\def\c{\vectorstat{c}}
-\protected\def\d{\vectorstat{d}}
-\protected\def\e{\vectorstat{e}}
-\protected\def\f{\vectorstat{f}}
-\protected\def\g{\vectorstat{g}}
-\protected\def\h{\vectorstat{h}}
-%\protected\def\i{\vectorstat{i}}
-\protected\def\j{\vectorstat{j}}
-\protected\def\k{\vectorstat{k}}
-\protected\def\l{\vectorstat{l}}
-\protected\def\m{\vectorstat{m}}
-\protected\def\n{\vectorstat{n}}
-\protected\def\p{\vectorstat{p}}
-\protected\def\q{\vectorstat{q}}
-\protected\def\r{\vectorstat{r}}
-\protected\def\s{\vectorstat{s}}
-\protected\def\t{\vectorstat{t}}
-\protected\def\u{\vectorstat{u}}
-\protected\def\v{\vectorstat{v}}
-\protected\def\w{\vectorstat{w}}
-\protected\def\x{\vectorstat{x}}
-\protected\def\y{\vectorstat{y}}
-\protected\def\z{\vectorstat{z}}
-\protected\def\A{\vectorstat{A}}
-\protected\def\B{\vectorstat{B}}
-\protected\def\C{\vectorstat{C}}
-\protected\def\D{\vectorstat{D}}
-\protected\def\E{\vectorstat{E}}
-\protected\def\F{\vectorstat{F}}
-\protected\def\G{\vectorstat{G}}
-\protected\def\H{\vectorstat{H}}
-\protected\def\I{\vectorstat{I}}
-\protected\def\J{\vectorstat{J}}
-\protected\def\K{\vectorstat{K}}
-\protected\def\L{\vectorstat{L}}
-\protected\def\M{\vectorstat{M}}
-\protected\def\N{\vectorstat{N}}
-\protected\def\P{\vectorstat{P}}
-\protected\def\Q{\vectorstat{Q}}
-\protected\def\R{\vectorstat{R}}
-\protected\def\S{\vectorstat{S}}
-\protected\def\T{\vectorstat{T}}
-\protected\def\U{\vectorstat{U}}
-\protected\def\V{\vectorstat{V}}
-\protected\def\W{\vectorstat{W}}
-\protected\def\X{\vectorstat{X}}
-\protected\def\Y{\vectorstat{Y}}
-\protected\def\Z{\vectorstat{Z}}
-\protected\def\zero{\vectorstat{0}}
-\protected\def\one{\vectorstat{1}}
-\protected\def\two{\vectorstat{2}}
-\def\up#1{^{(#1)}}
-\protected\def\red#1{{\color{red}#1}}
-\protected\def\ore#1{{\color{orange}#1}}
-\protected\def\grn#1{{\color{green}#1}}
-\protected\def\blu#1{{\color{blue}#1}}
-\protected\def\brn#1{{\color{brown}#1}}
-\protected\def\blk#1{{\color{black}#1}}
-\protected\def\gry#1{{\color{gray}#1}}
-\protected\def\mgn#1{{\color{magenta}#1}}
-\protected\def\prp#1{{\color{purple}#1}}
-\newcommand{\indx}[1]{\index{#1}{\sl #1}}%
-\def\exclamation{!}% use \exclamation instead of '!' inside \indx ('!' is active in \index)
-\makeindex%
-%einde nieuwe macros
-
+\documentclass{2wa40summary}
 
 \begin{document}
-\section{Beste allemaal}
-
-Mijn complimenten -- dit is de eerste keer dat ``m'n'' studenten alle lecture notes in \LaTeX typen.
-Prima job!
-
-\ \\
-Ik heb leesbare tekst toegevoegd (in \blu{blauw}).
-
-\ \\
-Ik heb in het \verb$.tex$ bestand definities toegevoegd -- geen aktie noodzakelijk -- tussen
-``start nieuwe macros'' en ``einde nieuwe macros'' die het
-typewerk sterk kunnen vergemakkelijken. ``Makkelijk'' is smaakafhankelijk.
-
-\ \\
-Ik stel voor -- maar dat hoeft vanzelfsprekend niet -- dat ``jullie'' de typografie aanpassen aan wat in de Analyse/Calculus gebruikelijk is -- een deel heb ik al als voorbeeld voorgedaan in de brontekst van dit bestand:
-\begin{itemize}
-\item In plaats van de letter x, y en z \textbf{die vectoren zijn in dit} \verb$.tex$ \textbf{bestand}, type
-\verb$\x$, \verb$\y$ en \verb$\z$: $\x, \y, \z$
-\item Voor alle vectoren zoals $\mathbf{a}$, $\mathbf{b}$ etc: Type \verb$\a$, \verb$\b$, etc
-\item Ditto voor vectorwaardige functies \verb$\f\colon\reals^d\mapsto\reals$: $\f\colon\reals^d\mapsto\reals$: Type \verb$\f$
-\item In plaats van de letter 0 type voor nulvectoren \verb$\zero$: $\zero$
-\item In plaats van \verb$|x|$ type \verb$\abs{x}$: $\abs{x}$
-\item In plaats van \verb$|\x|$ type \verb$\abs{\x}$: $\abs{\x}$
-\item In plaats van \verb$x^{(n)}$ type \verb$x\up{n}$: $x\up{n}$
-\item In plaats van \verb$\x^{(n)}$ type \verb$\x\up{n}$: $\x\up{n}$
-\item In plaats van \verb$\Leftrightarrow$ type \verb$\iff$: $\iff$
-\item In plaats van \verb$\Rightarrow$ type \verb$\implies$: $\implies$
-\item In plaats van \verb$\mathbb{R}$ type \verb$\reals$: $\reals$ (heb ik al vervangen)
-\item In plaats van \verb$\mathbb{N}$ type \verb$\naturals$: $\naturals$ (heb ik al vervangen)
-\item In plaats van \verb$:$ type \verb$\colon$: $x\colon y$
-\item Voor verzamelingen type bv \verb$\set{1,2,3}$: $\set{1,2,3}$
-\item Voor rode tekst gebruik \verb$\red{word 1 and 2}$ type \verb$\red{word 1 and 2}$: \red{word 1 and 2}
-\item Voor groene tekst gebruik \verb$\grn{word 1 and 2}$ type \verb$\grn{word 1 and 2}$: \grn{word 1 and 2}
-\item Voor blauwe tekst gebruik \verb$\blu{word 1 and 2}$ type \verb$\blu{word 1 and 2}$: \blu{word 1 and 2}
-\item \blu{Het} \verb$\blu{...}$ \blu{kleuren commando kan geen} \verb#\verb$...$# \blu{constructie bevatten.}
-\item De langere variant \verb$\{\color{blue}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
-\item De langere variant \verb$\{\color{red}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
-\item De langere variant \verb$\{\color{green}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
-\item In plaats van \verb$\define$ type \verb$\begin{define}[onderwerp] ..... \end{define}$: zie voorbeelden in dit \verb$.tex$ bestand
-\item Om een \verb$woord$ in de index te plaatsen, type \verb$\indx{woord}$ -- het verschijnt dan ``slanted'' in de \verb$.pdf$
-\item In \LaTeX\ zijn de braces \verb${...}$ de \LaTeX\ groep-open en \LaTeX\ groep-sluit operatoren -- en daarom niet zichtbaar in de tekst. Om ze zichtbaar te maken moet je \verb$\lbrace$ resp.{} \verb$\rbrace$ typen of -- minder slim als je \LaTeX\ beter kent type je \verb$\{$ resp.{} \verb$\}$.
-\item Als je zulke braces (\verb$\{\}$, \verb$()$, \verb$[]$) groot genoeg wilt hebben dan type je \verb$\left\lbrace ... \right\rbrace$:
-\[
-\left\lbrace \int_0^1 f(x) \text{d}x \right\rbrace.
-\]
-Een minder alternatief -- alleen te snappen met meer \LaTeX\ kennis is \verb$\big\{$ ipv.{} \verb$\left\rbrace$.
-\item Als je in het \verb$.pdf$ wilt kunnen klikken op secties om daarnaar toe te springen includeer dan
-\verb$\usepackage{hyperref}$ -- heb ik al gedaan -- dit package was al wel geincludeerd maar het automatisch springen was uitgeschakeld.
-\item De definities van \verb$\intr$ en \verb$\distr$ heb ik aangepast -- dat valt niet op maar daar komt later voordeel van
-\item De \verb$\AA$ geeft niet de gewenst ``interior'' notatie -- daarom heb ik \verb$\AA$ aangepast aan de \LaTeX\ standaard
-om $\mathring{A}$ te geven
-\item In plaats van \verb$\lim_{n\rightarrow\infty}$ type de kortere \LaTeX\ standaard \verb$\lim_{n\to\infty}$: $\lim_{n\to\infty}$
-\item De bold -- vetgedrukte -- vectoren veranderen in underline vectoren door 1 regel te wijzigen!
-\item In math mode -- tussen dollars en \verb$\[\]$ gebruik \verb$\ldots$ voor enumeraties zoals \verb$1,2,\ldots,d$: $1,2,\ldots,d$ -- gebruik \verb$\dots$ alleen in text mode.
-\end{itemize}
-Ik stel voor dat jullie deze tips verhuizen naar de appendix voor de volgende generatie -- die appendix heb ik toegevoegd.
-
-\ \\
-Groet,
-
-Jos.
-
-\newpage
 \section{Inleiding}
 We nemen aan dat $d\in\naturals_+$.
 
@@ -712,7 +514,7 @@ Deze definitie is equivalent met
 			\[ ((x,y) \in U \wedge F(x,y)=0) \Leftrightarrow y=g(x) \]
 			
 			
-			\subsubsection{"Implicite functies" in meer variabelen}
+			\subsubsection{'Impliciete functies' in meer variabelen}
 				Los stelsen van $m$ vergelijkingen op naar $m$ variabelen $(y_1, \dots ,y_m) = y \in \reals^m$ afhankelijk van $ (x_1, \dots , x_n) = x \in \reals^n $.
 				\[
 				\begin{rcases*}
@@ -731,7 +533,7 @@ Deze definitie is equivalent met
 				\end{itemize}
 				z.d.d. $ ((\underline{x},\underline{y}) \in U \wedge F(\underline{x},\underline{y})=0) \Leftrightarrow \underline{y}=\varphi (\underline{x}). $
 				
-			\subsubsection{"Impliciet differentieren"}
+			\subsubsection{'Impliciet differentieren'}
 				$ F(x,\varphi(x))=0 $. Differentieren naar $ x\in \reals^n $:
 				\[ D_x F(x,\varphi(x)) + D_y (x,\varphi(x))D_x \varphi(x) = 0 \Rightarrow D_x \varphi(x) = -(D_y F(x,\varphi(x)))^{-1} D_x F(x,\varphi(x)). \]
 				
