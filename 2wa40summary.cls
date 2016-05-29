@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/05/29
+%Added infinity norm
 %2016/05/28
 %Created class file
 
@@ -27,6 +29,20 @@
 \author{Abby Berkers \\ Thomas Schouten \\ Verbeteringen door Jos Maubach}
 \date{\today}
 
+%--------------------Make usable space all of page
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\headsep}{-.25in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+
+%--------------------Indention
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+
 \renewcommand\@seccntformat[1]{}
 
 \newtheorem*{voorbeeld}{Voorbeeld}
@@ -43,19 +59,8 @@
 \DeclareMathOperator{\intr}{\mathop{int}}
 \DeclareMathOperator{\dist}{\mathop{dist}}
 
-%--------------------Make usable space all of page
-\setlength{\oddsidemargin}{0in}
-\setlength{\evensidemargin}{0in}
-\setlength{\topmargin}{0in}
-\setlength{\headsep}{-.25in}
-\setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8.5in}
-
-%--------------------Indention
-\newlength\tindent
-\setlength{\tindent}{\parindent}
-\setlength{\parindent}{0pt}
-\renewcommand{\indent}{\hspace*{\tindent}}
+% Infinity norm
+\newcommand{\inftynorm}[1]{\left\|#1\right\|_\infty}
 
 \stackMath
 \renewcommand\TAB@delim[1]{\displaystyle#1}
