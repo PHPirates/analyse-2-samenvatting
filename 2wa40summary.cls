@@ -43,10 +43,10 @@
 \setlength{\parindent}{0pt}
 \renewcommand{\indent}{\hspace*{\tindent}}
 
-\renewcommand\@seccntformat[1]{}
+%\renewcommand\@seccntformat[1]{} % not needed?
 
-\newtheorem*{voorbeeld}{Voorbeeld}
 \theoremstyle{definition}
+\newtheorem*{voorbeeld}{Voorbeeld}
 \newtheorem*{define}{Definitie}
 \newtheorem*{theorem}{Stelling}
 \newtheorem*{lemma}{Lemma}
@@ -56,17 +56,21 @@
 \newtheorem*{valkuil}{\textcolor{red}{Valkuil}}
 \newtheorem*{note}{\textcolor{red}{Note}}
 
-\DeclareMathOperator{\intr}{\mathop{int}}
+% Set interior and distance
+\DeclareMathOperator{\intr}{\mathop{int}} 
 \DeclareMathOperator{\dist}{\mathop{dist}}
 
 % Infinity norm
 \newcommand{\inftynorm}[1]{\left\|#1\right\|_\infty}
 
+% Vertical vector
+\newcommand{\vvec}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
 \stackMath
 \renewcommand\TAB@delim[1]{\displaystyle#1}
-\setstackEOL{\cr}% ROW DELIMITER FOR STACKS
-\renewcommand\stackalignment{l}% LEFT ALIGNMENT OF STACKS
-\setstackgap{S}{8pt}% INTER-ROW PADDING OF SHORT STACKS
+\setstackEOL{\cr}% row delimiter for stacks
+\renewcommand\stackalignment{l}% left alignment of stacks
+\setstackgap{S}{8pt}% inter-row padding of short stacks
 
 % Number sets
 \newcommand{\naturals}{\mathbb{N}}
@@ -141,7 +145,7 @@
 \protected\def\gry#1{{\color{gray}#1}}
 \protected\def\mgn#1{{\color{magenta}#1}}
 \protected\def\prp#1{{\color{purple}#1}}
-\newcommand{\indx}[1]{\index{#1}{\sl #1}}%
+\newcommand{\indx}[1]{\index{#1}{\sl #1}}
 \def\exclamation{!}% use \exclamation instead of '!' inside \indx ('!' is active in \index)
 \makeindex
 
