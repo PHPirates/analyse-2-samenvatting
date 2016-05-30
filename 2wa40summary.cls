@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/05/30
+%Added vvec/map/toprove environment
 %2016/05/29
 %Added infinity norm
 %2016/05/28
@@ -43,7 +45,8 @@
 \setlength{\parindent}{0pt}
 \renewcommand{\indent}{\hspace*{\tindent}}
 
-%\renewcommand\@seccntformat[1]{} % not needed?
+% To remove the section numbering
+\renewcommand\@seccntformat[1]{} 
 
 \theoremstyle{definition}
 \newtheorem*{voorbeeld}{Voorbeeld}
@@ -56,6 +59,13 @@
 \newtheorem*{valkuil}{\textcolor{red}{Valkuil}}
 \newtheorem*{note}{\textcolor{red}{Note}}
 
+\newtheorem*{toprove}{Te bewijzen}
+%% Credits to Sten
+% Inline to prove env. To be used when `toprove' is the first content in a question. Then normally the text would end up on a new line, which is ugly. In these cases, use this environment instead.
+\newenvironment{inlinetoprove}
+{\enskip\textbf{Te bewijzen.\space}}% \begin{inlinetoprove}
+{\enskip}% \end{inlinetoprove}
+
 % Set interior and distance
 \DeclareMathOperator{\intr}{\mathop{int}} 
 \DeclareMathOperator{\dist}{\mathop{dist}}
@@ -65,6 +75,9 @@
 
 % Vertical vector
 \newcommand{\vvec}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
+% Linear maps
+\newcommand{\map}[1]{\mathcal{#1}}
 
 \stackMath
 \renewcommand\TAB@delim[1]{\displaystyle#1}
