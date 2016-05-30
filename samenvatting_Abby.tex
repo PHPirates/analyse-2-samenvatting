@@ -108,8 +108,8 @@
 		een rij in $\reals^d$en $\a =(a_1, \dots ,a_d ) \in \reals^d$. Dan heet $(\x^{(n)})$ convergent naar $\a$ als
 		\begin{enumerate}[(i)]
 			\item $\abs{\x\up{n}-\a}\stackrel{n\rightarrow \infty}{\longrightarrow} 0$
-			\item $\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon)}: \forall _{n\geq n_0} : \abs{\x\up{n} - a} < \varepsilon$.
-			\item $\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon)}: \forall _{n\geq n_0} : \x\up{n} \in B(\a,\varepsilon )$
+			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)}: \forall _{n\geq n_0} : \abs{\x\up{n} - a} < \epsilon$.
+			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)}: \forall _{n\geq n_0} : \x\up{n} \in B(\a,\epsilon )$
 		\end{enumerate}
 	\end{define}		
 	\begin{theorem}
@@ -192,7 +192,7 @@
 	
 	\theorem Zij $A \subset \reals^d$. Dan \[A \text{ begrensd} \Leftrightarrow \overline{A} \text{ begrensd} \Leftrightarrow \overline{A}\text{ compact}.\]
 	
-	\define[Cauchyrij] Een Cauchyrij $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\varepsilon >0} \exists _{n_0=n_0(\varepsilon )\in \naturals}:\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \varepsilon.\]
+	\define[Cauchyrij] Een Cauchyrij $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon )\in \naturals}:\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \epsilon.\]
 	\theorem Elke Cauchyrij $(\x\up{n})\subset\reals^d$ is convergent in $\reals^d$.
 	
 	\newpage
@@ -200,7 +200,7 @@
 	\subsection{Functies $\reals^d \rightarrow \reals$: limieten en continu\"{\i}teit}
 	\define[Limiet] Zij $D \subset \reals^d, f: D\rightarrow \reals, \a \in D', L\in\reals$.
 	De \indx{limiet}/(\textit{limit}) van $f(\x)$ voor $\x\to\a$:
-	\[ \lim_{x\rightarrow a}f(x)=L \Leftrightarrow \forall _{\varepsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \Rightarrow |f(x)-L|<\varepsilon\]
+	\[ \lim_{x\rightarrow a}f(x)=L \Leftrightarrow \forall _{\epsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \Rightarrow |f(x)-L|<\epsilon\]
 	
 	\theorem Zij $D \subset \reals^d, f:D\rightarrow \reals, \a \in D', L \in \reals$. Dan geldt
 	\[ \lim_{x \rightarrow a} f(x)=L \Leftrightarrow \text{voor elke rij } (\x\up{n}) \text{ in } D\backslash\{a\} \text{ met } \x\up{n}\rightarrow \a \text{ geldt } f(\x\up{n}) \rightarrow L.\]
@@ -208,7 +208,7 @@
 	\opm $\left[\text{K}\right]$ 10.2.5 limietstellingen analoog aan 1D.
 	
 	\define[continu te $\a$ voor $f$] Zij $D \subset \reals^d, \a\in D\cap D',f:D\rightarrow \reals$. $f$ heet \indx{continu te $\a$} als \[\lim_{x\rightarrow a}f(\x)=f(\a) \text{ oftewel als}\]
-	\[\forall _{\varepsilon >0} \exists _{\delta >0}: \x \in B(\a,\delta)\cap D \Rightarrow |f(\x)-f(\a)|<\varepsilon.\]
+	\[\forall _{\epsilon >0} \exists _{\delta >0}: \x \in B(\a,\delta)\cap D \Rightarrow |f(\x)-f(\a)|<\epsilon.\]
 	
 	\theorem $\left[\text{K}\right]$ 10.2.7
 	$f$ continu te $\a\Leftrightarrow$ voor elke rij $(\x\up{n})$ in $D: \x\up{n}\rightarrow \a \Rightarrow f(\x\up{n}) \rightarrow f(\a).$
@@ -235,14 +235,14 @@
 	\define Zij $\a \in D'$.
 	\begin{align*}
 	\lim_{\x\to\a}\f(\x)=L \in \reals^m  &\iff \lim_{\x\to\a}f_i(\x)=L_i (i=1,\ldots ,m) \\
-	&\Leftrightarrow \forall _{\varepsilon >0} \exists _{\delta >0}: 0<|\x-\a|<\delta, \x\in D \Rightarrow \abs{\f(\x)-L}<\varepsilon.
+	&\Leftrightarrow \forall _{\epsilon >0} \exists _{\delta >0}: 0<|\x-\a|<\delta, \x\in D \Rightarrow \abs{\f(\x)-L}<\epsilon.
 	\end{align*}
 	
 	\define[continu te $\a$ voor $\f$] Zij $D \subset \reals^d$ en $\a \in D \cap D'$.
 	Dan is $\f$ \indx{continu}/(\textit{continuous}) te $\a$ als:
 	\begin{align*}
-	\forall _{\varepsilon >0} \exists _{\delta >0}: \x\in B(\a,\delta)\backslash\set{\a} &\Rightarrow |\f(\x)-\f(\a)|<\varepsilon \\
-	&\Rightarrow \f(\x) \in B(\f(\a),\varepsilon).
+	\forall _{\epsilon >0} \exists _{\delta >0}: \x\in B(\a,\delta)\backslash\set{\a} &\Rightarrow |\f(\x)-\f(\a)|<\epsilon \\
+	&\Rightarrow \f(\x) \in B(\f(\a),\epsilon).
 	\end{align*}
 	
 	\define De volgende beweringen zijn equivalent: Zij $D\subset\reals^d$ het domein van $\f$.
@@ -277,8 +277,8 @@
 		\begin{enumerate}[(1)]
 			\item $\f(D)$ compact (continue functies beelden compacte verzamelingen af op compacte verzamelingen)
 			\item $\f$ uniform continu, dwz
-			\[\forall_{\varepsilon > 0} \exists_{\delta = \delta(\varepsilon)}\forall_{\x,\z\in D}\colon
-			\abs{\x-\z}<\delta \implies |\f(\x)-\f(\z)|<\varepsilon.
+			\[\forall_{\epsilon > 0} \exists_{\delta = \delta(\epsilon)}\forall_{\x,\z\in D}\colon
+			\abs{\x-\z}<\delta \implies |\f(\x)-\f(\z)|<\epsilon.
 			\]
 		\end{enumerate}
 	\end{theorem}
@@ -602,8 +602,40 @@
 				\end{enumerate}
 			\end{lemma}
 			\begin{define}
-				 
+				 Het getal \[ \sup \{ L(P,f) \mid \text{P partitie van }[a,b] \} =: \ul{\int_{a}^{b} f(x) dx} \]
+				 heet een \indx{onderintegraal} van $f$ op $[a,b]$.
+				 \opm Dit getal bestaat altijd, ook bij niet-integreerbare functies!
+				 \[ 
+					 \inf \{ U(P,f) \mid \text{P partitie van }[a,b] \} =: \overline{\int_{a}^{b} f(x) dx}
+				  \]
+				  heet \indx{bovenintegraal} van $f$ op $[a,b]$.
 			\end{define}
+			\begin{gevolg}
+				\[ \ul{\int_{a}^{b} f(x) dx} \le \overline{\int_{a}^{b} f(x) dx} \]
+			\end{gevolg}
+			\begin{define}
+				$f$ heet \indx{Riemann-integreerbaar} op $[a,b]$ als 
+				\[ \ul{\int_{a}^{b} f(x) dx} = \overline{\int_{a}^{b} f(x) dx}, \]
+				en dit getal heet \indx{Riemann integraal} van $f$ op $[a,b]$.
+				\begin{nota}
+					\[
+					\int_{a}^{b} f(x) dx,\ R[a,b] = \{ f\colon [a,b]\to \reals \mid f \text{ Riemann-integreerbaar} \}
+					\]
+				\end{nota}
+			\end{define}
+			
+			\begin{theorem}[Karakterisering integreerbaarheid]
+				Zij $ f\colon [a,b] \to \reals $ begrensd, dan
+				\[ 
+					f \in R[a,b] \iff \forall_{\epsilon >0} \exists_{\text{Partitie P}}: U(P,b) - L(P,f) < \epsilon.
+				 \]
+			\end{theorem}
+			
+			\begin{theorem}
+				Zij $ f\colon [a,b] \to \reals $ stijgend. Dan is $f$ Riemann-integreerbaar.
+				\opm $f$ hoeft niet continu te zijn!
+			\end{theorem}
+			
 					
 		\includepdf[pages={-}]{Aart.pdf}
 		

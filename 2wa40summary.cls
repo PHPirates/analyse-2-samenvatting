@@ -3,7 +3,7 @@
 
 %CHANGELOG
 %2016/05/30
-%Added vvec/map/toprove environment
+%Added vvec/map/toprove environment/underline shortcut/better epsilon/phi
 %2016/05/29
 %Added infinity norm
 %2016/05/28
@@ -78,6 +78,19 @@
 
 % Linear maps
 \newcommand{\map}[1]{\mathcal{#1}}
+
+% Vector underline shortcut
+\newcommand{\ul}[1]{\underline{#1}}
+
+% Better phi
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+% Better epsilon
+\let\temp\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\temp
 
 \stackMath
 \renewcommand\TAB@delim[1]{\displaystyle#1}
