@@ -15,6 +15,10 @@
 	We nemen aan dat $d\in\naturals_+$. Met [K] wordt het boek van Kosmala aangeduid: W. Kosmala, A friendly introduction to Analysis, 2nd edition, Prentice Hall, ISBN: 0131273167
 	
 	\section{College 15}
+	\begin{equation}\label{test}
+		MATHS \Sigma
+	\end{equation}
+	Reference \ref{test}.
 	\subsection{Eigenschappen van de norm}
 	Voor alle $\x\in \reals^d$ en $c\in\reals$ moet gelden
 	\begin{enumerate}[(i)]
@@ -622,7 +626,7 @@
 			\begin{define}
 				$f$ heet \indx{Riemann-integreerbaar} op $[a,b]$ als 
 				\[ \ul{\int_{a}^{b} f(x) dx} = \overline{\int_{a}^{b} f(x) dx}, \]
-				en dit getal heet \indx{Riemann integraal} van $f$ op $[a,b]$.
+				en dit getal heet \index{Riemann integraal} van $f$ op $[a,b]$.
 				\begin{nota}
 					\[
 					\int_{a}^{b} f(x) dx,\ R[a,b] = \{ f\colon [a,b]\to \reals \mid f \text{ Riemann-integreerbaar} \}
@@ -704,6 +708,17 @@
 				 	\item Zij $ c \in [a,b] $, $f$ continu in $c$. Dan $F$ differentieerbaar in $c$, $ F'(c)=f(c) $.
 				 \end{enumerate}
 			\end{theorem}
+			
+			\begin{gevolg}
+				Elke continue functie op $ [a,b] $ heeft een primitieve gegeven door 
+				\[ 
+					F(x)= \int_a^x f(t)dt = f(x).
+				 \]
+				 In het kort. Als $f$ continu, dan 
+				 \[ 
+					 \frac{d}{dx} \int_a^x f(t)dt = f(x).
+				  \]
+			\end{gevolg}
 			
 			\begin{lemma}
 				Zij $ f \in R[a,b] $, $F\colon [a,b] \to \reals$ gedefinieerd door $ F(x) = \int_a^x f(t)dt $. Verder zij $ c \in [a,b] $, $f$ continu in $c$. Dan
