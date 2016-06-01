@@ -21,11 +21,11 @@
 \RequirePackage{tabstackengine}
 \RequirePackage{thmtools}
 \RequirePackage{xcolor}
-\RequirePackage{bookmark}
 \RequirePackage{pdfpages}
-\RequirePackage{hyperref} 
-\RequirePackage{imakeidx} 
+\RequirePackage{imakeidx} % Used for index
 \RequirePackage[makeroom]{cancel}
+\RequirePackage{hyperref} % should make index clickable
+\RequirePackage{bookmark} % Used for pdf bookmarks, needs to be loaded after hyperref
 
 \title{\textbf{Samenvatting Analyse 2}}
 \author{Abby Berkers \\ Thomas Schouten \\ Verbeteringen door Jos Maubach}
