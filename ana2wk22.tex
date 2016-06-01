@@ -1,0 +1,38 @@
+
+{\bf Belangrijke begrippen analyse 2 week 22.}
+\vskip 8pt
+\begin{description}
+\item[Jacobiaan] Als $(f_1,f_2,\dots,f_n)=f\,:\,\mathbb R^d\to \mathbb R^n$ differentieerbaar is
+in het punt $a=(a_1,\dots,a_d)$ dan wordt de afgeleide $Df(a)$ gegeven
+door de ($n\times d$) Jacobiaan $M_{ij}=\partial_jf_i(a)$. Er geldt $f(a+h)=f(a)+Mh+\epsilon\|h\|$,
+waar $\epsilon$ een vector is met limiet $\bf 0$ als $\|h\|\to 0$.
+\item[Kettingregel] Als $x(t),y(t)\,:\,\mathbb R\to\mathbb R$ en $f(x,y)\,:\,\mathbb R^2\to R$
+en $z=f(x(t),y(t))$ 
+\[
+\frac{dz}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}.
+\]
+Als $x(t,s),y(t,s)\,:\,\mathbb R^2\to\mathbb R^2$ en $z=f(x,y)$ dan
+\[
+\frac{\partial z}{\partial t}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial t}
++\frac{\partial z}{\partial y}\frac{\partial y}{\partial t}.
+\]
+\item[Taylor (rond 0), drie variabelen] $f(x,y,z)\,:\,\mathbb R^3\to \mathbb R$:
+\[
+\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! T(h,k,l)=f({\bf 0})+ f_x({\bf 0})h + f_y k+ f_z l+
+\frac12 f_{xx}h^2+ f_{xy}hk +\cdots+\frac16 f_{xxx}h^3+\frac12 f_{xxy}h^2k+ f_{xyz}hkl +\cdots. 
+\] 
+\end{description}
+\vskip 8pt
+{\bf Belangrijk begrip analyse 2 week 23.}
+\begin{description}
+\item[Impliciete functiestelling] $F\,:\,D\to \mathbb R^m$ met
+$(x_0,y_0)\in D\subset \mathbb R^n\times \mathbb R^m$ en $F(x_0,y_0)=0$
+en $D_yF(x_0,*)$ inverteerbaar in $*=y_0$, dan zijn er open $U\ni (x_0,y_0)$ en
+$V\ni x_0$ en differentieerbare b $g\,:\,V\to\mathbb R^m$, met\\
+(i) $x\in V$, $y\in\mathbb R^m: y=g(x) \Leftrightarrow ((x,y)\in U\wedge F(x,y)=0)$.\\
+(ii) $x\in V$: $Dg(x)=-[D_yF(x,g(x))]^{-1}D_xF(x,y)$.\\[6pt]  
+Dus hier zijn $D_yF(x,*)$ en $D_xF(*,y)$ de Jacobianen van de afbeeldingen
+$F(x,*)\,:\,\mathbb R^m\to\mathbb R^m$ en $F(*,y)\,:\,\mathbb R^n\to \mathbb R^m$,
+dus $D_y$ is een $m\times m$ matrix en $D_x$ is een $m\times n$ matrix. 
+
+\end{description}

@@ -1,0 +1,40 @@
+{\bf Belangrijke begrippen analyse 2 week 18.}
+\vskip 8pt
+\begin{description}
+\item[limiet] Als $a$ een verdichtingspunt is van $A$, het domein van
+de functie $f$, dan betekent $\lim_{x\to a} f(x)=L$:
+voor elke $\epsilon>0$ is er een $\delta>0$ zodat als 
+$x\in A\setminus\{a\}$ en $|x-a|<\delta$, 
+dan $|f(x)-L|<\epsilon$.
+\item[hoogtelijnen] Voor level curves: aarzel niet Mathematica te gebruiken.
+\item[tip limieten] Voor limieten: probeer zoveel mogelijk de insluitstelling
+te gebruiken. Ook Taylorreeksen zijn vaak nuttig.
+\item[Som Kosmala] 10.2.9: onderscheid de gevallen $x\ne y$ en $x=y$.
+\end{description}
+\vskip 8pt
+{\bf Belangrijke begrippen analyse 2 week 19.}
+\begin{description}
+\item[Uniform continu] Voor elke $\epsilon>0$ is er
+een $\delta>0$ zodanig dat voor elke $a$ en $b$ in het domein van $f$ 
+geldt $|f(a)-f(b)|<\epsilon$ als $|a-b|<\delta$.
+\item[Banach] Als $f\,:\,D\to D(\subset \mathbb R^d)$ een contractie
+is en $D$ gesloten, dan is er een uniek vast punt $p$ (dus waarvoor $f(p)=p$), en voor elke
+$x\in D$ convergeert de rij $x,f(x),f(f(x)),\dots$ naar dit punt $p$. \\
+$f$ heet contractie op $D$ als er een $q<1$ is met $|f(x)-f(y)|\le q|x-y|$
+voor alle $x,y\in D$.
+\end{description}
+\vskip 8pt
+{\bf Belangrijke begrippen analyse 2 week 20.}
+\begin{description}
+\item[Parti\"ele afgeleiden] $\ds \partial_xf(a,b)=\lim_{h\to 0}\frac{f(a+h,b)-f(a,b)}h$.
+Iets dergelijks voor $\partial_y$ en voor functies van (nog) meer variabelen.
+Beetje verwarrend: met $\partial_{xy}f$ of ook $f_{xy}$ bedoelen we $\partial_y(\partial_xf)$,
+we differentieren hier dus {\em eerst} naar $x$ en dan naar $y$ (voor {\em fatsoenlijke}
+functies maakt de volgorde overigens niet uit).
+\item[Differentieerbaar] $f\,:\,\mathbb R^2\to\mathbb R$ is differentieerbaar in $(a,b)$
+als er getallen $m_1$ en $m_2$ zijn met 
+$f(a+h,b+k)=f(a,b)+m_1h+m_2k+\epsilon\sqrt{h^2+k^2}$ waarbij $\epsilon\to0$ als $(h,k)\to(0,0)$.
+hier zijn $m_1$ en $m_2$ de parti\"ele afgeleiden $\partial_xf(a,b)$ en $\partial_y$. 
+Het beginstuk heet de linearisering van $f$ rond $(a,b)$ en geeft de vergelijking van het
+raakvlak. Iets dergelijks voor meer variabelen.
+\end{description}

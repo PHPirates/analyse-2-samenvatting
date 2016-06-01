@@ -1,0 +1,64 @@
+\documentclass[12pt,dutch]{article}
+\usepackage{amssymb,amsmath}
+\newcommand\inw{\rm int}
+\newcommand\ds{\displaystyle}
+\begin{document}
+{\bf Uitwerking tussentoets Analyse 2, mei 2016.}
+\vskip 6pt
+\begin{description}
+\item[1.] Zij $A\subset \mathbb R^d$ en $a$ een inwendig punt van $A$. Laat zien:
+Voor elke rij $(x_n)$ in $\mathbb R^d$ die naar $a$
+convergeert is er een $n_0\in\mathbb N$ zodanig dat $x_n \in A$ voor alle
+$n \ge n_0$.\hfill {\sc 4 punten}
+\item[Antw.] Als $a$ inwendig punt is, dan is er een $r>0$ met $B(a,r)\subset A$.
+Als $(x_n)$ naar $a$ convergeert dan geldt voor alle $\epsilon>0$, dus ook voor
+de eerder gevonden $r$ dat er een $n_0$ is met $|x_n-a|<\epsilon$ als $n\ge n_0$.
+Dus voor de $n_0$ die hoort bij $r$ geldt $x_n\in B(a,r)\subset A$ als $n\ge n_0$.
+\item[2.] Is de volgende bewering waar? (Geef een bewijs of een tegenvoorbeeld.)\\
+``Voor willekeurige deelverzamelingen $A,B \subset \mathbb R^d$ geldt
+\[
+\overline{A\cup B} = \overline A\cup \overline B.~"
+\]
+\hfill {\sc 5 punten}
+\item[Antw.] We gebruiken (bijvoorbeeld) het feit dat de afsluiting van
+$C$ gelijk is aan $C$ samen met de verdichtingspunten. Elk verdichtingspunt
+$x$ van $A$ is uiteraard ook verdichtingspunt van $A\cup B$, een rij in $A$ die
+naar $x$ convergeert is bevat in $A\cup B$, evenzo is elk verdichtingspunt
+van $B$ verdichtingspunt van $A\cup B$, dus rechts is bevat in links.
+Omgekeerd als $x$ verdichtingspunt is van $A\cup B$, dan is er een rij in $A\cup B$
+die naar $x$ convergeert, en deze rij bevat een oneindige deelrij die hetzij in $A$
+hetzij in $B$ bevat is (allebei kan natuurlijk ook). Dus links is bevat in rechts. 
+\item[3.] Ga na of de volgende limieten bestaan en zo ja, bepaal ze:
+\[
+\mbox{\bf a)} \lim_{(x,y)\to(0,0)}\frac{e^{xy}-1}{x^2 + y^2}~,~~~~
+\mbox{\bf b)} \lim_{(x,y)\to(0,0)}\frac{(e^{xy}-1)^2}{x^2+y^2}~.
+\]
+\hfill 3+3 {\sc punten}
+\item[Antw.] Het best gebruiken we de standaardlimiet $\ds \lim_{t\to 0}\frac{e^t-1}t=\left.\frac{de^t}{dt}\right|_{t=0}=1$. 
+\[
+\lim\frac{e^{xy}-1}{xy}\cdot\frac{xy}{x^2+y^2}
+\]
+bestaat niet, bijvoorbeeld omdat dit langs $x=0$ naar nul gaat, en langs $y=x$ naar $\frac12$.
+\[
+\lim\frac{(e^{xy}-1)^2}{(xy)^2}\cdot\frac{x^2y^2}{x^2+y^2}=0,
+\]
+want $0\le x^2y^2/(x^2+y^2)\le y^2$ en dit gaat naar nul met de insluitstelling.
+\item[4.] Zij $f\, :\, \mathbb R^2 \to \mathbb R$ gegeven door
+\[
+f(x,y) =\left\{ 
+\begin{array}{rcc}
+-x^2 & \mbox{als} & y\ge0~,\\
+x^2  & \mbox{als} & y<0~.
+\end{array}
+\right.
+\]
+Ga na in welke punten de functie $f$ continu/discontinu is. (Beredeneer je antwoord en let op de
+volledigheid.) \hfill 5 {\sc punten}
+\item[Antw.] Voor punten $p=(x,y)$ met $y>0$ geldt dat er een bol $B(p,r)$ is waar de functie
+gedefini\"eerd is als $-x^2$, dus hier is $f$ zeker continu, iets dergelijks geldt als $y<0$.
+In de buurt van het punt $(x,0)$ worden zowel waarden in de buurt van $x^2$ als in de buurt van
+$-x^2$ aangenomen. Als $x\ne0$ dan is $x^2\ne -x^2$ dus hier is de functie discontinu.
+In de buurt van de oorsprong geldt dat $|f(x,y)|\le x^2$ met limiet $0$, dus in het punt $(0,0)$
+is de functie continu. 
+\end{description}
+\end{document} 

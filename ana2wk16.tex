@@ -1,0 +1,63 @@
+{\bf Belangrijke begrippen analyse 2 week 15.}
+\vskip 8pt
+\begin{description}
+\item[bol, ball] $B(a,r)=\{x\in \mathbb R^d\,|\,|x-a|<r\}$, de open bol rond $a$ met
+straal $r$ (in dimensie $d$). $|x-a|$ is de afstand tussen de punten $a$ en $x$,
+als $d=1$ is dit hetzelfde als de absolute waarde. Kosmala zou schrijven
+$\|\vec x-\vec a\|$.
+\item[inwendig punt, interior point] $a\in A$ heet inwendig punt als er een $r>0$ is
+met $B(a,r)\subseteq A$ (voor mij zijn $\subseteq$ en $\subset$ gelijkwaardig). Een
+inwendig punt behoort noodzakelijk tot de verzameling.
+\item[open, inwendige, interior]
+$\inw~A$, het inwendige van $A$ is de verzameling inwendige punten van $A$. 
+$A$ heet open als
+$A=\inw~A$. 
+\item[rand, boundary] Punt $a$ heet een randpunt van $A$ als voor elke $r>0$ de bol $B(a,r)$
+zowel punten in $A$ als punten niet in $A$ bevat, de rand van $A$ geven we aan met $\partial A$. 
+Een randpunt hoeft niet tot de verzameling te behoren.  
+\end{description}
+{\bf Belangrijke begrippen analyse 2 week 16.}
+\vskip 8pt
+\begin{description}
+\item[verdichtingspunt, accumulation point]
+Punt $a$ is {\em verdichtingspunt} van verzameling $A$ als voor alle $r>0$, $B(a,r)$ een punt
+van $A$ bevat {\em verschillend} van $a$. $A'$ is de collectie verdichtingspunten. Een 
+verdichtingspunt hoeft niet tot de verzameling te behoren.
+\item[afsluiting, closure]
+De afsluiting $\overline A$ is $A$ samen met zijn verdichtingspunten, het is ook $A$ samen
+met zijn rand $\partial A$. $A$ heet gesloten (closed) als hij gelijk is aan zijn afsluiting, dus
+als hij al zijn verdichtingspunten bevat, dus als de rand van $A$ in $A$ zit. $A$ is altijd bevat
+in zijn afsluiting.
+\item[rijen en limieten]
+$x^{(n)}\to a$ betekent $\lim_{n\to\infty} x^{(n)}=a$, oftewel:\\ 
+voor elke $\epsilon>0$ geldt dat de bol
+$B(a,\epsilon)$ voor zekere $N$ alle $x^{(n)}$ bevat waarvoor $n>N$. Oftewel:\\
+$\forall\epsilon>0: ~\exists N\in \mathbb N: \forall n>N: |x^{(n)}-a|<\epsilon$. \\
+Als de rij $x^{(n)}$ een limiet heeft dan heet de rij {\em convergent}.
+\item[infimum en supremum]
+Als $A\subset \mathbb R$ niet leeg is en van onderen begrensd, 
+dan betekent $m=\inf A$ dat \\
+(i) $m\le a$ voor alle $a\in A$; \\
+(ii) $m$ is maximaal met betrekking tot eigenschap (i), 
+oftewel:\\ 
+voor elke $\epsilon>0$ is er een $a\in A$ met $a<m+\epsilon$.\\
+Conventies: Als $A$ niet naar beneden begrensd is zeggen ook wel
+$\inf A=-\infty$. Als $A=\emptyset$ dan zeggen we ook wel
+$\inf A=\infty$.\\ 
+Verzin zelf wat $M=\sup A$ betekent.
+\end{description}
+{\bf Belangrijke begrippen analyse 2 week 17.}
+\vskip 8pt
+\begin{description}
+\item[begrensd, bounded] $A$ heet begrensd als er een $r$ is met $|a|<r$ voor alle
+$a\in A$ (dus $A\subseteq B(0,r)$).
+\item[(open) overdekking, cover] Een collectie (open) verzamelingen $A_i$, $i\in I$ ($I$ staat 
+hier voor een verzameling indices) heet (open) overdekking van $A$ als $A\subseteq \bigcup_{i\in I} A_i$,
+dus voor elke $a\in A$ is er een $i\in I$ met $a\in A_i$. Als $J$ een eindige deelverzameling is van
+$I$ en als ook $A\subseteq \bigcup_{j\in J} A_j$, dan is dit een eindige deeloverdekking. 
+\item[compact] $A$ heet compact als {\em elke} open overdekking van $A$ een eindige deeloverdekking
+heeft. Een compacte verzamelingen (in $\mathbb R^d$) is gesloten {\em en} begrensd, dit is `eenvoudig',
+omgekeerd is elke gesloten begrensde verzameling compact, dit is niet eenvoudig. `Veel' uitspraken die
+waar zijn voor eindige verzamelingen, en onwaar voor willekeurige oneindige verzamelingen, zijn wel waar
+voor compacte verzamelingen. 
+\end{description}
