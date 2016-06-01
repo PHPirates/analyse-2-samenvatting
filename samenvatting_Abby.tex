@@ -693,8 +693,53 @@
 			
 		\subsection{Hoofdstelling van de calculus (en moderne kunst en cultuur)}
 			\begin{theorem}[\text{[K]} 6.4.4, Hoofdstelling van de calculus versie 1]
-				Zij $f \in R[a,b]$. Definieer 
-				
+				Zij $f \in R[a,b]$. Definieer $ F\colon [a,b] \to \reals $ door 
+				\[ 
+					F(x)=\int_a^x f(t)dt.
+				 \]
+				 Dan
+				 \begin{enumerate}[(i)]
+				 	\item is $F$ goed gedefinieerd
+				 	\item is $F$ uniform continu op $ [a,b] $
+				 	\item Zij $ c \in [a,b] $, $f$ continu in $c$. Dan $F$ differentieerbaar in $c$, $ F'(c)=f(c) $.
+				 \end{enumerate}
+			\end{theorem}
+			
+			\begin{lemma}
+				Zij $ f \in R[a,b] $, $F\colon [a,b] \to \reals$ gedefinieerd door $ F(x) = \int_a^x f(t)dt $. Verder zij $ c \in [a,b] $, $f$ continu in $c$. Dan
+				\[ 
+					\sup_{x \in [c,c+h]} f(x) \xrightarrow{h \downarrow 0} f(c)
+					\qquad
+					\sup_{x \in [c+h,c]} f(x) \xrightarrow{h \uparrow 0} f(c)
+				 \]
+				 \[ 
+					\inf_{x \in [c,c+h]} f(x) \xrightarrow{h \downarrow 0} f(c)
+					\qquad
+					\inf_{x \in [c+h,c]} f(x) \xrightarrow{h \uparrow 0} f(c)
+				  \]
+			\end{lemma}
+			
+			\begin{theorem}[Hoofdstelling van de calculus, versie 2]
+				Zij $ F\colon [a,b] \to \reals $ continu differentieerbaar, $ F'=f $. Dan
+				\[ 
+					\int_a^b f(t)dt = F(b)-F(a).
+				 \]
+			\end{theorem}
+			
+		\subsection{Stellingen uit het huiswerk}
+			\begin{theorem}
+				Zij $ f, \tilde f \colon [a,b] \to \reals $ begrensd en zodanig dat 
+				\[ 
+					f(x) = \tilde f(x) \qquad \forall_{x \in [a,b] \backslash\set{z_1, \ldots, z_m}}
+				 \]
+				 voor een eindig aantal punten $ z_1, \ldots, z_m \in [a,b] $. Dan
+				 \[ 
+					 f \in R[a,b] \iff \tilde f \in R[a,b]
+				  \]
+				  en er geldt
+				  \[ 
+					  \int_a^b f(x)dx = \int_a^b \tilde f(x)dx.
+				   \]
 			\end{theorem}
 		
 		\newpage
