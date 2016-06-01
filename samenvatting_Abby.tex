@@ -12,7 +12,7 @@
 	\newpage
 	
 	\section{Inleiding}
-	We nemen aan dat $d\in\naturals_+$.
+	We nemen aan dat $d\in\naturals_+$. Met [K] wordt het boek van Kosmala aangeduid: W. Kosmala, A friendly introduction to Analysis, 2nd edition, Prentice Hall, ISBN: 0131273167
 	
 	\section{College 15}
 	\subsection{Eigenschappen van de norm}
@@ -642,6 +642,61 @@
 				\opm $f$ hoeft niet continu te zijn!
 			\end{theorem}
 			
+		\subsection{Stellingen uit het huiswerk}
+			\begin{theorem}
+				Zij $ [c,d] \subseteq [a,b] $ en $ f \in R[a,b] $. Dan 
+				\[ 
+					f|_{[c,d]} \in R[c,d].
+				 \]
+			\end{theorem}
+			
+		\newpage
+		\section{College 25}
+			\begin{theorem}[\text{[K]} 6.2.3]
+				\[ 
+					f\colon [a,b] \to \reals \text{ continu } \implies f \in R[a,b].
+				 \]
+			\end{theorem}
+		\subsection{Benadering door Riemannsommen}
+			\begin{theorem}
+				$ f\colon [a,b] \to \reals  $ begrensd,
+				\begin{align*}
+					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies 0 &\le \ul{\int_a^b f(x) dx} - L(P,f) < \epsilon  \\
+					\text{ en }0 &\le U(P,f) - \overline{\int_a^b f(x)dx} <\epsilon
+				 \end{align*}
+				 \opm $f$ hoeft niet Riemann-integreerbaar te zijn!
+			\end{theorem}
+			\begin{theorem}[Riemannsommen approximeren integralen]
+				Zij $ f \in R[a,b] $, dan
+				\[ 
+					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies \abs{S(P,f,c) - \int_a^b f(x) dx} < \epsilon.
+				 \]
+			\end{theorem}
+			\begin{theorem}[\text{[K]} 6.3.1]
+				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\colon R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)dx $ is een lineaire afbeelding.
+				\begin{gevolg}
+					\begin{align*}
+						f,g \in R[a,b] &\implies f+g \in R[a,b] \\
+						c \in \reals, f\in R[a,b] &\implies cf \in R[a,b]
+					 \end{align*}
+				\end{gevolg}
+			\end{theorem}
+			\begin{theorem}[\text{[K]} 6.3.3, deelintervallen]
+				Zij $f\colon [a,b] \to \reals$ begrensd, $c\in [a,b]$, dan
+				\[ 
+					f \in R[a,b] \iff (f|_{[a,c]} \in R[a,c] \wedge f|_{[c,b]} \in R[c,b]) \text{ en }
+				 \]
+				 \[ 
+					 \int_a^b f(x)dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+				  \]
+			\end{theorem}
+			
+		\subsection{Hoofdstelling van de calculus (en moderne kunst en cultuur)}
+			\begin{theorem}[\text{[K]} 6.4.4, Hoofdstelling van de calculus versie 1]
+				Zij $f \in R[a,b]$. Definieer 
+				
+			\end{theorem}
+		
 		\newpage
 		\section{Tips van Aart}			
 %		\includepdf[pages={-}]{Aart.pdf}
