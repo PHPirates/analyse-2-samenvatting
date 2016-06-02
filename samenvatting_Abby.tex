@@ -1,5 +1,7 @@
 \documentclass{2wa40summary}
 
+% \usepackage[nocenter]{qtree}
+
 % Used for Aart's tips
 \usepackage{amsmath,amssymb}
 \newcommand\inw{\mbox{int}}
@@ -15,10 +17,6 @@
 	We nemen aan dat $d\in\naturals_+$. Met [K] wordt het boek van Kosmala aangeduid: W. Kosmala, A friendly introduction to Analysis, 2nd edition, Prentice Hall, ISBN: 0131273167
 	
 	\section{College 15}
-	\begin{equation}\label{test}
-		MATHS \Sigma
-	\end{equation}
-	Reference \ref{test}.
 	\subsection{Eigenschappen van de norm}
 	Voor alle $\x\in \reals^d$ en $c\in\reals$ moet gelden
 	\begin{enumerate}[(i)]
@@ -468,7 +466,24 @@
 			
 			Dan $f\circ g:D\to \reals^k$ is d'baar bij $a$, en \[ D(f \circ g)(a) = Df(g(a))\circ Dg(a). \]
 			
-			Onthoud: iets raars met een boom.
+			\begin{voorbeeld}[Onthouden]
+				Zij $f \colon \reals^2 \to \reals$, differentieerbaar. Zij $g(t) = \vvec{x(t)\\y(t)}$. Dan
+				\[ 
+				(f \circ g)(t) = f(x(t),y(t)).
+				\]
+				Dan volgt uit de kettingregel dat $ f \circ g $ differentieerbaar is en $ \frac{df}{dt} = \frac{\partial_f}{\partial_x}\cdot\frac{\partial_x}{\partial_t} + \frac{\partial_f}{\partial_y} \cdot \frac{\partial_y}{\partial_t}$. Dit is te onthouden door in onderstaande boom alle paden van $f$ naar $t$ te volgen.
+				
+				\Tree[.f 
+						[.x
+							[.t ] 
+						]
+						[.y
+							[.t ]
+						]
+					]
+				
+				
+			\end{voorbeeld}
 			
 			\gevolg en \textbf{definitie.} Zij $f:D \subset \reals^d \to \reals$, $c \in \reals$. 
 			

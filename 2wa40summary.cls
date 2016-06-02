@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/06/02
+%Added qtree package
 %2016/05/30
 %Added vvec/map/toprove environment/underline shortcut/better epsilon/phi
 %2016/05/29
@@ -22,6 +24,7 @@
 \RequirePackage{thmtools}
 \RequirePackage{xcolor}
 \RequirePackage{pdfpages}
+\RequirePackage[nocenter]{qtree}
 \RequirePackage{imakeidx} % Used for index
 \RequirePackage[makeroom]{cancel}
 \RequirePackage{hyperref} % should make index clickable
