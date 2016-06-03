@@ -3,7 +3,7 @@
 
 %CHANGELOG
 %2016/06/02
-%Added qtree package
+%Added qtree package 	
 %2016/05/30
 %Added vvec/map/toprove environment/underline shortcut/better epsilon/phi
 %2016/05/29
