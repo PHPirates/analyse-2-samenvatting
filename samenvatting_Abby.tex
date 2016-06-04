@@ -46,21 +46,21 @@
 	\begin{define}[Bol]
 		Laat $\x\in\reals^d$ en laat $0<r\in\reals$. Dan is de \indx{bol\ om $\x$ met straal $r$} de verzameling
 		\[
-		B(x,r)=\set{y \in \reals^d \colon \abs{y-x}<r}.
+		B(x,r)=\set{y \in \reals^d \: \abs{y-x}<r}.
 		\]
 		
 	\end{define}
 	\begin{define}[Inwendig punt] Zij $\x \in \reals^d$ and $A \subset \reals^d$. Dan is $\x$ een
 		\indx{inwendig punt}/(\textit{interior point}) van $A$
-		als er $\exists_{r>0}\colon B(\x,r) \subset A$.
+		als er $\exists_{r>0}\: B(\x,r) \subset A$.
 		In dat geval heten $A$ en $\B(\x,r)$ een \indx{omgeving}/(\textit{neighbourhood}) van $\x$.
 	\end{define}
 	\begin{define}[Inwendige $\mathring{A}$, open verzameling $A$]
 		Het inwendige van $A$ is
-		\[\intr A=\mathring{A}=\left\lbrace x \in A \colon \x \text{ inwendig punt van } A\right\rbrace\]
+		\[\intr A=\mathring{A}=\left\lbrace x \in A \: \x \text{ inwendig punt van } A\right\rbrace\]
 		$A$ heet \indx{open verzameling}\ als $A=\mathring{A}$ oftewel als
 		\[
-		\forall _{x \in A} \exists _{R \in (0,\infty)}\colon B(x,R) \subset A,
+		\forall _{x \in A} \exists _{R \in (0,\infty)}\: B(x,R) \subset A,
 		\]
 		oftewel elk punt van $A$ is een inwendig punt.
 	\end{define}
@@ -80,7 +80,7 @@
 	\end{theorem}
 	\begin{theorem}[Open]
 		Zij $A\in\reals^d$. Dan is
-		\item \[\intr A=\bigcup_{C \subset A, C \text{ open} }C=\bigcup \left\lbrace C \colon C \subset A \wedge C \text{ is open}\right\rbrace\]
+		\item \[\intr A=\bigcup_{C \subset A, C \text{ open} }C=\bigcup \left\lbrace C \: C \subset A \wedge C \text{ is open}\right\rbrace\]
 		open. Volgt uit Kosmala 10.1.4
 	\end{theorem}
 	\begin{define}[Rand]
@@ -262,8 +262,8 @@
 	\end{enumerate}
 	
 	\define[continue te $D\subset\reals^d$ voor $\f$]
-	Laat $D \subset \reals^d$. Dan is $\f\colon D \mapsto \reals^m$ continu $\iff$ $\f$ is continu te elke $\a\in D\cap D'$.
-	\opm Zij $\f\colon D\mapsto \reals^m$ continu en $(\x\up{n})$ rij in $D$ met $\x^{(n)} \to \x^* \in D$.
+	Laat $D \subset \reals^d$. Dan is $\f\: D \mapsto \reals^m$ continu $\iff$ $\f$ is continu te elke $\a\in D\cap D'$.
+	\opm Zij $\f\: D\mapsto \reals^m$ continu en $(\x\up{n})$ rij in $D$ met $\x^{(n)} \to \x^* \in D$.
 	Dan $\f(\x\up{n}) \to \f(\x^*).$
 	\subsection{Stellingen uit het huiswerk}
 	\theorem Zij $D \subset \reals^d, \a \in D', L \in \reals, f:D \rightarrow \reals$. Dan
@@ -285,17 +285,17 @@
 		\begin{enumerate}[(1)]
 			\item $\f(D)$ compact (continue functies beelden compacte verzamelingen af op compacte verzamelingen)
 			\item $\f$ uniform continu, dwz
-			\[\forall_{\epsilon > 0} \exists_{\delta = \delta(\epsilon)}\forall_{\x,\z\in D}\colon
+			\[\forall_{\epsilon > 0} \exists_{\delta = \delta(\epsilon)}\forall_{\x,\z\in D}\:
 			\abs{\x-\z}<\delta \implies |\f(\x)-\f(\z)|<\epsilon.
 			\]
 		\end{enumerate}
 	\end{theorem}
 	\gevolg[continue functies op compacte verzamelingen nemen een minimum en maximum aan]
-	Stel $f\colon D\subset\reals\mapsto\reals$ is continu
+	Stel $f\: D\subset\reals\mapsto\reals$ is continu
 	en $D$ is compact. Dan is $f$ begrensd en $\exists_{\x^* \in D}:f(\x^*)=\max_{\x\in D}\set{f(\x)}$.
 	
 	\subsection{Compositie van continue functies}
-	\theorem Zij $\f\colon D\subset\reals^d\rightarrow \reals^k$ continu, $\g\colon E\subset\reals^k\rightarrow \reals^l$ continu en $\f(D) \subset E$. Dan $\g \circ \f\colon D\rightarrow \reals^l$ continu.
+	\theorem Zij $\f\: D\subset\reals^d\rightarrow \reals^k$ continu, $\g\: E\subset\reals^k\rightarrow \reals^l$ continu en $\f(D) \subset E$. Dan $\g \circ \f\: D\rightarrow \reals^l$ continu.
 	
 	\subsection{De vastepuntstelling van Banach}
 	\begin{theorem}
@@ -321,10 +321,10 @@
 	%			Stel $F:D\rightarrow D$, oftewel $F(D) \subset D$. Elke rij $(x_n)$ met $F(x_n) = x_{n+1}$ heet \textbf{iteratierij} (met startvoorwaarde $x_0 \in D$).
 	
 	\theorem[vastepuntstelling van Banach]
-	Zij $D \subset \reals^d, \F\colon D\rightarrow \reals^d$. Veronderstel
+	Zij $D \subset \reals^d, \F\: D\rightarrow \reals^d$. Veronderstel
 	\begin{enumerate}[(i)]
 		\item $D$ gesloten
-		\item $\F\colon D \rightarrow D$ ($\F(D) \subset D$)
+		\item $\F\: D \rightarrow D$ ($\F(D) \subset D$)
 		\item $\F$ contraherend
 	\end{enumerate}
 	Dan
@@ -340,8 +340,8 @@
 		Zij $D \subset \reals^2$ open. $F:D \rightarrow \reals$, $(a,b) \in D$.
 		De functies
 		\begin{enumerate}
-			\item $p_b\colon S_b \rightarrow \reals$, $p_b(x):=f(x,b)$
-			\item $q_a\colon T_a \rightarrow \reals$, $q_a(y):=f(a,y)$
+			\item $p_b\: S_b \rightarrow \reals$, $p_b(x):=f(x,b)$
+			\item $q_a\: T_a \rightarrow \reals$, $q_a(y):=f(a,y)$
 		\end{enumerate}
 		heten \indx{parti\"ele functies}.
 		Alternatieve notatie:
@@ -351,7 +351,7 @@
 		\end{enumerate}
 		
 	\end{define}
-	\red{Let op: $S_b$ en $T_a$ zijn niet gedefinieerd. Voor de hand ligt $S_b = \set{b\in\reals\colon(x,b)\in D}$.}
+	\red{Let op: $S_b$ en $T_a$ zijn niet gedefinieerd. Voor de hand ligt $S_b = \set{b\in\reals\:(x,b)\in D}$.}
 	
 	\begin{define}[parti\"eel differentieerbaar]
 		Als $p_b, q_a$ differentieerbaar is in $x=a,y=b$ dan heet $f$ \indx{partieel d'baar} naar $x,y$ in $(a,b)$
@@ -467,7 +467,7 @@
 			Dan $f\circ g:D\to \reals^k$ is d'baar bij $a$, en \[ D(f \circ g)(a) = Df(g(a))\circ Dg(a). \]
 			
 			\begin{voorbeeld}[Onthouden]
-				Zij $f \colon \reals^2 \to \reals$, differentieerbaar. Zij $g(t) = \vvec{x(t)\\y(t)}$. Dan
+				Zij $f \: \reals^2 \to \reals$, differentieerbaar. Zij $g(t) = \vvec{x(t)\\y(t)}$. Dan
 				\[ 
 				(f \circ g)(t) = f(x(t),y(t)).
 				\]
@@ -540,7 +540,7 @@
 			
 			
 			\subsubsection{'Impliciete functies' in meer variabelen}
-				Los stelsen van $m$ vergelijkingen op naar $m$ variabelen $(y_1, \dots ,y_m) = y \in \reals^m$ afhankelijk van $ (x_1, \dots , x_n) = x \in \reals^n $.
+				Los stelsels van $m$ vergelijkingen op naar $m$ variabelen $(y_1, \dots ,y_m) = y \in \reals^m$ afhankelijk van $ (x_1, \dots , x_n) = x \in \reals^n $.
 				\[
 				\begin{rcases*}
 				F_1(x_1,\dots,x_n,y_1,\dots,y_m)=0 \\
@@ -595,7 +595,7 @@
 				\end{enumerate}
 			\end{lemma}
 			\begin{define}
-				Zij $ f\colon [a,b] \mapsto \reals $ begrensd, $ P = \{ x_0,\ldots,x_n \} $ een partitie van $[a,b]$, dan
+				Zij $ f\: [a,b] \mapsto \reals $ begrensd, $ P = \{ x_0,\ldots,x_n \} $ een partitie van $[a,b]$, dan
 				\[
 				\begin{split}
 					M_k (f) &= \sup \{ f(x) \mid x \in [x_{k-1},x_k] \} \\
@@ -611,7 +611,7 @@
 				  \]
 			\end{define}
 			\begin{lemma}
-				Zij $ f,g\colon [a,b] \mapsto \reals $ begrensd, $P$, $c$ als boven, dan
+				Zij $ f,g\: [a,b] \mapsto \reals $ begrensd, $P$, $c$ als boven, dan
 				\begin{enumerate}[(i)]
 					\item $\displaystyle \inf_{x\in [a,b]} f(x) (b-a) \le L(P,f) \le S(p,f,c) \le U(p,f) \le \sup_{x \in [a,b]} f(x) (b-a) $
 					\item $L(P,f+g) \ge L(P,f) + L(P,g)$ \\
@@ -641,23 +641,23 @@
 			\begin{define}
 				$f$ heet \indx{Riemann-integreerbaar} op $[a,b]$ als 
 				\[ \ul{\int_{a}^{b} f(x) dx} = \overline{\int_{a}^{b} f(x) dx}, \]
-				en dit getal heet \index{Riemann integraal} van $f$ op $[a,b]$.
+				en dit getal heet \indx{Riemann integraal} van $f$ op $[a,b]$.
 				\begin{nota}
 					\[
-					\int_{a}^{b} f(x) dx,\ R[a,b] = \{ f\colon [a,b]\to \reals \mid f \text{ Riemann-integreerbaar} \}
+					\int_{a}^{b} f(x) dx,\ R[a,b] = \{ f\: [a,b]\to \reals \mid f \text{ Riemann-integreerbaar} \}
 					\]
 				\end{nota}
 			\end{define}
 			
 			\begin{theorem}[\text{[K] 6.2.1, }karakterisering integreerbaarheid]
-				Zij $ f\colon [a,b] \to \reals $ begrensd, dan
+				Zij $ f\: [a,b] \to \reals $ begrensd, dan
 				\[ 
 					f \in R[a,b] \iff \forall_{\epsilon >0} \exists_{\text{Partitie P}}: U(P,f) - L(P,f) < \epsilon.
 				 \]
 			\end{theorem}
 			
 			\begin{theorem}[\text{[K] 6.2.2}]
-				Zij $ f\colon [a,b] \to \reals $ stijgend. Dan is $f$ Riemann-integreerbaar.
+				Zij $ f\: [a,b] \to \reals $ stijgend. Dan is $f$ Riemann-integreerbaar.
 				\opm $f$ hoeft niet continu te zijn!
 			\end{theorem}
 			
@@ -673,12 +673,12 @@
 		\section{College 25}
 			\begin{theorem}[\text{[K]} 6.2.3]
 				\[ 
-					f\colon [a,b] \to \reals \text{ continu } \implies f \in R[a,b].
+					f\: [a,b] \to \reals \text{ continu } \implies f \in R[a,b].
 				 \]
 			\end{theorem}
 		\subsection{Benadering door Riemannsommen}
 			\begin{theorem}
-				$ f\colon [a,b] \to \reals  $ begrensd,
+				$ f\: [a,b] \to \reals  $ begrensd,
 				\begin{align*}
 					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies 0 &\le \ul{\int_a^b f(x) dx} - L(P,f) < \epsilon  \\
 					\text{ en }0 &\le U(P,f) - \overline{\int_a^b f(x)dx} <\epsilon
@@ -692,7 +692,7 @@
 				 \]
 			\end{theorem}
 			\begin{theorem}[\text{[K]} 6.3.1]
-				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\colon R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)dx $ is een lineaire afbeelding.
+				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\: R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)dx $ is een lineaire afbeelding.
 				\begin{gevolg}
 					\begin{align*}
 						f,g \in R[a,b] &\implies f+g \in R[a,b] \\
@@ -701,7 +701,7 @@
 				\end{gevolg}
 			\end{theorem}
 			\begin{theorem}[\text{[K]} 6.3.3, deelintervallen]
-				Zij $f\colon [a,b] \to \reals$ begrensd, $c\in [a,b]$, dan
+				Zij $f\: [a,b] \to \reals$ begrensd, $c\in [a,b]$, dan
 				\[ 
 					f \in R[a,b] \iff (f|_{[a,c]} \in R[a,c] \wedge f|_{[c,b]} \in R[c,b]) \text{ en }
 				 \]
@@ -712,7 +712,7 @@
 			
 		\subsection{Hoofdstelling van de calculus (en moderne kunst en cultuur)}
 			\begin{theorem}[\text{[K]} 6.4.4, Hoofdstelling van de calculus versie 1]
-				Zij $f \in R[a,b]$. Definieer $ F\colon [a,b] \to \reals $ door 
+				Zij $f \in R[a,b]$. Definieer $ F\: [a,b] \to \reals $ door 
 				\[ 
 					F(x)=\int_a^x f(t)dt.
 				 \]
@@ -736,7 +736,7 @@
 			\end{gevolg}
 			
 			\begin{lemma}
-				Zij $ f \in R[a,b] $, $F\colon [a,b] \to \reals$ gedefinieerd door $ F(x) = \int_a^x f(t)dt $. Verder zij $ c \in [a,b] $, $f$ continu in $c$. Dan
+				Zij $ f \in R[a,b] $, $F\: [a,b] \to \reals$ gedefinieerd door $ F(x) = \int_a^x f(t)dt $. Verder zij $ c \in [a,b] $, $f$ continu in $c$. Dan
 				\[ 
 					\sup_{x \in [c,c+h]} f(x) \xrightarrow{h \downarrow 0} f(c)
 					\qquad
@@ -750,7 +750,7 @@
 			\end{lemma}
 			
 			\begin{theorem}[Hoofdstelling van de calculus, versie 2]
-				Zij $ F\colon [a,b] \to \reals $ continu differentieerbaar, $ F'=f $. Dan
+				Zij $ F\: [a,b] \to \reals $ continu differentieerbaar, $ F'=f $. Dan
 				\[ 
 					\int_a^b f(t)dt = F(b)-F(a).
 				 \]
@@ -758,7 +758,7 @@
 			
 		\subsection{Stellingen uit het huiswerk}
 			\begin{theorem}
-				Zij $ f, \tilde f \colon [a,b] \to \reals $ begrensd en zodanig dat 
+				Zij $ f, \tilde f \: [a,b] \to \reals $ begrensd en zodanig dat 
 				\[ 
 					f(x) = \tilde f(x) \qquad \forall_{x \in [a,b] \backslash\set{z_1, \ldots, z_m}}
 				 \]
@@ -771,7 +771,153 @@
 					  \int_a^b f(x)dx = \int_a^b \tilde f(x)dx.
 				   \]
 			\end{theorem}
+			\begin{theorem}[Positiviteit van de integraal]
+				Zij $f \in R[a,b]$ en $f(x) \ge 0$ voor alle $x \in [a,b]$. Dan 
+				\[ 
+					\int_a^b f(x)dx \ge 0.
+				 \]
+			\end{theorem}
+			\begin{theorem}[Monotonie van de integraal]
+				Zij $f,g \in R[a,b]$ en $f(x) \ge g(x)$ voor alle $x \in [a,b]$. Dan
+				\[ 
+					\int_a^b f(x)dx \ge \int_a^b g(x)dx.
+				 \]
+			\end{theorem}
+			\begin{theorem}
+				Zij $f\: [a,b] \to \reals$ begrensd en stuksgewijs continu. Dan $f\in R[a,b]$.
+			\end{theorem}
+			\begin{theorem}
+				Zij $f \in R[a,b]$ en zij $\int_a^b f(x) dx >0$. Dan is er een interval $I \subset [a,b]$ met positieve lengte en een $\epsilon >0$ zodanig dat $f(x) > \epsilon$ voor alle $x \in I$.
+			\end{theorem}
 		
+		\newpage
+		\section{College 26}
+		\subsection{Integraalrekening in $\reals^d$}
+			We bekijken hier de $\reals^2$, voor hogere dimensies gaat dit analoog.
+			\begin{define}
+				We defini\"eren een \indx{rechthoek} $R$ door $R=[a,b]\times[c,d]$. Zij $P_1$ een partitie van $[a,b]$ en $P_2$ een partitie van $[c,d]$, dan is $P=P_1 \times P_2$ een \indx{partitie van $R$}.
+				
+				Dan is $A_{ij}=[x_{i-1},x_i] \times [y_{j-1},y_j]$ een \indx{deelrechthoek} van $R$, en $\text{Vol}(A_{ij})=\text{opp}(A_{ij})=(x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x_i \Delta x_j$.
+			\end{define}
+			\begin{define}
+				De \indx{fijnheid in $\reals^2$} van $P$ is de maximale diameter van $A_{ij}$, met $i=1\ldots n,j=1\ldots m$.
+			\end{define}
+			\begin{define}
+				Zij $R=[a,b]\times[c,d]$ een rechthoek, $P=P_1 \times P_2$ een partitie, $R=\bigcup A_{ij}$, $f\: R \to \reals$ begrensd.
+				
+				Dan is
+				\[
+					\begin{rcases*}
+						m_{ij} = \inf_{x \in A_{ij}} f(x) \\
+						M_{ij} = \sup_{x \in A_{ij}} f(x)
+					\end{rcases*}
+					i=1 \ldots n, j=1 \ldots m 
+				\]
+				\begin{align*}
+					L(P,f) &= \sum_{i=1}^{n} \sum_{j=1}^{m} m_{ij} \Delta x_i \Delta x_j \text{ is een \indx{ondersom in $\reals^2$}} \\
+					U(P,f) &= \sum_{i=1}^{n} \sum_{j=1}^{m} M_{ij} \Delta x_i \Delta x_j \text{ is een \indx{bovensom in $\reals^2$}}
+				 \end{align*}
+				 
+			\end{define}
+			\begin{define}
+				Kies $c_{ij} \in A_{ij}$, $c=(c_{ij})$, $i=1 \ldots n$, $j=1 \ldots m$. Dan is 
+				\[ 
+					S(P,f,c) := \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta x_j
+				 \]
+				 een \indx{Riemannsom in $\reals^2$}.
+			\end{define}
+			\begin{define} Zij
+				\[ 
+					\begin{rcases*}
+						P=P_1\times P_2 \\
+						Q=Q_1 \times Q_2
+					\end{rcases*}
+					\text{ twee partities voor $R$,}
+				 \]
+				 met de deelrechthoeken $A_{ij} \subset P$ en $D_{ij} \subset R$. $Q$ heet \indx{fijner dan (in $\reals^2$)} $P$ als 
+				 \[ 
+					 \forall_{D_{ij}}\exists{A_{kl}}: D_{ij} \subset A_{kl}.
+				  \]
+			\end{define}
+			\begin{theorem}
+				Zij $P=P_1 \times P_2$, $T=T_1 \times T_2$ twee partities van $R$. Dan is er een partitie $Q$ fijner dan $P$ en fijner dan $T$, namelijk $Q=(P_1 \cup T_1)\times(P_2 \cup T_2)$.
+			\end{theorem}
+			\begin{define}
+				\[ 
+					\ul{\iint_R f} = \sup \{ L(P,f) \mid P \text{ partitie van } R \}
+				 \]
+				 heet een \indx{onderintegraal in $\reals^2$}, en
+				 \[ 
+				 \overline{\iint_R f} = \inf \{ U(P,f) \mid P \text{ partitie van } R \}
+				 \]
+				 heet een \indx{bovenintegraal in $\reals^2$}.
+			\end{define}
+			\begin{define}
+				$f$ heet \indx{Riemann-integreerbaar op $R$} als 
+				\[ 
+					\ul{\iint_R f} = \overline{\iint_R f} =: \iint_R f.
+				 \]
+			\end{define}
+			\begin{theorem}
+				De volgende beweringen zijn equivalent.
+				\begin{enumerate}[(i)]
+					\item $f$ Riemann-integreerbaar
+					\item $\forall_{\epsilon >0} \exists_{\text{Partitie }P}: U(P,f)-L(P,f)<\epsilon.$
+				\end{enumerate}
+				Als deze waar zijn, dan
+				\[ 
+					\forall_{\epsilon >0} \exists_{\delta(\epsilon,f)}: \text{Als $P$ partitie met $\abs{P}<\delta$ dan } \abs{S(P,f,c)-\iint_R f} < \epsilon
+				 \]
+				 voor alle Riemannsommen van $P$.
+			\end{theorem}
+			\begin{theorem}
+				$f\: R\to \reals$ continu $\implies f$ Riemann-integreerbaar.
+			\end{theorem}
+			\begin{nota}
+				$\R (R) = \{ f\: R\to \reals \mid f \text{ Riemann-integreerbaar} \}$ is een vectorruimte, met de integraal een lineaire afbeelding.
+			\end{nota}
+			\begin{theorem}
+				Als $f,g \in \R (R)$ en $f \ge g$ op $R$ dan $\iint_R f \ge \iint_R g$.
+			\end{theorem}
+			\begin{theorem}
+				Als $f \in \R (R)$ dan $\abs{f} \in \R (R)$ en $\abs{\iint_R f} \le \iint_R \abs{f}$.
+			\end{theorem}
+			
+		\subsection{Berekening van integralen in $\reals^d$}
+			Opnieuw bekijken we hier $d=2$, hogere dimensies gaan analoog.
+			\begin{theorem}[van \textsl{Fubini} \index{Fubini, stelling van} (\text{[K]} 11.2.2)]
+				Zij $R=[a,b]\times[c,d] \subset \reals^2$, $f\: R\to\reals$ Riemann-integreerbaar.
+				
+				Definieer voor $x \in [a,b]$: $h_x \: [c,d] \to \reals$ door $h_x = f(x,\cdot)$. Veronderstel $h_x \in \R [c,d] \forall_{x \in [a,b]}$. 
+				
+				Zij $g \: [a,b] \to \reals$ gedefinieerd door
+				\[ 
+					g(x) = \int_c^d h_x (y) dy = \int_c^d f(x,y) dy.
+				 \]
+				 Dan $g\in \R [a,b]$, en \[ \iint_R f = \int_a^b g(x) dx = \int_a^b \left( \int_c^d f(x,y)dy  \right) dx. \]
+				 \opm Indien ook $f(\cdot,y) \in \R [a,b] \forall_{y \in [c,d]}$ dan 
+				 \[ 
+					 \iint_R f  =  \int_a^b \left( \int_c^d f(x,y)dy  \right) dx =  \int_c^d \left( \int_a^b f(x,y)dx  \right) dy.
+				  \]
+			\end{theorem}
+			
+		\subsection{Integratie op algemene gebieden}
+			\begin{define}
+				Zij $D \subset \reals^2$ begrensd, $f \: D \to \reals$ begrensd. Zij $R$ een rechthoek zodanig dat $D \subset R$.
+				
+				Definieer $\iint_D f := \iint F$ met 
+				\[ 
+					F(x,y) = 
+					\begin{cases}
+						f(x,y) & (x,y) \in D \\
+						0 & \text{anders}
+					\end{cases}
+				\]
+			\end{define}
+			
+		\subsection{Stellingen uit het huiswerk}
+			
+			
 		\newpage
 		\section{Tips van Aart}			
 %		\includepdf[pages={-}]{Aart.pdf}
@@ -802,7 +948,7 @@
 			\item In plaats van de letter x, y en z \textbf{die vectoren zijn in dit} \verb$.tex$ \textbf{bestand}, type
 			\verb$\x$, \verb$\y$ en \verb$\z$: $\x, \y, \z$
 			\item Voor alle vectoren zoals $\mathbf{a}$, $\mathbf{b}$ etc: Type \verb$\a$, \verb$\b$, etc
-			\item Ditto voor vectorwaardige functies \verb$\f\colon\reals^d\mapsto\reals$: $\f\colon\reals^d\mapsto\reals$: Type \verb$\f$
+			\item Ditto voor vectorwaardige functies \verb$\f\:\reals^d\mapsto\reals$: $\f\:\reals^d\mapsto\reals$: Type \verb$\f$
 			\item In plaats van de letter 0 type voor nulvectoren \verb$\zero$: $\zero$
 			\item In plaats van \verb$|x|$ type \verb$\abs{x}$: $\abs{x}$
 			\item In plaats van \verb$|\x|$ type \verb$\abs{\x}$: $\abs{\x}$
@@ -812,7 +958,7 @@
 			\item In plaats van \verb$\Rightarrow$ type \verb$\implies$: $\implies$
 			\item In plaats van \verb$\mathbb{R}$ type \verb$\reals$: $\reals$ (heb ik al vervangen)
 			\item In plaats van \verb$\mathbb{N}$ type \verb$\naturals$: $\naturals$ (heb ik al vervangen)
-			\item In plaats van \verb$:$ type \verb$\colon$: $x\colon y$
+			\item In plaats van \verb$:$ type \verb$\:$: $x\: y$
 			\item Voor verzamelingen type bv \verb$\set{1,2,3}$: $\set{1,2,3}$
 			\item Voor rode tekst gebruik \verb$\red{word 1 and 2}$ type \verb$\red{word 1 and 2}$: \red{word 1 and 2}
 			\item Voor groene tekst gebruik \verb$\grn{word 1 and 2}$ type \verb$\grn{word 1 and 2}$: \grn{word 1 and 2}

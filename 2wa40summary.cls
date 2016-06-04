@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/06/04
+% Added \R for Riemann multivariable, \: for \colon, changed \sl into \textsl 
 %2016/06/02
 %Added qtree package 	
 %2016/05/30
@@ -107,6 +109,12 @@
 \newcommand{\complex}{\mathbb{C}}
 \newcommand{\rationals}{\mathbb{Q}}
 
+%Riemann multi-variable
+\newcommand{\R}{\mathcal{R}}
+
+%Short colon
+\renewcommand{\:}{\colon}
+
 %Macro's Maubach
 \def\set#1{\lbrace#1\rbrace}
 \def\abs#1{{\left|#1\right|}}
@@ -152,7 +160,7 @@
 \protected\def\N{\vectorstat{N}}
 \protected\def\P{\vectorstat{P}}
 \protected\def\Q{\vectorstat{Q}}
-\protected\def\R{\vectorstat{R}}
+%\protected\def\R{\vectorstat{R}} % replaced by Riemann
 \protected\def\S{\vectorstat{S}}
 \protected\def\T{\vectorstat{T}}
 \protected\def\U{\vectorstat{U}}
@@ -174,7 +182,7 @@
 \protected\def\gry#1{{\color{gray}#1}}
 \protected\def\mgn#1{{\color{magenta}#1}}
 \protected\def\prp#1{{\color{purple}#1}}
-\newcommand{\indx}[1]{\index{#1}{\sl #1}}
+\newcommand{\indx}[1]{\index{#1}\textsl{#1}} % Do not use \sl 
 \def\exclamation{!}% use \exclamation instead of '!' inside \indx ('!' is active in \index)
 \makeindex
 
