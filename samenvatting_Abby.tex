@@ -384,26 +384,41 @@
 	\newpage
 	\section{College 20}
 	\subsection{Hogere orde parti\"ele afgeleiden}
-	\define[inductief] parti\"ele afgeleiden van orde $k+1$ zijn de p.a. van de p.a. van orde $k$.
-	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open, $f:D \rightarrow \reals$ twee keer continu partieel d'baar, $a \in D$. Dan $\partial_i \partial_j f(a) = \partial_j \partial_i f(a) \quad i,j=1,\dots ,d$.
+	\define[inductief] Parti\"ele afgeleiden van orde $k+1$ zijn de parti\"ele afgeleiden van de parti\"ele afgeleiden van orde $k$.
+	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open. Als $f:D \rightarrow \reals$ twee keer continu partieel d'baar in $D$
+        dan geldt $\partial_i \partial_j f(\a) = \partial_j \partial_i f(\a) \quad i,j=1,\dots ,d$ voor alle $\a \in D$.
 	\subsection{Totale differentieerbaarheid}
-	\define Zij $D \subset \reals^d$ open, $f:D \rightarrow \reals$ heet d'baar (\textit{totaal d'baar, Fr\`echet'-d'baar}) in $a \in D$ als
-	\[\text{Er is een lineaire afbeelding } L_a:\reals^d \rightarrow \reals \text{ z.d.d. } f(a+h)=f(a)+L_a h +\mathrm{o}(h)\text{, oftewel}\]
-	\[\lim_{h \rightarrow 0}\frac{|f(a+h)-f(a)-L_a h|}{|h|} = 0\]
-	Dan heet $L_a$ \textbf{afgeleide van $f$ te $a$}.
-	\nota $L_a = f'(a)$
-	\define De functie $ p: \reals^d \rightarrow \reals $ gegeven door $ p(x)=f(a)+f(a)(x-a) $ heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
+	\define [Fr\`echet'-d'baar] Zij $D \subset \reals^d$ open en $\a \in D$. Als
+ er is een lineaire afbeelding $L_{\a}\colon\reals^d \mapsto \reals$ bestaat zodanig dat
+	\[f(\a+\h)=f(\a)+ L_{\a} \h +\mathrm{o}(\abs{\h})\iff\lim_{\h\to0}\frac{\abs{f(\a+\h)-f(\a)-L_{\a} \h}}{\abs{h}} = 0\]
+ dan heet $f\colon D \mapsto \reals$ \indx{differenti\"eerbaar} (\indx{totaal differenti\"eerbaar}, \indx{Fr\`echet' differenti\"eerbaar}) te $\a \in D$
+	en heet $L_{\a}$ \textbf{afgeleide van} $f$ \textbf{te} $\a$.
+	\nota $L_{\a} = f'(\a) = [\partial_1 f,\ldots,\partial_m f](\a)\in\reals^{1\times d}$
 	\subsection{De gradi\"ent}
-	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $f: D \rightarrow \reals^d$, d'baar te $a \in D$. Dan $f$ partieel d'baar te $a$, en $\nabla f(a)= \begin{bmatrix}
-	\partial_1 f(a) \\
-	\vdots \\
-	\partial_d f(a)
-	\end{bmatrix}$.
-	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f: D \rightarrow \reals$ d'baar te $a \in D$, dan $f$ continu te $a$.
+	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $f: D \rightarrow \reals^d$, d'baar te $a \in D$. Dan $f$ partieel d'baar te $a$, en
+\[\nabla f(a)= \begin{bmatrix}
+\partial_1 f(\a) \\
+\vdots \\
+\partial_d f(\a)
+\end{bmatrix} = f'(\a)^{T}\in\reals^{d\times 1}.
+\]
+
+	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f\colon D \rightarrow \reals$ d'baar te $\a \in D$ dan is $f$ ook continu te $\a$.
       		
+	\define De functie $ p: \reals^d \rightarrow \reals $ gegeven door \[p(x)=f(a)+f'(a)(x-a)\] heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
 	\newpage	
 	\section{College 21}
-		Zij $D \subset \mathbb{R}^d$ open, $a \in D$, $f: D \rightarrow \mathbb{R}$.
+		Zij $D \subset \reals^d$ open, $\a\in D$, $f\colon D \rightarrow \reals$.
+
+%\[
+%\begin{array}{rcl}
+%f \text{\textbf{totaal d'baar te }} \a &\implies
+%f \text{\textbf{partieel d'baar te }} \a \\
+%\hline
+%f \text{\textbf{totaal d'baar te }} \a &\leftarrow
+%{f \text{\textbf{partieel d'baar te }} \a \text{ en}\atop \text{\textbf{alle parti\"ele afgeleide continu te } \a}}\\
+%\end{array}
+%\]
 		
     	\begin{tabular}{l p{3cm} r}
     		\textbf{$f$ partieel d'baar bij $a$} & & \textbf{$f$ totaal d'baar bij $a$} \\
@@ -412,17 +427,26 @@
  			& \center $\Rightarrow$ & \\
  			& voorwaarde: part afg bestaan en zijn continu in omgeving $a$& \\   		
 		\end{tabular}
-		\theorem[K 10.4.5] Zij $f$ part d'baar in een omgeving ($D: a \in \intr D$) van $a$, $\partial_i f \quad i=1,\dots ,d$ continu bij $a$. Dan $f$ d'baar in $a$.
+		\theorem[K 10.4.5] Zij $D\subset\reals^d$, $f\colon D\mapsto\reals$ part d'baar in een omgeving van $\a \in \intr D$ en $\partial_i f \quad i=1,\dots ,d$ continu te $\a$. Dan $f$ d'baar in $\a$.
 		
 		\subsection{Richtingsafgeleiden}
-			Zij $D \subset \mathbb{R}^d$ open, $a \in D, u \in \mathbb{R}^d$ met $|u|=1$ ($u$ heet \textbf{richtingsvector}). Zij $f: D \rightarrow \mathbb{R}$ d'baar in $a$.
+\begin{define}[Richtingsvector]
+Een vector $\u\in\reals^d$ met $\abs{\u}=1$ heet \indx{richtingsvector}.
+\end{define}
+\begin{define}[Richtingsafgeleide]
+			Zij $D \subset \reals^d$ open, $\a \in D$, $\u \in \reals^d$ een richtingsvector. Zij $f\colon D \rightarrow \reals$ d'baar te $a$.
+Dan is de \indx{richtingsafgeleide} van $f$ in de richting van $\u$ gegeven door
 			\begin{equation} \label{eq:rafg}
-			   	  		\textbf{Richtingsafgeleide: } D_u f(a) := \lim_{t \rightarrow 0} \frac{f(a+tu) - f(a)}{t}
+			   	  		D_{\u} f(\a) := \lim_{t \rightarrow 0} \dfrac{f(\a+t\u) - f(\a)}{t}
 			\end{equation}
-			Speciale gevallen: $u=e_i \Rightarrow D_{e_i}f(a)=\partial_i f(a)$.
-			\theorem[K 10.5.2] Situatie als beschreven. De limiet \ref{eq:rafg} bestaat, en
-			\[D_u f(a)=(\nabla f(a),u).\]  	  	
-			\gevolg Stel $\nabla f(a) \neq 0$. De functie $f \Longunderstack{\text{ stijgt }\cr \text{ daalt }}$ het bij $a$ het sterkst in de richting $\pm \frac{\nabla f(a)}{|\nabla f(a)|}$.	
+			Speciale gevallen:
+\[\u=\e_i \implies D_{\e_i}f(\a)=\partial_i f(\a)\].
+\end{define}
+\begin{theorem} [K 10.5.2]
+Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
+			\[D_{\u} f(\a)= \lim_{t \to 0} \dfrac{f(\a+t\u) - f(\a)}{t}=(\nabla f(\a),\u).\]  	  	
+\end{theorem}
+			\gevolg Stel $\nabla f(\a) \neq 0$. De functie $f \Longunderstack{\text{ stijgt }\cr \text{ daalt }}$ bij $\a$ het sterkst in de richting $\ds\pm \dfrac{\nabla f(\a)}{\abs{\nabla f(\a)}}$.	
 			
 		\subsection{Differentieerbaarheid van vectorwaardige functies, Jacobimatrix}
 			Zij $D \subset \mathbb{R}^d$ open, $a \in D. f: D \rightarrow \mathbb{R}^m$. $f$ is d'baar in $a$ als er een lineaire afbeelding $L_a :\mathbb{R}^n \rightarrow \mathbb{R}^m$ bestaat zodanig dat \[f(x)=f(a)+L_a (x-a) + r(x) \qquad \lim_{x \rightarrow 0} \frac{r(x)}{|x-a|} =0 \quad\text{ (lim in } \mathbb{R}^m \text{!)}\]
