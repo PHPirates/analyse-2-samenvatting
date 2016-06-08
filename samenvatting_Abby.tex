@@ -715,7 +715,7 @@
 			\begin{theorem}[\text{[K]} 6.4.4, Hoofdstelling van de calculus versie 1]
 				Zij $f \in R[a,b]$. Definieer $ F\: [a,b] \to \reals $ door 
 				\[ 
-					F(x)=\int_a^x f(t)dt.
+					F(x)=\int_a^x f(t)\d t.
 				 \]
 				 Dan
 				 \begin{enumerate}[(i)]
@@ -728,16 +728,16 @@
 			\begin{gevolg}
 				Elke continue functie op $ [a,b] $ heeft een primitieve gegeven door 
 				\[ 
-					F(x)= \int_a^x f(t)dt = f(x).
+					F(x)= \int_a^x f(t)\d t = f(x).
 				 \]
 				 In het kort. Als $f$ continu, dan 
 				 \[ 
-					 \frac{d}{dx} \int_a^x f(t)dt = f(x).
+					 \frac{d}{dx} \int_a^x f(t)\d t = f(x).
 				  \]
 			\end{gevolg}
 			
 			\begin{lemma}
-				Zij $ f \in R[a,b] $, $F\: [a,b] \to \reals$ gedefinieerd door $ F(x) = \int_a^x f(t)dt $. Verder zij $ c \in [a,b] $, $f$ continu in $c$. Dan
+				Zij $ f \in R[a,b] $, $F\: [a,b] \to \reals$ gedefinieerd door $ F(x) = \int_a^x f(t)\d t $. Verder zij $ c \in [a,b] $, $f$ continu in $c$. Dan
 				\[ 
 					\sup_{x \in [c,c+h]} f(x) \xrightarrow{h \downarrow 0} f(c)
 					\qquad
@@ -753,7 +753,7 @@
 			\begin{theorem}[Hoofdstelling van de calculus, versie 2]
 				Zij $ F\: [a,b] \to \reals $ continu differentieerbaar, $ F'=f $. Dan
 				\[ 
-					\int_a^b f(t)dt = F(b)-F(a).
+					\int_a^b f(t)\d t = F(b)-F(a).
 				 \]
 			\end{theorem}
 			
