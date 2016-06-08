@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/06/07
+% Added integral-d, \d
 %2016/06/04
 % Added \R for Riemann multivariable, \: for \colon, changed \sl into \textsl 
 %2016/06/02
@@ -71,6 +73,9 @@
 {\enskip\textbf{Te bewijzen.\space}}% \begin{inlinetoprove}
 {\enskip}% \end{inlinetoprove}
 
+% d used for integrals
+\newcommand*\d{\mathop{}\!\mathrm{d}}
+
 % Set interior and distance
 \DeclareMathOperator{\intr}{\mathop{int}} 
 \DeclareMathOperator{\dist}{\mathop{dist}}
@@ -122,7 +127,7 @@
 \protected\def\a{\vectorstat{a}}
 \protected\def\b{\vectorstat{b}}
 \protected\def\c{\vectorstat{c}}
-\protected\def\d{\vectorstat{d}}
+%\protected\def\d{\vectorstat{d}} % replaced by integral d
 \protected\def\e{\vectorstat{e}}
 \protected\def\f{\vectorstat{f}}
 \protected\def\g{\vectorstat{g}}
