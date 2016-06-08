@@ -628,24 +628,24 @@
 				\end{enumerate}
 			\end{lemma}
 			\begin{define}
-				 Het getal \[ \sup \{ L(P,f) \mid \text{P partitie van }[a,b] \} =: \ul{\int_{a}^{b} f(x) dx} \]
+				 Het getal \[ \sup \{ L(P,f) \mid \text{P partitie van }[a,b] \} =: \ul{\int_{a}^{b} f(x) \d x} \]
 				 heet een \indx{onderintegraal} van $f$ op $[a,b]$.
 				 \opm Dit getal bestaat altijd, ook bij niet-integreerbare functies!
 				 \[ 
-					 \inf \{ U(P,f) \mid \text{P partitie van }[a,b] \} =: \overline{\int_{a}^{b} f(x) dx}
+					 \inf \{ U(P,f) \mid \text{P partitie van }[a,b] \} =: \overline{\int_{a}^{b} f(x) \d x}
 				  \]
 				  heet \indx{bovenintegraal} van $f$ op $[a,b]$.
 			\end{define}
 			\begin{gevolg}
-				\[ \ul{\int_{a}^{b} f(x) dx} \le \overline{\int_{a}^{b} f(x) dx} \]
+				\[ \ul{\int_{a}^{b} f(x) \d x} \le \overline{\int_{a}^{b} f(x) \d x} \]
 			\end{gevolg}
 			\begin{define}
 				$f$ heet \indx{Riemann-integreerbaar} op $[a,b]$ als 
-				\[ \ul{\int_{a}^{b} f(x) dx} = \overline{\int_{a}^{b} f(x) dx}, \]
+				\[ \ul{\int_{a}^{b} f(x) \d x} = \overline{\int_{a}^{b} f(x) \d x}, \]
 				en dit getal heet \indx{Riemann integraal} van $f$ op $[a,b]$.
 				\begin{nota}
 					\[
-					\int_{a}^{b} f(x) dx,\ R[a,b] = \{ f\: [a,b]\to \reals \mid f \text{ Riemann-integreerbaar} \}
+					\int_{a}^{b} f(x) \d x,\ R[a,b] = \{ f\: [a,b]\to \reals \mid f \text{ Riemann-integreerbaar} \}
 					\]
 				\end{nota}
 			\end{define}
@@ -681,19 +681,19 @@
 			\begin{theorem}
 				$ f\: [a,b] \to \reals  $ begrensd,
 				\begin{align*}
-					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies 0 &\le \ul{\int_a^b f(x) dx} - L(P,f) < \epsilon  \\
-					\text{ en }0 &\le U(P,f) - \overline{\int_a^b f(x)dx} <\epsilon
+					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies 0 &\le \ul{\int_a^b f(x) \d x} - L(P,f) < \epsilon  \\
+					\text{ en }0 &\le U(P,f) - \overline{\int_a^b f(x)\d x} <\epsilon
 				 \end{align*}
 				 \opm $f$ hoeft niet Riemann-integreerbaar te zijn!
 			\end{theorem}
 			\begin{theorem}[Riemannsommen approximeren integralen]
 				Zij $ f \in R[a,b] $, dan
 				\[ 
-					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies \abs{S(P,f,c) - \int_a^b f(x) dx} < \epsilon.
+					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies \abs{S(P,f,c) - \int_a^b f(x) \d x} < \epsilon.
 				 \]
 			\end{theorem}
 			\begin{theorem}[\text{[K]} 6.3.1]
-				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\: R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)dx $ is een lineaire afbeelding.
+				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\: R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
 				\begin{gevolg}
 					\begin{align*}
 						f,g \in R[a,b] &\implies f+g \in R[a,b] \\
@@ -707,7 +707,7 @@
 					f \in R[a,b] \iff (f|_{[a,c]} \in R[a,c] \wedge f|_{[c,b]} \in R[c,b]) \text{ en }
 				 \]
 				 \[ 
-					 \int_a^b f(x)dx = \int_a^c f(x) dx + \int_c^b f(x) dx
+					 \int_a^b f(x)\d x = \int_a^c f(x) \d x + \int_c^b f(x) \d x
 				  \]
 			\end{theorem}
 			
@@ -769,26 +769,26 @@
 				  \]
 				  en er geldt
 				  \[ 
-					  \int_a^b f(x)dx = \int_a^b \tilde f(x)dx.
+					  \int_a^b f(x)\d x = \int_a^b \tilde f(x)\d x.
 				   \]
 			\end{theorem}
 			\begin{theorem}[Positiviteit van de integraal]
 				Zij $f \in R[a,b]$ en $f(x) \ge 0$ voor alle $x \in [a,b]$. Dan 
 				\[ 
-					\int_a^b f(x)dx \ge 0.
+					\int_a^b f(x)\d x \ge 0.
 				 \]
 			\end{theorem}
 			\begin{theorem}[Monotonie van de integraal]
 				Zij $f,g \in R[a,b]$ en $f(x) \ge g(x)$ voor alle $x \in [a,b]$. Dan
 				\[ 
-					\int_a^b f(x)dx \ge \int_a^b g(x)dx.
+					\int_a^b f(x)\d x \ge \int_a^b g(x)\d x.
 				 \]
 			\end{theorem}
 			\begin{theorem}
 				Zij $f\: [a,b] \to \reals$ begrensd en stuksgewijs continu. Dan $f\in R[a,b]$.
 			\end{theorem}
 			\begin{theorem}
-				Zij $f \in R[a,b]$ en zij $\int_a^b f(x) dx >0$. Dan is er een interval $I \subset [a,b]$ met positieve lengte en een $\epsilon >0$ zodanig dat $f(x) > \epsilon$ voor alle $x \in I$.
+				Zij $f \in R[a,b]$ en zij $\int_a^b f(x) \d x >0$. Dan is er een interval $I \subset [a,b]$ met positieve lengte en een $\epsilon >0$ zodanig dat $f(x) > \epsilon$ voor alle $x \in I$.
 			\end{theorem}
 		
 		\newpage
@@ -904,12 +904,12 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 				
 				Zij $g \: [a,b] \to \reals$ gedefinieerd door
 				\[ 
-					g(x) = \int_c^d h\up{x} (y) dy = \int_c^d f(x,y) dy.
+					g(x) = \int_c^d h\up{x} (y) \d y = \int_c^d f(x,y) \d y.
 				 \]
-				 Dan $g\in \R [a,b]$, en \[ \iint_R f = \int_a^b g(x) dx = \int_a^b \left( \int_c^d f(x,y)dy  \right) dx. \]
+				 Dan $g\in \R [a,b]$, en \[ \iint_R f = \int_a^b g(x) \d x = \int_a^b \left( \int_c^d f(x,y)\d y  \right) \d x. \]
 				 \opm Indien ook $f(\cdot,y) \in \R [a,b]$ voor alle $y \in [c,d]$ dan 
 				 \[ 
-					 \iint_R f  =  \int_a^b \left( \int_c^d f(x,y)dy  \right) dx =  \int_c^d \left( \int_a^b f(x,y)dx  \right) dy.
+					 \iint_R f  =  \int_a^b \left( \int_c^d f(x,y)\d y  \right) \d x =  \int_c^d \left( \int_a^b f(x,y)\d x  \right) \d y.
 				  \]
 			\end{theorem}
 			
