@@ -6,6 +6,7 @@
 \usepackage{amsmath,amssymb}
 \newcommand\inw{\mbox{int}}
 \newcommand\ds{\displaystyle}
+\def\diam{\text{diam}}
 \parindent 0pt
 
 \begin{document}
@@ -795,36 +796,47 @@
 		\subsection{Integraalrekening in $\reals^d$}
 			We bekijken hier de $\reals^2$, voor hogere dimensies gaat dit analoog.
 			\begin{define}
-				We defini\"eren een \indx{rechthoek} $R$ door $R=[a,b]\times[c,d]$. Zij $P_1$ een partitie van $[a,b]$ en $P_2$ een partitie van $[c,d]$, dan is $P=P_1 \times P_2$ een \indx{partitie van $R$}.
-				
-				Dan is $A_{ij}=[x_{i-1},x_i] \times [y_{j-1},y_j]$ een \indx{deelrechthoek} van $R$, en $\text{Vol}(A_{ij})=\text{opp}(A_{ij})=(x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x_i \Delta x_j$.
+				Het \indx{volume} van de \indx{rechthoek} $R =[a,b]\times[c,d]$ is  $\text{Vol}(R) = (b-a)(d-c)$.
 			\end{define}
+\begin{theorem}
+Zij $P_1$ de partitie $x_0,\ldots x_n$ van $[a,b]$ en
+$P_2$ de partitie $x_0,\ldots x_m$ van $[c,d]$.
+Dan bestaat de \indx{partitie van $R$} $P=P_1 \times P_2$ bestaande uit de \indx{deelrechthoeken}
+\[
+R = \cup_{i=1,j=1}^{i=n,j=m} A_{ij}
+\]
+waar $A_{ij}=[x_{i-1},x_i] \times [y_{j-1},y_j]$.
+Volgens de vorige definitie is $\text{Vol}(A_{ij})=\text{opp}(A_{ij})=(x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x_i \Delta x_j$.
+\end{theorem}
 			\begin{define}
-				De \indx{fijnheid in $\reals^2$} van $P$ is de maximale diameter van $A_{ij}$, met $i=1\ldots n,j=1\ldots m$.
+				De \indx{fijnheid in $\reals^2$} van een partitie $P$ is de maximale \indx{diameter}
+\[
+\max_{i=1\ldots n,j=1\ldots m}\set{\diam(A_{ij})},
+\]
+VRAAG AAN GEORG OF DE DIAMETER waar voor rechthoek $\diam(\A_{ij})=\sqrt{(x_k-x_{k-1})^2 + (y_k-y_{k-1})^2}$ is of anders $\diam(A_{ij})\max\set{x_k-x_{k-1},y_k-y_{k-1}}$.
 			\end{define}
 			\begin{define}
 				Zij $R=[a,b]\times[c,d]$ een rechthoek, $P=P_1 \times P_2$ een partitie, $R=\bigcup A_{ij}$, $f\: R \to \reals$ begrensd.
-				
-				Dan is
+				Defini\"eer voor alle $i=1 \ldots n$ en alle $j=1 \ldots m$:
 				\[
-					\begin{rcases*}
-						m_{ij} = \inf_{x \in A_{ij}} f(x) \\
-						M_{ij} = \sup_{x \in A_{ij}} f(x)
-					\end{rcases*}
-					i=1 \ldots n, j=1 \ldots m 
+					\begin{array}{rcl}
+						m_{ij} &=& \ds\inf_{x \in A_{ij}}\set{f(x)}\\
+						M_{ij} &=& \ds\sup_{x \in A_{ij}}\set{f(x)}
+					\end{array}
 				\]
-				\begin{align*}
-					L(P,f) &= \sum_{i=1}^{n} \sum_{j=1}^{m} m_{ij} \Delta x_i \Delta x_j \text{ is een \indx{ondersom in $\reals^2$}} \\
-					U(P,f) &= \sum_{i=1}^{n} \sum_{j=1}^{m} M_{ij} \Delta x_i \Delta x_j \text{ is een \indx{bovensom in $\reals^2$}}
-				 \end{align*}
-				 
 			\end{define}
 			\begin{define}
 				Kies $c_{ij} \in A_{ij}$, $c=(c_{ij})$, $i=1 \ldots n$, $j=1 \ldots m$. Dan is 
 				\[ 
-					S(P,f,c) := \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta x_j
+					S(P,f,c) := \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta y_j
 				 \]
 				 een \indx{Riemannsom in $\reals^2$}.
+Verder kan met behulp van bovenstaande definities aangetoond worden dat:
+				\begin{align*}
+					L(P,f) &= \sum_{i=1}^{n} \sum_{j=1}^{m} m_{ij} \Delta x_i \Delta y_j \text{ is een \indx{ondersom in $\reals^2$}} \\
+					U(P,f) &= \sum_{i=1}^{n} \sum_{j=1}^{m} M_{ij} \Delta x_i \Delta y_j \text{ is een \indx{bovensom in $\reals^2$}}
+				 \end{align*}
+				 
 			\end{define}
 			\begin{define} Zij
 				\[ 
@@ -834,7 +846,7 @@
 					\end{rcases*}
 					\text{ twee partities voor $R$,}
 				 \]
-				 met de deelrechthoeken $A_{ij} \subset P$ en $D_{ij} \subset R$. $Q$ heet \indx{fijner dan (in $\reals^2$)} $P$ als 
+				 met de deelrechthoeken $A_{ij} \subset P$ en $D_{ij} \subset Q$. $Q$ heet \indx{fijner dan (in $\reals^2$)} $P$ als 
 				 \[ 
 					 \forall_{D_{ij}}\exists{A_{kl}}: D_{ij} \subset A_{kl}.
 				  \]
@@ -888,14 +900,14 @@
 			\begin{theorem}[van \textsl{Fubini} \index{Fubini, stelling van} (\text{[K]} 11.2.2)]
 				Zij $R=[a,b]\times[c,d] \subset \reals^2$, $f\: R\to\reals$ Riemann-integreerbaar.
 				
-				Definieer voor $x \in [a,b]$: $h_x \: [c,d] \to \reals$ door $h_x = f(x,\cdot)$. Veronderstel $h_x \in \R [c,d] \forall_{x \in [a,b]}$. 
+				Definieer voor $x \in [a,b]$: $h\up{x} \: [c,d] \to \reals$ door $h\up{x} = f(x,\cdot)$. Veronderstel $h\up{x} \in \R [c,d]$ voor alle $x \in [a,b]$. 
 				
 				Zij $g \: [a,b] \to \reals$ gedefinieerd door
 				\[ 
-					g(x) = \int_c^d h_x (y) dy = \int_c^d f(x,y) dy.
+					g(x) = \int_c^d h\up{x} (y) dy = \int_c^d f(x,y) dy.
 				 \]
 				 Dan $g\in \R [a,b]$, en \[ \iint_R f = \int_a^b g(x) dx = \int_a^b \left( \int_c^d f(x,y)dy  \right) dx. \]
-				 \opm Indien ook $f(\cdot,y) \in \R [a,b] \forall_{y \in [c,d]}$ dan 
+				 \opm Indien ook $f(\cdot,y) \in \R [a,b]$ voor alle $y \in [c,d]$ dan 
 				 \[ 
 					 \iint_R f  =  \int_a^b \left( \int_c^d f(x,y)dy  \right) dx =  \int_c^d \left( \int_a^b f(x,y)dx  \right) dy.
 				  \]
@@ -913,6 +925,7 @@
 						0 & \text{anders}
 					\end{cases}
 				\]
+DE DEFINITIE $\iint_D f := \iint F$ GEEFT IN DE RECHTERKANT GEEN RECHTHOEKIG DOMEIN. VRAAG GEORG WELK RECHTHOEKIG DOMEIN GEBRUIKT ZOU KUNNEN WORDEN (tip: RECHTHOEK OM D HEEN) (of staat $\iint$ voor integeren over $\reals^2$? -- of dat laatste lukt met partities \dots)
 			\end{define}
 			
 		\subsection{Stellingen uit het huiswerk}
