@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/06/08
+% Added \Vol for volume operator
 %2016/06/07
 % Added integral-d, \d
 %2016/06/04
@@ -72,6 +74,9 @@
 \newenvironment{inlinetoprove}
 {\enskip\textbf{Te bewijzen.\space}}% \begin{inlinetoprove}
 {\enskip}% \end{inlinetoprove}
+
+% Volume
+\DeclareMathOperator{\Vol}{Vol}
 
 % d used for integrals
 \renewcommand*\d{\mathop{}\!\mathrm{d}}

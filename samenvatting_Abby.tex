@@ -952,6 +952,39 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			\end{define}
 			
 		\subsection{Stellingen uit het huiswerk}
+		\begin{theorem}[\text{[K]} 11.1.10]
+			Zij $f\colon R \subset \reals^2 \to \reals$ continu op een rechthoek $R = [a, b] \times [c, d]$.
+			Dan bestaat er een punt $(x_0, y_0) \in R$ waarbij
+			\[
+			\iint_R f = f(x_0, y_0) (b - a) (d - c)\,.
+			\]
+		\end{theorem}
+		\begin{theorem}[\text{[K] 11.2.6a}]
+			Zij $f_{xy}$ Riemannintegreerbaar is op een rechthoek $R = [a, b] \times [c, d]$. Dan
+			\[ 
+				\iint_R f_{xy} = f(a, c) - f(a, d) + f(b, d) - f(b, c)\,.
+			 \]
+		\end{theorem}
+		\begin{theorem}[\text{[K] 11.2.7a}]
+			Zij $f\colon [a, b] \to \reals$ en $g\colon [c, d] \to \reals$ beide Riemannintegreerbaar. Zij verder gegeven de rechthoek $R = [a, b] \times [c, d]$. Dan
+			\[ 
+				\iint_R f(x) g(y) = \left[ \int_a^b f \right] \left[ \int_c^d g \right]\,.
+			 \]
+		\end{theorem}
+		\begin{theorem}
+			Zij $f(x, y)$ een begrensde functie op een rechthoek $R = [a, b] \times [c, d]$. Zij verder $R = R_1 \cup R_2$, waar $R_1$ en $R_2$ twee rechthoeken zijn met $\intr R_1 \cap \intr R_2 = \emptyset$.
+			
+			Dan geldt dat de functie $f$ Riemannintegreerbaar is op $R$ dan en slechts dan als $f$ Riemannintegreerbaar is op zowel $R_1$ als $R_2$. In het geval dat $f$ Riemannintegreerbaar is op $R$ geldt dan
+			\[
+			\iint_R f = \iint_{R_1} f + \iint_{R_2} f \,.
+			\]
+		\end{theorem}
+		\begin{theorem}
+			Zij $B \subset \reals^2$ een rechthoekgebied. Als $\{ A_1, \dots, A_N \}$ een familie van rechthoekgebieden $A_i \subset \reals^2$ is die $B$ overdekken dan
+			\[
+			\sum_{i=1}^N \Vol A_i \ge \Vol B \,.
+			\]
+		\end{theorem}
 			
 	\newpage
 	\section{College 27}
