@@ -915,9 +915,9 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			
 		\subsection{Integratie op algemene gebieden}
 			\begin{define}
-				Zij $D \subset \reals^2$ begrensd, $f \: D \to \reals$ begrensd. Zij $R$ een rechthoek zodanig dat $D \subset R$.
+				Zij $D \subset \reals^2$ begrensd, $f \: D \to  \reals$ begrensd. Zij $R$ een rechthoek zodanig dat $D \subset R$.
 				
-				Definieer $\iint_D f := \iint F$ met 
+				Definieer $\iint_D f := \iint_R F$ met 
 				\[ 
 					F(x,y) = 
 					\begin{cases}
@@ -925,15 +925,66 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 						0 & \text{anders}
 					\end{cases}
 				\]
-DE DEFINITIE $\iint_D f := \iint F$ GEEFT IN DE RECHTERKANT GEEN RECHTHOEKIG DOMEIN. VRAAG GEORG WELK RECHTHOEKIG DOMEIN GEBRUIKT ZOU KUNNEN WORDEN (tip: RECHTHOEK OM D HEEN) (of staat $\iint$ voor integeren over $\reals^2$? -- of dat laatste lukt met partities \dots)
 			\end{define}
 			
 		\subsection{Stellingen uit het huiswerk}
 			
-			
+	\newpage
+	\section{College 27}
+		\begin{valkuil}
+			Let op met de grens van de binnenste integraal, deze grens hangt af van de variabele van de buitenste integraal.
+		\end{valkuil}
+		
+		\begin{define}
+			$ A \subset \reals^2 $ heeft \indx{Jordaninhoud nul}, $A$ heet een \indx{nulverzameling} als voor alle $ \epsilon > 0 $ er eindig veel rechthoekgebieden $ R_1, \ldots, R_n $ zijn z.d.d.
+			\begin{enumerate}[(i)]
+				\item $ A \subset \ds\bigcup_{i=1}^n R_i $
+				\item $ \ds\sum_{i=1}^n \text{Vol}(R_i) < \epsilon $.
+			\end{enumerate}
+			$ \text{Vol}(R_i) $ is gedefinieerd als 
+			\[ 
+				\text{Vol}(R_i)=\text{Opp}(R_i) = (d_i-c_i)(b_i-a_i) \qquad \text{met } R_i = (a_i,b_i) \times (c_i,d_i). 
+			\]	 
+		\end{define}
+		
+	    \begin{theorem}[Differentieerbare krommen hebben Jordaninhoud nul]
+	    	Zij $ I=[a,b] $ een compact interval, $ \phi \: I \to~\reals^2 $ Lipschitzcontinu, d.w.z
+	    	\[ 
+		    	\exists_{L>o} \forall_{s,t \in I} \: \abs{\phi (s) - \phi (t)} \leq L \abs{s-t} 
+	    	 \]
+	    	 Dan heeft $ C = \set{\phi (t) \mid t \in I} $ Jordaninhoud nul.
+	    \end{theorem}
+	    
+	    \begin{opm}
+	    	Zij $ \phi \: I \to \reals^2 $ continu differentieerbaar, dan is $\phi$ Lipschitzcontinu.
+	    \end{opm}
+	    
+	    \begin{theorem}[\text{[K] 11.3.3}]
+	    	Zij $ R=[a,] \times [c,d] $ een rechthoekgebied, $ f \: R \to \reals $ begrensd. Veronderstel dat $f$ discontinu is op een verzameling van Jordaninhoud nul. Dan is $f$ Riemannintegreerbaar op $R$.
+	    \end{theorem}
+	    
+	    \begin{define}
+	    	Een verzameling $ D \subset \reals^d $ heet \indx{Jordan-meetbaar} (of \indx{Jordanverzameling}) als 
+	    	\begin{itemize}
+	    		\item $D$ is begrensd
+	    		\item $\partial D$ heeft Jordaninhoud nul.
+	    	\end{itemize}
+	    	Dan is $ \iint_D f $ goed gedefinieerd indien  
+	    	\begin{itemize}
+	    		\item $ f \: D \to \reals $ bijvoorbeeld continu 
+	    		\item $D$ is een Jordanverzameling
+	    	\end{itemize}
+	    \end{define}
+	    
+	    \begin{define}
+	    	Zij $D$ een Jordanverzameling. Dan
+	    	\[ 
+		    	\text{Vol}D := \iint_D 1.
+	    	 \]
+	    \end{define}
+	    
 		\newpage
 		\section{Tips van Aart}			
-%		\includepdf[pages={-}]{Aart.pdf}
 		\input{ana2wk16}
 		\input{ana2wk18}
 		\input{ana2wk22}

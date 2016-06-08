@@ -74,7 +74,7 @@
 {\enskip}% \end{inlinetoprove}
 
 % d used for integrals
-\newcommand*\d{\mathop{}\!\mathrm{d}}
+\renewcommand*\d{\mathop{}\!\mathrm{d}}
 
 % Set interior and distance
 \DeclareMathOperator{\intr}{\mathop{int}} 
