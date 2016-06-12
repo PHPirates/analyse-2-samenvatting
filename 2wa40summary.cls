@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/06/12
+% Added hyperlink setup
 %2016/06/08
 % Added \Vol for volume operator
 %2016/06/07
@@ -39,6 +41,14 @@
 \title{\textbf{Samenvatting Analyse 2}}
 \author{Abby Berkers \\ Thomas Schouten \\ Verbeteringen door Jos Maubach}
 \date{\today}
+
+% Hyperlink setup
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
 
 %--------------------Make usable space all of page
 \setlength{\oddsidemargin}{0in}
