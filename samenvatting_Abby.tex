@@ -42,7 +42,7 @@
 		\dist(\x,\y) & \leq \dist(\x,\z) + \dist(\z,\y)
 		\end{align*}
 	\end{define}
-	De meest gebruikte afstandsfunctie in $\reals^d$ is $\dist(\x,\y):=|\x-\y|$
+	De meest gebruikte afstandsfunctie in $\reals^d$ is $\dist(\x,\y)\coloneqq |\x-\y|$
 	
 	\begin{define}[Bol]
 		Laat $\x\in\reals^d$ en laat $0<r\in\reals$. Dan is de \indx{bol\ om $\x$ met straal $r$} de verzameling
@@ -86,7 +86,7 @@
 	\end{theorem}
 	\begin{define}[Rand]
 		Zij $A \subset \reals^d$. Dan
-		\[\partial A:= \reals^d\backslash (\intr A \cup \intr (\reals^d\backslash A))\]
+		\[\partial A\coloneqq  \reals^d\backslash (\intr A \cup \intr (\reals^d\backslash A))\]
 		d.w.z: $x$ is een randpunt van $A \iff x$ is geen inwendig punt van $A$ en geen inwendig punt van het complement $\reals^d\backslash A$.
 		Equivalente definitie: Als $\x$ een randpunt is dan geldt voor alle $0<r\in\reals$ dat
 		$B(\x,r)$ zowel een punt van $A$ als van $\reals\backslash A$ bevat.
@@ -126,7 +126,7 @@
 	\end{theorem}
 	
 	\define[verdichtingspunt] Zij $A \subset \reals^d$. Een punt $x \in \reals^d$ heet \indx{verdichtingspunt} van $A$ als \[\forall _{R>0}:B(x,R)\cap  A \backslash\{x\} \neq \emptyset.\]
-	Dan $A':=\big\{ x \in \reals^d \bigm| x \text{ verdichtingspunt van } A\big\}$ is de verzameling van
+	Dan $A'\coloneqq \big\{ x \in \reals^d \bigm| x \text{ verdichtingspunt van } A\big\}$ is de verzameling van
 	alle verdichtingspunten van $A$.
 	
 	\lemma Zij $A \subset \reals^d$. Dan $\partial A \subset A\cup A'$.
@@ -150,14 +150,14 @@
 		\item Zij $A_1, \dots ,A_n$ gesloten. Dan $\bigcup_{i=1}^n A_i$ gesloten.
 	\end{enumerate}
 	
-	\define[afsluiting] Zij $A \subset \reals^d$. De verzameling $\overline{A}:= \reals^d \backslash (\intr (\reals^d \backslash A))$ heet de \indx{afsluiting} (\textit{closure}) van $A$.
+	\define[afsluiting] Zij $A \subset \reals^d$. De verzameling $\overline{A}\coloneqq  \reals^d \backslash (\intr (\reals^d \backslash A))$ heet de \indx{afsluiting} (\textit{closure}) van $A$.
 	\theorem[Karakterisering  van de afsluiting]
 	Zij $A \subset \reals^d$. Dan
 	\[\overline{A}= A \cup \partial A = A \cup A'= \big\{\z \in \reals^d \bigm| \exists _{\text{rij } (\x\up{n}) \text{ in } A \text{ met } \x\up{n} \to \z} \big\}\]
 	
 	\subsection{Stellingen uit het huiswerk}
 	\theorem Zij $(\x\up{n})$ een rij in $\reals^d, \a \in \reals^d$. Dan $\x\up{n}\to \a \Rightarrow |\x\up{n}|\to |a|.$
-	\theorem Zij $z \in \reals^d, A \subset \reals^d, A \neq \emptyset, \text{dist}(z,A) := \text{inf}_{x\in A}|x-z|$.
+	\theorem Zij $z \in \reals^d, A \subset \reals^d, A \neq \emptyset, \text{dist}(z,A) \coloneqq  \text{inf}_{x\in A}|x-z|$.
 	Dan $\overline{A}=\big\{z\in \reals^d \bigm| \text{dist}(z,A)=0\big\}$.
 	\newpage
 	\section{College 17}
@@ -176,7 +176,7 @@
 	
 	\begin{itemize}
 		\item Een overdekking $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ heet \underline{open} als alle $A_\alpha$ open zijn in $\reals^d$.
-		\item Een overdekking $B:=\big\{ A_\beta \bigm| \beta \in J\big\}$ heet een \textbf{deeloverdekking} van $A:=\big\{ A_\alpha \bigm| \alpha \in I \big\}$ als $B \subset A$.
+		\item Een overdekking $B\coloneqq \big\{ A_\beta \bigm| \beta \in J\big\}$ heet een \textbf{deeloverdekking} van $A\coloneqq \big\{ A_\alpha \bigm| \alpha \in I \big\}$ als $B \subset A$.
 	\end{itemize}
 	
 	\define[compact] $K \subset \reals^d$ heet \indx{compact} als elke open overdekking van $K$ een eindige deeloverdekking bevat.
@@ -239,7 +239,7 @@
 	f_1(x_1,\dots , x_d) \\
 	\vdots \\
 	f_m(x_1,\dots , x_d) \\
-	\end{bmatrix}\in\reals^d, \qquad f_i:D\to \reals.\]
+	\end{bmatrix}\in\reals^d, \qquad f_i\:D\to \reals.\]
 	
 	\define Zij $\a \in D'$.
 	\begin{align*}
@@ -286,7 +286,7 @@
 		\begin{enumerate}[(1)]
 			\item $\f(D)$ compact (continue functies beelden compacte verzamelingen af op compacte verzamelingen)
 			\item $\f$ uniform continu, dwz
-			\[\forall_{\epsilon > 0} \exists_{\delta = \delta(\epsilon)}\forall_{\x,\z\in D}\:
+			\[\forall_{\epsilon > 0} \exists_{\delta = \delta(\epsilon)}\forall_{\x,\z\in D}:
 			\abs{\x-\z}<\delta \implies |\f(\x)-\f(\z)|<\epsilon.
 			\]
 		\end{enumerate}
@@ -301,7 +301,7 @@
 	\subsection{De vastepuntstelling van Banach}
 	\begin{theorem}
 		Zij $D \subset \reals^d$.
-		Een afbeelding $\F:D \to \reals^d$ heet \indx{contraherend} (\textit{contracting}) als
+		Een afbeelding $\F\: D \to \reals^d$ heet \indx{contraherend} (\textit{contracting}) als
 		\[\forall _{x,y\in D}\exists _{q \in (0,1)}:\abs{F(x)-F(y)}_{\reals^d} \leq q\abs{x-y}_{\reals^d}. \]
 	\end{theorem}
 	
@@ -310,10 +310,10 @@
 	
 	
 	\begin{define}[iteratierij]
-		Stel $\F:D\to D$, oftewel $\F(D) \subset D$. Kies \indx{startbenadering} $\x\up{0} \in D$.
+		Stel $\F\: D\to D$, oftewel $\F(D) \subset D$. Kies \indx{startbenadering} $\x\up{0} \in D$.
 		Dan bestaat de rij $(\x\up{n})$ gedefinieerd door
 		\[
-		\x\up{n+1} := \F(\x\up{n})
+		\x\up{n+1} \coloneqq  \F(\x\up{n})
 		\]
 		en heet~\indx{iteratierij}.
 	\end{define}
@@ -338,17 +338,17 @@
 	\subsubsection{Parti\"ele functies en parti\"ele afgeleiden}
 	
 	\begin{define}[parti\"ele functies]
-		Zij $D \subset \reals^2$ open. $F:D \to \reals$, $(a,b) \in D$.
+		Zij $D \subset \reals^2$ open. $F\: D \to \reals$, $(a,b) \in D$.
 		De functies
 		\begin{enumerate}
-			\item $p_b\: S_b \to \reals$, $p_b(x):=f(x,b)$
-			\item $q_a\: T_a \to \reals$, $q_a(y):=f(a,y)$
+			\item $p_b\: S_b \to \reals$, $p_b(x)\coloneqq f(x,b)$
+			\item $q_a\: T_a \to \reals$, $q_a(y)\coloneqq f(a,y)$
 		\end{enumerate}
 		heten \indx{parti\"ele functies}.
 		Alternatieve notatie:
 		\begin{enumerate}
-			\item $p_b:=f(\cdot, b)$
-			\item $q_a:=f(\red{a},\cdot)$
+			\item $p_b\coloneqq f(\cdot, b)$
+			\item $q_a\coloneqq f(\red{a},\cdot)$
 		\end{enumerate}
 		
 	\end{define}
@@ -359,8 +359,8 @@
 		
 		en definieren we
 		\begin{itemize}
-			\item $\partial_x f(a,b) := p_b'(a)$
-			\item $\partial_y f(a,b) := q_a'(b)$
+			\item $\partial_x f(a,b) \coloneqq  p_b'(a)$
+			\item $\partial_y f(a,b) \coloneqq  q_a'(b)$
 		\end{itemize}
 		
 	\end{define}
@@ -378,9 +378,9 @@
 	
 	
 	\subsection{Stellingen uit het huiswerk}
-	\theorem Zij $D \subset \reals^d$. Een functie $f\: D \to \reals^m$ heet \indx{Lipschitz continu} als er een $L>0$ is zodanig dat
+	\theorem Zij $D \subset \reals^d$. Een functie $f\: D \to \reals^m$ heet \indx{Lipschitz-continu} als er een $L>0$ is zodanig dat
 	\[\forall _{x,y \in D}: |f(x)-f(y)|_{\reals^m} \leq L|x-y|_{\reals^d}.\]
-	Elke Lipschitz continue functie is uniform continu op $D$.
+	Elke Lipschitz-continue functie is uniform continu op $D$.
 	\newpage
 	\section{College 20}
 	\subsection{Hogere orde parti\"ele afgeleiden}
@@ -405,7 +405,7 @@
 
 	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f\: D \to \reals$ d'baar te $\a \in D$ dan is $f$ ook continu te $\a$.
       		
-	\define De functie $ p: \reals^d \to \reals $ gegeven door \[p(x)=f(a)+f'(a)(x-a)\] heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
+	\define De functie $ p\:  \reals^d \to \reals $ gegeven door \[p(x)=f(a)+f'(a)(x-a)\] heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
 	\newpage	
 	\section{College 21}
 		Zij $D \subset \reals^d$ open, $\a\in D$, $f\: D \to \reals$.
@@ -437,7 +437,7 @@ Een vector $\u\in\reals^d$ met $\abs{\u}=1$ heet \indx{richtingsvector}.
 			Zij $D \subset \reals^d$ open, $\a \in D$, $\u \in \reals^d$ een richtingsvector. Zij $f\: D \to \reals$ d'baar te $a$.
 Dan is de \indx{richtingsafgeleide} van $f$ in de richting van $\u$ gegeven door
 			\begin{equation} \label{eq:rafg}
-			   	  		D_{\u} f(\a) := \lim_{t \to 0} \dfrac{f(\a+t\u) - f(\a)}{t}
+			   	  		D_{\u} f(\a) \coloneqq  \lim_{t \to 0} \dfrac{f(\a+t\u) - f(\a)}{t}
 			\end{equation}
 			Speciale gevallen:
 \[\u=\e_i \implies D_{\e_i}f(\a)=\partial_i f(\a)\].
@@ -449,7 +449,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			\gevolg Stel $\nabla f(\a) \neq 0$. De functie $f \Longunderstack{\text{ stijgt }\cr \text{ daalt }}$ bij $\a$ het sterkst in de richting $\ds\pm \dfrac{\nabla f(\a)}{\abs{\nabla f(\a)}}$.	
 			
 		\subsection{Differentieerbaarheid van vectorwaardige functies, Jacobimatrix}
-			Zij $D \subset \mathbb{R}^d$ open, $a \in D. f\:  D \to \mathbb{R}^m$. $f$ is d'baar in $a$ als er een lineaire afbeelding $L_a :\mathbb{R}^n \to \mathbb{R}^m$ bestaat zodanig dat \[f(x)=f(a)+L_a (x-a) + r(x) \qquad \lim_{x \to 0} \frac{r(x)}{|x-a|} =0 \quad\text{ (lim in } \mathbb{R}^m \text{!)}\]
+			Zij $D \subset \mathbb{R}^d$ open, $a \in D. f\:  D \to \mathbb{R}^m$. $f$ is d'baar in $a$ als er een lineaire afbeelding $L_a \: \mathbb{R}^n \to \mathbb{R}^m$ bestaat zodanig dat \[f(x)=f(a)+L_a (x-a) + r(x) \qquad \lim_{x \to 0} \frac{r(x)}{|x-a|} =0 \quad\text{ (lim in } \mathbb{R}^m \text{!)}\]
 			Co\"ordinaten: $\underline{f}(x_1,\dots ,x_n)=\begin{bmatrix}
 				f_1 (x_1, \dots ,x_n) \\
 				\vdots \\
@@ -477,7 +477,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			\end{bmatrix}\]
 			
 		\subsection{Stellingen uit het huiswerk}
-			\theorem Zij $ D \subseteq \mathbb{R}^d $ open, $ f\:  D \to \mathbb{R}^m $ met co\"ordinaatvoorstelling $ f=(f_1,\dots,f_m) $ waarbij $ f_i : D \to \mathbb{R} $. Zij $ a \in D $. Dan
+			\theorem Zij $ D \subseteq \mathbb{R}^d $ open, $ f\:  D \to \mathbb{R}^m $ met co\"ordinaatvoorstelling $ f=(f_1,\dots,f_m) $ waarbij $ f_i \:  D \to \mathbb{R} $. Zij $ a \in D $. Dan
 			\begin{enumerate}[(1)]
 				\item $ f $ d'baar in $ a \Leftrightarrow $ alle $ f_i $ d'baar in $ a $.
 				\item Alle eerste orde part afg $ \partial_j f_i $ bestaan in een omgeving van $ a $ en zijn continu bij $ a $, dan is $ f $ d'baar bij $ a $.
@@ -549,7 +549,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 		\subsection{Impliciete functiestelling, impliciet differentieren}
 			Lokale oplosbaarheid van vergelijking in de vorm $ F(x,y)=0. \qquad (x,y) \in D \subset \reals^2. $
 			
-			\theorem[K 10.6.9 | Impliciete functiestelling voor twee variabelen] Zij $D \subset \reals^2$ open, $ (x_0 , y_0 ) \in D, F:D \to \reals $ d'baar, partiele afgeleiden $ \partial_x F, \partial_y F $ continu op $ D $.
+			\theorem[K 10.6.9 | Impliciete functiestelling voor twee variabelen] Zij $D \subset \reals^2$ open, $ (x_0 , y_0 ) \in D, F\: D \to \reals $ d'baar, partiele afgeleiden $ \partial_x F, \partial_y F $ continu op $ D $.
 			
 			Veronderstel: $ F(x_0, y_0) = 0 \qquad \partial_y F(x_0, y_0)\neq 0 $.
 			
@@ -571,7 +571,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 				F_1(x_1,\dots,x_n,y_1,\dots,y_m)=0 \\
 				\vdots \\
 				F_m(x_1,\dots,x_n,y_1,\dots,y_m)=0
-				\end{rcases*} \Rightarrow \underline{F}(\underline{x},\underline{y})=\underline{0} \text{ in } \reals^m \qquad D \subset \reals^{n+m}, F: D \to \reals^m
+				\end{rcases*} \Rightarrow \underline{F}(\underline{x},\underline{y})=\underline{0} \text{ in } \reals^m \qquad D \subset \reals^{n+m}, F\:  D \to \reals^m
 				\]
 				
 				\theorem[Impliciete functiestelling algemeen] Zij $ D\subset \reals^{n+m} $ open, $ (x_0, y_0) \in D $ d'baar, alle parti\"ele afgeleiden continu. ($ \partial_{x_i}F_j , \partial_{y_k}F_j \quad i=1,\dots,n \quad j,k=1,\dots,m $). Zij ook $ F(x_0, y_0) = \underline{0}$, $ \partial_y F(x_0,y_0) $ regulier, inverteerbaar ($ (m,m) $-Jacobimatrix).
@@ -579,17 +579,17 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 				Dan is er \begin{itemize}
 					\item[] een omgeving $ U $ van $ (x_0,y_0) $ in $ \reals^{n+m} $
 					\item[] een open omgeving $V$ van $x_0$ in $\reals^n$
-					\item[] een afbeelding $ \varphi : V\to \reals^m $ continu d'baar 
+					\item[] een afbeelding $ \phi \:  V\to \reals^m $ continu d'baar 
 				\end{itemize}
-				z.d.d. $ ((\underline{x},\underline{y}) \in U \wedge F(\underline{x},\underline{y})=0) \Leftrightarrow \underline{y}=\varphi (\underline{x}). $
+				z.d.d. $ ((\underline{x},\underline{y}) \in U \wedge F(\underline{x},\underline{y})=0) \Leftrightarrow \underline{y}=\phi (\underline{x}). $
 				
 			\subsubsection{'Impliciet differenti\"eren'}
-				$ F(x,\varphi(x))=0 $. Differenti\"eren naar $ x\in \reals^n $:
-				\[ D_x F(x,\varphi(x)) + D_y (x,\varphi(x))D_x \varphi(x) = 0 \Rightarrow D_x \varphi(x) = -(D_y F(x,\varphi(x)))^{-1} D_x F(x,\varphi(x)). \]
+				$ F(x,\phi(x))=0 $. Differenti\"eren naar $ x\in \reals^n $:
+				\[ D_x F(x,\phi(x)) + D_y (x,\phi(x))D_x \phi(x) = 0 \Rightarrow D_x \phi(x) = -(D_y F(x,\phi(x)))^{-1} D_x F(x,\phi(x)). \]
 				
 		\subsection{Stellingen uit het huiswerk}
 			\theorem (Hogere differentieerbaarheid van impliciete functies)
-				Laat $I,J$ twee open intervallen in $ \reals $ zijn. Zij $F:I \times J \to \reals$ differentieerbaar met continue parti\"ele afgeleiden. Zij verder $\partial_y F(x,y) \neq 0$ voor $(x,y) \in I \times J$. Zij $g\: I\to J$ differentieerbaar en \[ F(x,g(x)) = 0. \]
+				Laat $I,J$ twee open intervallen in $ \reals $ zijn. Zij $F\: I \times J \to \reals$ differentieerbaar met continue parti\"ele afgeleiden. Zij verder $\partial_y F(x,y) \neq 0$ voor $(x,y) \in I \times J$. Zij $g\: I\to J$ differentieerbaar en \[ F(x,g(x)) = 0. \]
 				
 				Als $F$ $k$ keer continu differentieerbaar is (d.w.z. alle parti\"ele afgeleiden tot en met orde $k$ zijn continu differentieerbaar in $I \times J$) dan is ook $g$ $k$ keer continu differentieerbaar.		
 				
@@ -652,11 +652,11 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 				\end{enumerate}
 			\end{lemma}
 			\begin{define}
-				 Het getal \[ \sup \{ L(P,f) \mid \text{P partitie van }[a,b] \} =: \ul{\int_{a}^{b} f(x) \d x} \]
+				 Het getal \[ \sup \{ L(P,f) \mid \text{P partitie van }[a,b] \} \eqqcolon  \ul{\int_{a}^{b} f(x) \d x} \]
 				 heet een \indx{onderintegraal} van $f$ op $[a,b]$.
 				 \opm Dit getal bestaat altijd, ook bij niet-integreerbare functies!
 				 \[ 
-					 \inf \{ U(P,f) \mid \text{P partitie van }[a,b] \} =: \overline{\int_{a}^{b} f(x) \d x}
+					 \inf \{ U(P,f) \mid \text{P partitie van }[a,b] \} \eqqcolon  \overline{\int_{a}^{b} f(x) \d x}
 				  \]
 				  heet \indx{bovenintegraal} van $f$ op $[a,b]$.
 			\end{define}
@@ -717,7 +717,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 				 \]
 			\end{theorem}
 			\begin{theorem}[\text{[K]} 6.3.1]
-				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\: R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
+				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\\:  R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
 				\begin{gevolg}
 					\begin{align*}
 						f,g \in R[a,b] &\implies f+g \in R[a,b] \\
@@ -852,7 +852,7 @@ VRAAG AAN GEORG OF DE DIAMETER waar voor rechthoek $\diam(\A_{ij})=\sqrt{(x_k-x_
 			\begin{define}
 				Kies $c_{ij} \in A_{ij}$, $c=(c_{ij})$, $i=1 \ldots n$, $j=1 \ldots m$. Dan is 
 				\[ 
-					S(P,f,c) := \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta y_j
+					S(P,f,c) \coloneqq  \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta y_j
 				 \]
 				 een \indx{Riemannsom in $\reals^2$}.
 Verder kan met behulp van bovenstaande definities aangetoond worden dat:
@@ -891,7 +891,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			\begin{define}
 				$f$ heet \indx{Riemann-integreerbaar op $R$} als 
 				\[ 
-					\ul{\iint_R f} = \overline{\iint_R f} =: \iint_R f.
+					\ul{\iint_R f} = \overline{\iint_R f} \eqqcolon  \iint_R f.
 				 \]
 			\end{define}
 			\begin{theorem}
@@ -941,7 +941,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			\begin{define}
 				Zij $D \subset \reals^2$ begrensd, $f \: D \to  \reals$ begrensd. Zij $R$ een rechthoek zodanig dat $D \subset R$.
 				
-				Definieer $\iint_D f := \iint_R F$ met 
+				Definieer $\iint_D f \coloneqq  \iint_R F$ met 
 				\[ 
 					F(x,y) = 
 					\begin{cases}
@@ -960,13 +960,13 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			\]
 		\end{theorem}
 		\begin{theorem}[\text{[K] 11.2.6a}]
-			Zij $f_{xy}$ Riemannintegreerbaar is op een rechthoek $R = [a, b] \times [c, d]$. Dan
+			Zij $f_{xy}$ Riemann-integreerbaar is op een rechthoek $R = [a, b] \times [c, d]$. Dan
 			\[ 
 				\iint_R f_{xy} = f(a, c) - f(a, d) + f(b, d) - f(b, c)\,.
 			 \]
 		\end{theorem}
 		\begin{theorem}[\text{[K] 11.2.7a}]
-			Zij $f\: [a, b] \to \reals$ en $g\: [c, d] \to \reals$ beide Riemannintegreerbaar. Zij verder gegeven de rechthoek $R = [a, b] \times [c, d]$. Dan
+			Zij $f\: [a, b] \to \reals$ en $g\: [c, d] \to \reals$ beide Riemann-integreerbaar. Zij verder gegeven de rechthoek $R = [a, b] \times [c, d]$. Dan
 			\[ 
 				\iint_R f(x) g(y) = \left[ \int_a^b f \right] \left[ \int_c^d g \right]\,.
 			 \]
@@ -974,7 +974,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 		\begin{theorem}
 			Zij $f(x, y)$ een begrensde functie op een rechthoek $R = [a, b] \times [c, d]$. Zij verder $R = R_1 \cup R_2$, waar $R_1$ en $R_2$ twee rechthoeken zijn met $\intr R_1 \cap \intr R_2 = \emptyset$.
 			
-			Dan geldt dat de functie $f$ Riemannintegreerbaar is op $R$ dan en slechts dan als $f$ Riemannintegreerbaar is op zowel $R_1$ als $R_2$. In het geval dat $f$ Riemannintegreerbaar is op $R$ geldt dan
+			Dan geldt dat de functie $f$ Riemann-integreerbaar is op $R$ dan en slechts dan als $f$ Riemann-integreerbaar is op zowel $R_1$ als $R_2$. In het geval dat $f$ Riemann-integreerbaar is op $R$ geldt dan
 			\[
 			\iint_R f = \iint_{R_1} f + \iint_{R_2} f \,.
 			\]
@@ -1005,7 +1005,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 		\end{define}
 		
 	    \begin{theorem}[Differentieerbare krommen hebben Jordaninhoud nul]
-	    	Zij $ I=[a,b] $ een compact interval, $ \phi \: I \to~\reals^2 $ Lipschitzcontinu, d.w.z
+	    	Zij $ I=[a,b] $ een compact interval, $ \phi \: I \to~\reals^2 $ Lipschitz-continu, d.w.z
 	    	\[ 
 		    	\exists_{L>o} \forall_{s,t \in I} \: \abs{\phi (s) - \phi (t)} \leq L \abs{s-t} 
 	    	 \]
@@ -1013,11 +1013,11 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 	    \end{theorem}
 	    
 	    \begin{opm}
-	    	Zij $ \phi \: I \to \reals^2 $ continu differentieerbaar, dan is $\phi$ Lipschitzcontinu.
+	    	Zij $ \phi \: I \to \reals^2 $ continu differentieerbaar, dan is $\phi$ Lipschitz-continu.
 	    \end{opm}
 	    
 	    \begin{theorem}[\text{[K] 11.3.3}]
-	    	Zij $ R=[a,] \times [c,d] $ een rechthoekgebied, $ f \: R \to \reals $ begrensd. Veronderstel dat $f$ discontinu is op een verzameling van Jordaninhoud nul. Dan is $f$ Riemannintegreerbaar op $R$.
+	    	Zij $ R=[a,] \times [c,d] $ een rechthoekgebied, $ f \: R \to \reals $ begrensd. Veronderstel dat $f$ discontinu is op een verzameling van Jordaninhoud nul. Dan is $f$ Riemann-integreerbaar op $R$.
 	    \end{theorem}
 	    
 	    \begin{define}
@@ -1036,9 +1036,91 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 	    \begin{define}
 	    	Zij $D$ een Jordanverzameling. Dan
 	    	\[ 
-		    	\text{Vol}D := \iint_D 1.
+		    	\text{Vol}D \coloneqq  \iint_D 1.
 	    	 \]
 	    \end{define}
+	    
+	    \subsection{Stellingen uit het huiswerk}
+	    
+	    \begin{theorem}
+	    	Elke cirkelschijf in $\reals^2$ is een Jordanverzameling.
+	    \end{theorem}
+	    \begin{theorem}
+	    	Een begrensde, gesloten verzameling $P \subset \reals^2$ zodanig dat $\partial P$ de vereniging is van eindig veel lijnstukken heet een polygoongebied.  
+	    	Elk polygoongebied in $\reals^2$ is een Jordanverzameling.
+	    \end{theorem}
+	    \begin{theorem}
+	    	Zij $A \subset \reals^2$ begrensd, als $A$ een inwendig punt heeft dan is $A$ geen nulverzameling.
+	    \end{theorem}
+	    \begin{theorem}
+	    	Zij $I$ een compact interval en de functie $\phi \: I \to \reals^2$ continu differentieerbaar, dan is $\phi$ Lipschitz-continu.
+	    \end{theorem}
+	    
+	    \newpage
+	    \section{College 28}
+	    \subsection{Transformatiestelling voor meervoudige integralen}
+	    \textbf{("Change of variables formula")}
+	    
+	    In dit college zullen we een integratiegebied beschrijven met behulp van andere dan carthesische co\"ordinaten.
+	    
+	    \begin{theorem}[\indx{Transformatiestelling} voor integralen]
+	    	Zij 
+	    	\begin{itemize}
+		    	\item $V \subset \reals^d$ open,
+		    	\item $\phi \: V \to \reals^d$ continu differentieerbaar en injectief,
+		    	\item $E \subset V$ een Jordanverzameling met $\overline{E} \subset V$,
+		    	\item $f \: \phi(E) \to \reals$ Riemann-integreerbaar,
+		    	\item $f \circ \phi \: E \to \reals$ Riemann-integreerbaar,
+		    	\item de Jacobiaan $\det D\phi \neq 0$ met uitzondering van een nulverzameling.
+	    	\end{itemize}
+	    	Dan 
+	    	\[ 
+		    	\iint_{\phi(E)} f = \iint_E (f \circ \phi) |\det D\phi| \,.
+	    	 \]
+	    \end{theorem}
+	    
+		\begin{voorbeeld}[\indx{Poolco\"ordinaten}]
+			\[ 
+				\phi (r,\theta) = \vvec{x \\ y} = \vvec {r \cos \theta \\ r \sin \theta} \,.
+			 \]
+		\end{voorbeeld}
+		\begin{voorbeeld}[\indx{Cilinderco\"ordinaten}]
+			\[ 
+				\phi(r,\theta,z) = \vvec{r \cos \theta \\ r \sin \theta \\ z} \,.
+			 \]
+			 \[ 
+				 \iiint_{\phi(E)} f(x,y,z) \d x \d y \d z = \iiint_E f (r \cos \theta, r \sin \theta , z) r \d r \d \theta \d z \,.
+			  \]
+		\end{voorbeeld}
+		\begin{voorbeeld}[\indx{Bolco\"ordinaten}]
+			Deze co\"ordinaten hebben breedte $\phi$ en lengte $\theta$.
+			\[ 
+				\phi(\rho,\phi,\theta) = \vvec{\rho \cos \theta \sin \phi \\ \rho \sin \theta \sin \phi \\ \rho \cos \phi} \,.
+			 \]
+			 \[ 
+				 \iiint_{\phi(E)} f(x,y,z) \d x \d y \d z = \iiint_E f(\rho \cos \theta \sin \phi , \rho \sin \theta \sin \phi , \rho \cos \phi) \rho^2 \sin \phi \d \rho \d \phi \d \theta \,.
+			  \]
+		\end{voorbeeld}
+		\subsubsection{Onthoud}
+		\begin{tabular}{ll}
+			2D: & "$\d A = \d x \d y = r \d r \d \theta$" \\
+			3D cilinderco\"ordinaten: & "$\d V = \d x \d y \d z = r \d r \d \theta \d z $" \\
+			3D bolco\"ordinaten: & $"=\rho^2 \sin \phi \d \rho \d \phi \d \theta"$
+		\end{tabular}
+		
+		\begin{theorem}[\indx{Bell curve}]
+			\[ 
+				\int_{-\infty}^{\infty} e^{-x^2} \d x = \sqrt{\pi} \,.
+			 \]
+		\end{theorem}
+		
+		\subsection{Stellingen uit het huiswerk}
+		\begin{theorem}
+			Zij $D,D_1,D_2 \subset \reals^d$ drie Jordanverzamelingen met $D=D_1 \cup D_2$, $D_1 \cap D_2 = \emptyset$. Zij $f$ continu en begrensd op $D$. Dan is $f$ integreerbaar op $D_1$ en $D_2$, en \[ 
+				\int_D f = \int_{D_1} f + \int_{D_2} f \,.
+			 \]
+		\end{theorem}
+		
 	    
 		\newpage
 		\section{Tips van Aart}			
