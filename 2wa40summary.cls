@@ -32,6 +32,7 @@
 \RequirePackage{thmtools}
 \RequirePackage{xcolor}
 \RequirePackage{pdfpages}
+\RequirePackage{tikz} % Used for drawings
 \RequirePackage[nocenter]{qtree}
 \RequirePackage{imakeidx} % Used for index
 \RequirePackage[makeroom]{cancel}

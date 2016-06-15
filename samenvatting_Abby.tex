@@ -7,6 +7,9 @@
 \def\diam{\text{diam}}
 \parindent 0pt
 
+
+\usetikzlibrary{calc}
+
 \begin{document}
 	\maketitle
 	\thispagestyle{empty}
@@ -42,7 +45,7 @@
 		\dist(\x,\y) & \leq \dist(\x,\z) + \dist(\z,\y)
 		\end{align*}
 	\end{define}
-	De meest gebruikte afstandsfunctie in $\reals^d$ is $\dist(\x,\y)\coloneqq |\x-\y|$
+	De meest gebruikte afstandsfunctie \index{dist(x,y)} in $\reals^d$ is $\dist(\x,\y)\coloneqq |\x-\y|$
 	
 	\begin{define}[Bol]
 		Laat $\x\in\reals^d$ en laat $0<r\in\reals$. Dan is de \indx{bol\ om $\x$ met straal $r$} de verzameling
@@ -533,10 +536,10 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			
 			met $ \alpha_j = \#\{i_k | i_k = j\} $, $ v^\alpha = v_1^{\alpha_1} ,..., v_d^{\alpha_k} $, $ \partial^\alpha f = \partial_1^{\alpha_1},...,\partial_d^{\alpha_d} f $
 			
-		\subsection{Stelling van Taylor met meerdere variabelen}
+		\subsection{Stelling van \indx{Taylor} met meerdere variabelen}
 			\theorem Zij  $D \subset \reals^d$ open, $x_0 \in D$ z.d.d. $B(x_0,n) \subset D$, $n\in \naturals$, $f\: D\to \reals$ $n+1$ keer continu d'baar.
 			
-			Dan als $h \in \reals^d$, $ |h|<n $: ($\Rightarrow x_0+h \in B(x_0,n)$)
+			Dan als $h \in \reals^d$, $ |h|<n $ : ($\Rightarrow x_0+h \in B(x_0,n)$)
 			\[ \exists_{\Theta \in (0,1)}:f(x_0+h) = f(x_0) + D_h f(x_0) + \frac{1}{2} D_h^2 f(x_0) + \dots + \frac{1}{n!} D_h^n f(x_0) \]
 			($D_h$ is richtingsafgeleide richting $h$, $\Theta$ is tussenpunt)
 			met $R_{n+1} = \frac{1}{(n+1)!}D_h^{n+1} f(x_0 + \Theta h)$.
@@ -546,7 +549,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 		
 	\newpage
 	\section{College 23}
-		\subsection{Impliciete functiestelling, impliciet differentieren}
+		\subsection{\indx{Impliciete functiestelling}, impliciet differentieren}
 			Lokale oplosbaarheid van vergelijking in de vorm $ F(x,y)=0. \qquad (x,y) \in D \subset \reals^2. $
 			
 			\theorem[K 10.6.9 | Impliciete functiestelling voor twee variabelen] Zij $D \subset \reals^2$ open, $ (x_0 , y_0 ) \in D, F\: D \to \reals $ d'baar, partiele afgeleiden $ \partial_x F, \partial_y F $ continu op $ D $.
@@ -571,17 +574,17 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 				F_1(x_1,\dots,x_n,y_1,\dots,y_m)=0 \\
 				\vdots \\
 				F_m(x_1,\dots,x_n,y_1,\dots,y_m)=0
-				\end{rcases*} \Rightarrow \underline{F}(\underline{x},\underline{y})=\underline{0} \text{ in } \reals^m \qquad D \subset \reals^{n+m}, F\:  D \to \reals^m
+				\end{rcases*} \Rightarrow \F (\x,\y)=\zero \text{ in } \reals^m \qquad D \subset \reals^{n+m}, F\:  D \to \reals^m
 				\]
 				
-				\theorem[Impliciete functiestelling algemeen] Zij $ D\subset \reals^{n+m} $ open, $ (x_0, y_0) \in D $ d'baar, alle parti\"ele afgeleiden continu. ($ \partial_{x_i}F_j , \partial_{y_k}F_j \quad i=1,\dots,n \quad j,k=1,\dots,m $). Zij ook $ F(x_0, y_0) = \underline{0}$, $ \partial_y F(x_0,y_0) $ regulier, inverteerbaar ($ (m,m) $-Jacobimatrix).
+				\theorem[Impliciete functiestelling algemeen] Zij $ D\subset \reals^{n+m} $ open, $ (x_0, y_0) \in D $ d'baar, alle parti\"ele afgeleiden continu. ($ \partial_{x_i}F_j , \partial_{y_k}F_j \quad i=1,\dots,n \quad j,k=1,\dots,m $). Zij ook $ F(x_0, y_0) = \zero$, $ \partial_y F(x_0,y_0) $ regulier, inverteerbaar ($ (m,m) $-Jacobimatrix).
 				
 				Dan is er \begin{itemize}
 					\item[] een omgeving $ U $ van $ (x_0,y_0) $ in $ \reals^{n+m} $
 					\item[] een open omgeving $V$ van $x_0$ in $\reals^n$
 					\item[] een afbeelding $ \phi \:  V\to \reals^m $ continu d'baar 
 				\end{itemize}
-				z.d.d. $ ((\underline{x},\underline{y}) \in U \wedge F(\underline{x},\underline{y})=0) \Leftrightarrow \underline{y}=\phi (\underline{x}). $
+				z.d.d. $ ((\x,\y) \in U \wedge F(\x,\y)=0) \Leftrightarrow \y=\phi (\x). $
 				
 			\subsubsection{'Impliciet differenti\"eren'}
 				$ F(x,\phi(x))=0 $. Differenti\"eren naar $ x\in \reals^n $:
@@ -837,7 +840,8 @@ Volgens de vorige definitie is $\text{Vol}(A_{ij})=\text{opp}(A_{ij})=(x_i-x_{i-
 \[
 \max_{i=1\ldots n,j=1\ldots m}\set{\diam(A_{ij})},
 \]
-VRAAG AAN GEORG OF DE DIAMETER waar voor rechthoek $\diam(\A_{ij})=\sqrt{(x_k-x_{k-1})^2 + (y_k-y_{k-1})^2}$ is of anders $\diam(A_{ij})\max\set{x_k-x_{k-1},y_k-y_{k-1}}$.
+waar voor een rechthoek $A_{ij}$ we defini\"eren $\diam(A_{ij}) = \max\set{x_k-x_{k-1},y_k-y_{k-1}}$. % From kosmala, page 481 on the top
+
 			\end{define}
 			\begin{define}
 				Zij $R=[a,b]\times[c,d]$ een rechthoek, $P=P_1 \times P_2$ een partitie, $R=\bigcup A_{ij}$, $f\: R \to \reals$ begrensd.
@@ -1093,13 +1097,26 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			  \]
 		\end{voorbeeld}
 		\begin{voorbeeld}[\indx{Bolco\"ordinaten}]
-			Deze co\"ordinaten hebben breedte $\phi$ en lengte $\theta$.
+			Deze co\"ordinaten hebben breedte $\phi$ en lengte $\theta$, dus $\phi$ is de hoek ten opzichte van de $z$-as en $\theta$ de hoek ten opzichte van de $x$-as.
 			\[ 
 				\phi(\rho,\phi,\theta) = \vvec{\rho \cos \theta \sin \phi \\ \rho \sin \theta \sin \phi \\ \rho \cos \phi} \,.
 			 \]
 			 \[ 
 				 \iiint_{\phi(E)} f(x,y,z) \d x \d y \d z = \iiint_E f(\rho \cos \theta \sin \phi , \rho \sin \theta \sin \phi , \rho \cos \phi) \rho^2 \sin \phi \d \rho \d \phi \d \theta \,.
 			  \]
+
+			Om dit te onthouden, gebruik poolco\"ordinaten en druk $r$ uit in $\rho$ en $\phi$, zodat $r=\rho \sin \phi$, en vul deze in, in poolco\"ordinaten om $x$ en $y$ te krijgen. Vind de $z$-co\"ordinaat op dezelfde manier zodat $z=\rho \cos \phi$.
+			
+			\begin{tikzpicture}[thick]
+			\draw(0,0) 
+			-- (90:2cm) node[midway,left]{$z$-as} 
+			-- (30:4cm) node[midway,above]{$r$} % node of point
+			-- (0,0) node[midway,below right]{$\rho$};
+			\draw[fill=lightgray, thick] (0,0) 
+			-- (30:0.8cm) arc (0:112:0.5cm) node at (60:0.5cm) {$\phi$} 
+			 -- cycle;
+			
+			\end{tikzpicture}
 		\end{voorbeeld}
 		\subsubsection{Onthoud}
 		\begin{tabular}{ll}
