@@ -7,9 +7,6 @@
 \def\diam{\text{diam}}
 \parindent 0pt
 
-
-\usetikzlibrary{calc}
-
 \begin{document}
 	\maketitle
 	\thispagestyle{empty}
@@ -25,7 +22,7 @@
 	Voor alle $\x\in \reals^d$ en $c\in\reals$ moet gelden
 	\begin{enumerate}[(i)]
 		\item $|\x| \geq 0$
-		\item $\abs{\x=0 \Leftrightarrow \x=\zero}$
+		\item $\abs{\x=0 \iff \x=\zero}$
 		\item $|c\x|=|c||\x|$ ($|$norm$|$ = $|$absolute waarde$||$norm$|$)
 	\end{enumerate}
 	Als \verb#|.|# een norm is dan geldt voor alle $\x,\y\in \reals^d$ de:
@@ -33,7 +30,7 @@
 		\item ongelijkheid van \indx{Cauchy-Schwartz}
 		\[\forall \x,\y \in \reals^d: \sum_{i=1}^{d}\x_i \y_i = (\x,\y)\]
 		\[|(\x,\y)| \leq |\x||\y|\]
-		\item \indx{driehoeksongelijkheid} 't'
+		\item \indx{driehoeksongelijkheid}
 		\[\forall \x,\y \in \reals^d: |\x+\y|\leq |\x|+|\y|\]
 	\end{enumerate}
 	\subsection{Afstand in $\reals^d$}
@@ -41,7 +38,7 @@
 		Een afstandsfunctie $(\x,\y)\mapsto\dist(\x,\y)\in\reals$ heeft de eigenschap dat voor alle $\x,\y\in\reals^d$:
 		\begin{align*}
 		\dist(\x,\y) & \geq 0 \\
-		\dist(\x,\y) & =0 \Leftrightarrow \x=\y \\
+		\dist(\x,\y) & =0 \iff \x=\y \\
 		\dist(\x,\y) & \leq \dist(\x,\z) + \dist(\z,\y)
 		\end{align*}
 	\end{define}
@@ -117,7 +114,7 @@
 	\subsection{Convergentie in $\reals^d$}
 	\begin{define}
 		Zij $(\x\up{n}) = (x\up{1}_1,x\up{1}_2,\ldots,x\up{1}_d), (x\up{2}_1,x\up{2}_2,\ldots,x\up{2}_d), \ldots$
-		een rij in $\reals^d$en $\a =(a_1, \dots ,a_d ) \in \reals^d$. Dan heet $(\x^{(n)})$ convergent naar $\a$ als
+		een rij in $\reals^d$ en $\a =(a_1, \dots ,a_d ) \in \reals^d$. Dan heet $(\x^{(n)})$ convergent naar $\a$ als
 		\begin{enumerate}[(i)]
 			\item $\abs{\x\up{n}-\a}\stackrel{n\to \infty}{\longrightarrow} 0$
 			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)}: \forall _{n\geq n_0} : \abs{\x\up{n} - a} < \epsilon$.
@@ -135,7 +132,7 @@
 	\lemma Zij $A \subset \reals^d$. Dan $\partial A \subset A\cup A'$.
 	\define $A \subset \reals^d$ heet \textbf{gesloten} als haar \underline{complement open} is.
 	\valkuil Een niet open/gesloten verzameling is in het algemeen niet gesloten/open.
-	Niet alle verzamelingen zijn open en of gesloten. Sommige verzamelingen zoals $[0,1)$ zijn geen van beide
+	Niet alle verzamelingen zijn open of gesloten. Sommige verzamelingen zoals $[0,1)$ zijn geen van beide
 	en sommige andere verzamelingen zoals $\reals$ zijn zowel open als gesloten.
 	
 	\theorem[Karakterisering voor geslotenheid] Zij $A \subset \reals^d$. De volgende beweringen zijn equivalent:
@@ -144,7 +141,7 @@
 		\item $A'\subset A$
 		\item $\partial A \subset A$
 		%\item voor elke convergente rij in $A$ ligt de limiet in $A$. (limiet convergente rij blijft in $A$)
-		\item voor elke convergente rij $(\x\up{n})\to\x$ met $\set{\x\up{n}}\subset A$ geldt dat de limiet in $\x\in A$.% (limiet convergente rij blijft in $A$)
+		\item voor elke convergente rij $(\x\up{n})\to\x$ met $\set{\x\up{n}}\subset A$ geldt dat de limiet $\x\in A$.% (limiet convergente rij blijft in $A$)
 	\end{enumerate}
 	
 	\theorem $\left[\text{K}\right]$ 10.1.6
@@ -159,14 +156,14 @@
 	\[\overline{A}= A \cup \partial A = A \cup A'= \big\{\z \in \reals^d \bigm| \exists _{\text{rij } (\x\up{n}) \text{ in } A \text{ met } \x\up{n} \to \z} \big\}\]
 	
 	\subsection{Stellingen uit het huiswerk}
-	\theorem Zij $(\x\up{n})$ een rij in $\reals^d, \a \in \reals^d$. Dan $\x\up{n}\to \a \Rightarrow |\x\up{n}|\to |a|.$
-	\theorem Zij $z \in \reals^d, A \subset \reals^d, A \neq \emptyset, \text{dist}(z,A) \coloneqq  \text{inf}_{x\in A}|x-z|$.
-	Dan $\overline{A}=\big\{z\in \reals^d \bigm| \text{dist}(z,A)=0\big\}$.
+	\theorem Zij $(\x\up{n})$ een rij in $\reals^d, \a \in \reals^d$. Dan $\x\up{n}\to \a \implies |\x\up{n}|\to |\a|.$
+	\theorem Zij $\z \in \reals^d, A \subset \reals^d, A \neq \emptyset, \text{dist}(\z,A) \coloneqq  \text{inf}_{\x\in A}|\x-\z|$.
+	Dan $\overline{A}=\big\{\z\in \reals^d \bigm| \text{dist}(\z,A)=0\big\}$.
 	\newpage
 	\section{College 17}
 	\subsection{Compacte verzamelingen in $\reals^d$}
-	\define Een verzameling $A\subset\reals^d$ heet \textbf{begrensd} als \[\exists _{R>0}: A \subset B(0,R)\]
-	\[\forall _{x\in A}: \|x\|<R.\]
+	\define Een verzameling $A\subset\reals^d$ heet \indx{begrensd} als \[\exists _{R>0}: A \subset B(\zero,R)\]
+	\[\forall _{\x\in A}: \abs{\x}<R.\]
 	
 	\theorem $\left[\text{K}\right]$ 10.1.7 (andere formulering)
 	Zij $A \subset \reals^d$. De volgende beweringen zijn equivalent:
@@ -175,22 +172,22 @@
 		\item $A$ begrensd en gesloten
 	\end{enumerate}
 	
-	\define[overdekking] Zij $A \subset \reals^d$. Een familie $\big\{A_\alpha \bigm| \alpha \in I \big\}$ van verzamelingen $A_\alpha \subset \reals^d$ heet een \indx{overdekking}/(\textit{cover, covering}) van $A$ als \[A \subset \bigcup_{\alpha \in I}A_\alpha\]
+	\define[overdekking] Zij $A \subset \reals^d$. Een familie $\big\{A_\alpha \bigm| \alpha \in I \big\}$ van verzamelingen $A_\alpha \subset \reals^d$ heet een \indx{overdekking} (\textit{cover, covering}) van $A$ als \[A \subset \bigcup_{\alpha \in I}A_\alpha\]
 	
 	\begin{itemize}
-		\item Een overdekking $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ heet \underline{open} als alle $A_\alpha$ open zijn in $\reals^d$.
-		\item Een overdekking $B\coloneqq \big\{ A_\beta \bigm| \beta \in J\big\}$ heet een \textbf{deeloverdekking} van $A\coloneqq \big\{ A_\alpha \bigm| \alpha \in I \big\}$ als $B \subset A$.
+		\item Een overdekking $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ heet \textit{open} als alle $A_\alpha$ open zijn in $\reals^d$.
+		\item Een overdekking $B\coloneqq \big\{ A_\beta \bigm| \beta \in J\big\}$ heet een \indx{deeloverdekking} van $A\coloneqq \big\{ A_\alpha \bigm| \alpha \in I \big\}$ als $B \subset A$.
 	\end{itemize}
 	
 	\define[compact] $K \subset \reals^d$ heet \indx{compact} als elke open overdekking van $K$ een eindige deeloverdekking bevat.
-	\note Niet-lege open verzamelingen zijn NOOIT compact.
+	\valkuil Niet-lege open verzamelingen zijn NOOIT compact.
 	
 	\theorem[Heine-Borel]
-	Zij $K \subset \reals^d$. Dan \[K \text{ compact}\Leftrightarrow K \text{ begrensd en gesloten.}\]
+	Zij $K \subset \reals^d$. Dan \[K \text{ compact}\iff K \text{ begrensd en gesloten.}\]
 	
 	\theorem Zij $A,B$ gesloten, niet leeg, $A\cap B = \emptyset$, $A$ compact.
 	Dan $\text{dist}(A,B) = \text{inf}\big\{ |a-b| \bigm| a \in A, b \in B \big\} > 0$.
-	\define[relatief compact] $A \subset \reals^d$ heet relatief compact $\iff \overline{A}$ compact.
+	\define[relatief compact] $A \subset \reals^d$ heet \indx{relatief compact} $\iff \overline{A}$ compact.
 	
 	\subsection{Stellingen uit het huiswerk}
 	\theorem Zij $A \subset \reals^d$. Equivalente beweringen:
@@ -202,28 +199,28 @@
 		\item De verzameling $\big\{|x-y| \bigm| x,y \in A \big\}$ is begrensd.
 	\end{enumerate}
 	
-	\theorem Zij $A \subset \reals^d$. Dan \[A \text{ begrensd} \Leftrightarrow \overline{A} \text{ begrensd} \Leftrightarrow \overline{A}\text{ compact}.\]
+	\theorem Zij $A \subset \reals^d$. Dan \[A \text{ begrensd} \iff \overline{A} \text{ begrensd} \iff \overline{A}\text{ compact}.\]
 	
-	\define[Cauchyrij] Een Cauchyrij $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon )\in \naturals}:\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \epsilon.\]
+	\define[Cauchyrij] Een Cauchyrij $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon )\in \naturals}\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \epsilon.\]
 	\theorem Elke Cauchyrij $(\x\up{n})\subset\reals^d$ is convergent in $\reals^d$.
 	
 	\newpage
 	\section{College 18}
 	\subsection{Functies $\reals^d \to \reals$: limieten en continu\"{\i}teit}
 	\define[Limiet] Zij $D \subset \reals^d, f\: D\to \reals, \a \in D', L\in\reals$.
-	De \indx{limiet}/(\textit{limit}) van $f(\x)$ voor $\x\to\a$:
-	\[ \lim_{x\to a}f(x)=L \Leftrightarrow \forall _{\epsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \Rightarrow |f(x)-L|<\epsilon\]
+	De \indx{limiet} (\textit{limit}) van $f(\x)$ voor $\x\to\a$:
+	\[ \lim_{x\to a}f(x)=L \iff \left( \forall _{\epsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \implies |f(x)-L|<\epsilon \right) \]
 	
 	\theorem Zij $D \subset \reals^d, f\: D\to \reals, \a \in D', L \in \reals$. Dan geldt
-	\[ \lim_{x \to a} f(x)=L \Leftrightarrow \text{voor elke rij } (\x\up{n}) \text{ in } D\backslash\{a\} \text{ met } \x\up{n}\to \a \text{ geldt } f(\x\up{n}) \to L.\]
+	\[ \lim_{x \to a} f(x)=L \iff \text{voor elke rij } (\x\up{n}) \text{ in } D\backslash\{a\} \text{ met } \x\up{n}\to \a \text{ geldt } f(\x\up{n}) \to L.\]
 	
-	\opm $\left[\text{K}\right]$ 10.2.5 limietstellingen analoog aan 1D.
+	\opm ($\left[\text{K}\right]$ 10.2.5) De limietstellingen zijn analoog aan 1D.
 	
-	\define[continu te $\a$ voor $f$] Zij $D \subset \reals^d, \a\in D\cap D',f\: D\to \reals$. $f$ heet \indx{continu te $\a$} als \[\lim_{x\to a}f(\x)=f(\a) \text{ oftewel als}\]
-	\[\forall _{\epsilon >0} \exists _{\delta >0}: \x \in B(\a,\delta)\cap D \Rightarrow |f(\x)-f(\a)|<\epsilon.\]
+	\define[\indx{continu te $\a$ voor $f$}] Zij $D \subset \reals^d, \a\in D\cap D',f\: D\to \reals$. $f$ heet continu te $\a$ als \[\lim_{x\to a}f(\x)=f(\a) \text{ oftewel als}\]
+	\[\forall _{\epsilon >0} \exists _{\delta >0}: \x \in B(\a,\delta)\cap D \implies |f(\x)-f(\a)|<\epsilon.\]
 	
-	\theorem $\left[\text{K}\right]$ 10.2.7
-	$f$ continu te $\a\Leftrightarrow$ voor elke rij $(\x\up{n})$ in $D: \x\up{n}\to \a \Rightarrow f(\x\up{n}) \to f(\a).$
+	\theorem ($\left[\text{K}\right]$ 10.2.7)
+	$f$ continu te $\a\iff ($voor elke rij $(\x\up{n})$ in $D: \x\up{n}\to \a \implies f(\x\up{n}) \to f(\a) ).$
 	
 	\theorem Betreffende de continu\"iteit van samengestelde functies. Zij
 	$D \subset \reals^d, \a \in D\cap D', f,g\: D\to \reals$, beide continu te $\a$ en $\zero \not \in R(g)$.
@@ -235,7 +232,7 @@
 	\end{itemize}
 	continu te $a$.
 	
-	\define[Vectorwaardige functies]
+	\define[\indx{Vectorwaardige functies}]
 	Zij $D \subset \reals^d, \f\: D\to \reals^m, m \in \naturals_+$. Dat wil zeggen
 	\[\f(x)=\f(x_1,\dots , x_d) =
 	\begin{bmatrix}
@@ -244,17 +241,17 @@
 	f_m(x_1,\dots , x_d) \\
 	\end{bmatrix}\in\reals^d, \qquad f_i\:D\to \reals.\]
 	
-	\define Zij $\a \in D'$.
+	\theorem[Limieten mogen componentsgewijs genomen worden] Zij $\a \in D'$.
 	\begin{align*}
 	\lim_{\x\to\a}\f(\x)=L \in \reals^m  &\iff \lim_{\x\to\a}f_i(\x)=L_i (i=1,\ldots ,m) \\
-	&\Leftrightarrow \forall _{\epsilon >0} \exists _{\delta >0}: 0<|\x-\a|<\delta, \x\in D \Rightarrow \abs{\f(\x)-L}<\epsilon.
+	&\iff \forall _{\epsilon >0} \exists _{\delta >0}: 0<|\x-\a|<\delta, \x\in D \implies \abs{\f(\x)-L}<\epsilon.
 	\end{align*}
 	
-	\define[continu te $\a$ voor $\f$] Zij $D \subset \reals^d$ en $\a \in D \cap D'$.
-	Dan is $\f$ \indx{continu}/(\textit{continuous}) te $\a$ als:
+	\define[\indx{continu te $\a$ voor $\f$}] Zij $D \subset \reals^d$, $\a \in D \cap D'$ en $\f\: D \to \reals^m$ een vectorwaardige functie.
+	Dan is $\f$ continu te $\a$ als:
 	\begin{align*}
-	\forall _{\epsilon >0} \exists _{\delta >0}: \x\in B(\a,\delta)\backslash\set{\a} &\Rightarrow |\f(\x)-\f(\a)|<\epsilon \\
-	&\Rightarrow \f(\x) \in B(\f(\a),\epsilon).
+	\forall _{\epsilon >0} \exists _{\delta >0}: \x\in B(\a,\delta)\backslash\set{\a} &\implies |\f(\x)-\f(\a)|<\epsilon \\
+	&\implies \f(\x) \in B(\f(\a),\epsilon).
 	\end{align*}
 	
 	\define De volgende beweringen zijn equivalent: Zij $D\subset\reals^d$ het domein van $\f$.
@@ -276,10 +273,10 @@
 	\]
 	voor elke rij $(\x\up{n})$ in $D\backslash\set{\a}$ met $\x\up{n}\to\a$ geldt dat
 	\[
-	\lim_{n\to\infty f(\x\up{n}) = L}.
+	\lim_{n\to\infty} f(\x\up{n}) = L \,.
 	\]
 	Zij ook $\a \in D \cap D'$. Dan
-	\[f \text{ continu te } \a \iff \text{ elke rij }(\x\up{n}) \text{ in } D \text{ met } \x\up{n}\to\a \text{ geldt } f(\x\up{n}) \to\a\]
+	\[f \text{ continu te } \a \iff \text{ elke rij }(\x\up{n}) \text{ in } D \text{ met } \x\up{n}\to\a \text{ geldt } f(\x\up{n}) \to\a \,.\]
 	
 	\newpage
 	\section{College 19}
@@ -324,7 +321,7 @@
 	
 	%			Stel $F:D\to D$, oftewel $F(D) \subset D$. Elke rij $(x_n)$ met $F(x_n) = x_{n+1}$ heet \textbf{iteratierij} (met startvoorwaarde $x_0 \in D$).
 	
-	\theorem[vastepuntstelling van Banach]
+	\theorem[vastepuntstelling van Banach \index{Banach, vastepuntstelling van}]
 	Zij $D \subset \reals^d, \F\: D\to \reals^d$. Veronderstel
 	\begin{enumerate}[(i)]
 		\item $D$ gesloten
@@ -340,7 +337,7 @@
 	\subsection{Differentieerbare functies van meerdere variabelen}
 	\subsubsection{Parti\"ele functies en parti\"ele afgeleiden}
 	
-	\begin{define}[parti\"ele functies]
+	\begin{define}[\indx{parti\"ele functies}]
 		Zij $D \subset \reals^2$ open. $F\: D \to \reals$, $(a,b) \in D$.
 		De functies
 		\begin{enumerate}
@@ -358,12 +355,11 @@
 	\red{Let op: $S_b$ en $T_a$ zijn niet gedefinieerd. Voor de hand ligt $S_b = \set{b\in\reals\:(x,b)\in D}$.}
 	
 	\begin{define}[parti\"eel differentieerbaar]
-		Als $p_b, q_a$ differentieerbaar is in $x=a,y=b$ dan heet $f$ \indx{partieel d'baar} naar $x,y$ in $(a,b)$
-		
+		Als $p_b, q_a$ differentieerbaar is in $x=a,y=b$ dan heet $f$ \indx{partieel differentieerbaar} naar $x,y$ in $(a,b)$
 		en definieren we
 		\begin{itemize}
 			\item $\partial_x f(a,b) \coloneqq  p_b'(a)$
-			\item $\partial_y f(a,b) \coloneqq  q_a'(b)$
+			\item $\partial_y f(a,b) \coloneqq  q_a'(b) $
 		\end{itemize}
 		
 	\end{define}
@@ -388,17 +384,17 @@
 	\section{College 20}
 	\subsection{Hogere orde parti\"ele afgeleiden}
 	\define[inductief] Parti\"ele afgeleiden van orde $k+1$ zijn de parti\"ele afgeleiden van de parti\"ele afgeleiden van orde $k$.
-	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open. Als $f\: D \to \reals$ twee keer continu partieel d'baar in $D$
+	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open. Als $f\: D \to \reals$ twee keer continu partieel differentieerbaar in $D$
         dan geldt $\partial_i \partial_j f(\a) = \partial_j \partial_i f(\a) \quad i,j=1,\dots ,d$ voor alle $\a \in D$.
 	\subsection{Totale differentieerbaarheid}
-	\define [Fr\`echet'-d'baar] Zij $D \subset \reals^d$ open en $\a \in D$. Als
- er is een lineaire afbeelding $L_{\a}\:\reals^d \to \reals$ bestaat zodanig dat
+	\define [Fr\`echet-differentieerbaar] Zij $D \subset \reals^d$ open en $\a \in D$. Als
+ er is een lineaire afbeelding $L_{\a}\:\reals^d \to~\reals$ bestaat zodanig dat
 	\[f(\a+\h)=f(\a)+ L_{\a} \h +\mathrm{o}(\abs{\h})\iff\lim_{\h\to0}\frac{\abs{f(\a+\h)-f(\a)-L_{\a} \h}}{\abs{h}} = 0\]
- dan heet $f\: D \to \reals$ \indx{differenti\"eerbaar} (\indx{totaal differenti\"eerbaar}, \indx{Fr\`echet' differenti\"eerbaar}) te $\a \in D$
+ dan heet $f\: D \to \reals$ \indx{differentieerbaar} (\indx{totaal differentieerbaar}, \indx{Fr\`echet' differentieerbaar}) te $\a \in D$
 	en heet $L_{\a}$ \textbf{afgeleide van} $f$ \textbf{te} $\a$.
 	\nota $L_{\a} = f'(\a) = [\partial_1 f,\ldots,\partial_m f](\a)\in\reals^{1\times d}$
 	\subsection{De gradi\"ent}
-	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $f\:  D \to \reals^d$, d'baar te $a \in D$. Dan $f$ partieel d'baar te $a$, en
+	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $f\:  D \to \reals^d$, differentieerbaar te $a \in D$. Dan $f$ partieel differentieerbaar te $a$, en
 \[\nabla f(a)= \begin{bmatrix}
 \partial_1 f(\a) \\
 \vdots \\
@@ -406,7 +402,7 @@
 \end{bmatrix} = f'(\a)^{T}\in\reals^{d\times 1}.
 \]
 
-	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f\: D \to \reals$ d'baar te $\a \in D$ dan is $f$ ook continu te $\a$.
+	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f\: D \to \reals$ differentieerbaar te $\a \in D$ dan is $f$ ook continu te $\a$.
       		
 	\define De functie $ p\:  \reals^d \to \reals $ gegeven door \[p(x)=f(a)+f'(a)(x-a)\] heet \textbf{lineaire approximatie} van $ f $ in/rond $ a $.
 	\newpage	
@@ -415,29 +411,29 @@
 
 %\[
 %\begin{array}{rcl}
-%f \text{\textbf{totaal d'baar te }} \a &\implies
-%f \text{\textbf{partieel d'baar te }} \a \\
+%f \text{\textbf{totaal differentieerbaar te }} \a &\implies
+%f \text{\textbf{partieel differentieerbaar te }} \a \\
 %\hline
-%f \text{\textbf{totaal d'baar te }} \a &\leftarrow
-%{f \text{\textbf{partieel d'baar te }} \a \text{ en}\atop \text{\textbf{alle parti\"ele afgeleide continu te } \a}}\\
+%f \text{\textbf{totaal differentieerbaar te }} \a &\leftarrow
+%{f \text{\textbf{partieel differentieerbaar te }} \a \text{ en}\atop \text{\textbf{alle parti\"ele afgeleide continu te } \a}}\\
 %\end{array}
 %\]
 		
     	\begin{tabular}{l p{3cm} r}
-    		\textbf{$f$ partieel d'baar bij $a$} & & \textbf{$f$ totaal d'baar bij $a$} \\
-    		& \center $\not\Rightarrow$ & \\
- 			$\partial_i f(a)= \lim_{h \to 0} \frac{f(a+he_i)-f(a)}{h}$ bestaat & \center $\Leftarrow$ & $\frac{f(a+h)-f(a)-f'(a)[h]}{|h|}\stackrel{h \to 0}{\to} 0$ \\
- 			& \center $\Rightarrow$ & \\
+    		\textbf{$f$ partieel differentieerbaar bij $a$} & & \textbf{$f$ totaal differentieerbaar bij $a$} \\
+    		& \center $\centernot \implies$ & \\
+ 			$\partial_i f(a)= \lim_{h \to 0} \frac{f(a+he_i)-f(a)}{h}$ bestaat & \center $\Longleftarrow$ & $\frac{f(a+h)-f(a)-f'(a)[h]}{|h|}\stackrel{h \to 0}{\to} 0$ \\
+ 			& \center $\implies$ & \\
  			& voorwaarde: part afg bestaan en zijn continu in omgeving $a$& \\   		
 		\end{tabular}
-		\theorem[K 10.4.5] Zij $D\subset\reals^d$, $f\: D\to\reals$ part d'baar in een omgeving van $\a \in \intr D$ en $\partial_i f \quad i=1,\dots ,d$ continu te $\a$. Dan $f$ d'baar in $\a$.
+		\theorem[K 10.4.5] Zij $D\subset\reals^d$, $f\: D\to\reals$ part differentieerbaar in een omgeving van $\a \in \intr D$ en $\partial_i f \quad i=1,\dots ,d$ continu te $\a$. Dan $f$ differentieerbaar in $\a$.
 		
 		\subsection{Richtingsafgeleiden}
 \begin{define}[Richtingsvector]
 Een vector $\u\in\reals^d$ met $\abs{\u}=1$ heet \indx{richtingsvector}.
 \end{define}
 \begin{define}[Richtingsafgeleide]
-			Zij $D \subset \reals^d$ open, $\a \in D$, $\u \in \reals^d$ een richtingsvector. Zij $f\: D \to \reals$ d'baar te $a$.
+			Zij $D \subset \reals^d$ open, $\a \in D$, $\u \in \reals^d$ een richtingsvector. Zij $f\: D \to \reals$ differentieerbaar te $a$.
 Dan is de \indx{richtingsafgeleide} van $f$ in de richting van $\u$ gegeven door
 			\begin{equation} \label{eq:rafg}
 			   	  		D_{\u} f(\a) \coloneqq  \lim_{t \to 0} \dfrac{f(\a+t\u) - f(\a)}{t}
@@ -446,24 +442,24 @@ Dan is de \indx{richtingsafgeleide} van $f$ in de richting van $\u$ gegeven door
 \[\u=\e_i \implies D_{\e_i}f(\a)=\partial_i f(\a)\].
 \end{define}
 \begin{theorem} [K 10.5.2]
-Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
+Veronderstel de situatie zoals in de definitie hierboven. Dan geldt
 			\[D_{\u} f(\a)= \lim_{t \to 0} \dfrac{f(\a+t\u) - f(\a)}{t}=(\nabla f(\a),\u).\]  	  	
 \end{theorem}
 			\gevolg Stel $\nabla f(\a) \neq 0$. De functie $f \Longunderstack{\text{ stijgt }\cr \text{ daalt }}$ bij $\a$ het sterkst in de richting $\ds\pm \dfrac{\nabla f(\a)}{\abs{\nabla f(\a)}}$.	
 			
 		\subsection{Differentieerbaarheid van vectorwaardige functies, Jacobimatrix}
-			Zij $D \subset \mathbb{R}^d$ open, $a \in D. f\:  D \to \mathbb{R}^m$. $f$ is d'baar in $a$ als er een lineaire afbeelding $L_a \: \mathbb{R}^n \to \mathbb{R}^m$ bestaat zodanig dat \[f(x)=f(a)+L_a (x-a) + r(x) \qquad \lim_{x \to 0} \frac{r(x)}{|x-a|} =0 \quad\text{ (lim in } \mathbb{R}^m \text{!)}\]
+			Zij $D \subset \mathbb{R}^d$ open, $a \in D. f\:  D \to \mathbb{R}^m$. $f$ is differentieerbaar in $a$ als er een lineaire afbeelding $L_a \: \mathbb{R}^n \to \mathbb{R}^m$ bestaat zodanig dat \[f(x)=f(a)+L_a (x-a) + r(x) \qquad \lim_{x \to 0} \frac{r(x)}{|x-a|} =0 \quad\text{ (lim in } \mathbb{R}^m \text{!)}\]
 			Co\"ordinaten: $\underline{f}(x_1,\dots ,x_n)=\begin{bmatrix}
 				f_1 (x_1, \dots ,x_n) \\
 				\vdots \\
 				f_m (x_1, \dots ,x_n)
 			\end{bmatrix}$
-			\theorem[en definitie] Situatie als beschreven. $f$ d'baar in $a \Rightarrow$ alle part afg $\frac{\partial f_i}{\partial x_j}(a)$ bestaan, en
+			\theorem[en definitie] Situatie als beschreven. $f$ differentieerbaar in $a \implies$ alle part afg $\frac{\partial f_i}{\partial x_j}(a)$ bestaan, en
 			\[[L_a] = \begin{bmatrix}
 				\partial_1 f_1 (a) & \partial_2 f_1 (a) & \dots &\partial_n f_1 (a) \\
 				\vdots & & & \vdots \\
 				\partial_1 f_m (a) & \partial_1 f_m (a) & \dots &\partial_n f_m (a)
-			\end{bmatrix} \qquad \textbf{Jacobimatrix}\]
+			\end{bmatrix} \qquad \textbf{\indx{Jacobimatrix}}\]
 			Dat wil zeggen: $[L_a]_{ij}=\frac{\partial f_i}{\partial x_j}(a)$.
 			\nota $\frac{\partial f_i}{\partial x_j}(a)$, $\frac{\partial (f_1,\dots,f_m)}{\partial (x_1,\dots,x_n)}(a)$, $ Df(a) $.
 			
@@ -482,17 +478,17 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 		\subsection{Stellingen uit het huiswerk}
 			\theorem Zij $ D \subseteq \mathbb{R}^d $ open, $ f\:  D \to \mathbb{R}^m $ met co\"ordinaatvoorstelling $ f=(f_1,\dots,f_m) $ waarbij $ f_i \:  D \to \mathbb{R} $. Zij $ a \in D $. Dan
 			\begin{enumerate}[(1)]
-				\item $ f $ d'baar in $ a \Leftrightarrow $ alle $ f_i $ d'baar in $ a $.
-				\item Alle eerste orde part afg $ \partial_j f_i $ bestaan in een omgeving van $ a $ en zijn continu bij $ a $, dan is $ f $ d'baar bij $ a $.
+				\item $ f $ differentieerbaar in $ a \iff $ alle $ f_i $ differentieerbaar in $ a $.
+				\item Alle eerste orde part afg $ \partial_j f_i $ bestaan in een omgeving van $ a $ en zijn continu bij $ a $, dan is $ f $ differentieerbaar bij $ a $.
 			\end{enumerate}
-			\theorem Zij $ A $ een $ (m,n) $-matrix en zij $ f\: \mathbb{R}^n \to \mathbb{R}^m $ gegeven door $ f(x)=Ax $. Dan $ f $ d'baar op $ \mathbb{R}^n $ en $ Df(x) = A $.
+			\theorem Zij $ A $ een $ (m,n) $-matrix en zij $ f\: \mathbb{R}^n \to \mathbb{R}^m $ gegeven door $ f(x)=Ax $. Dan $ f $ differentieerbaar op $ \mathbb{R}^n $ en $ Df(x) = A $.
 			
 	\newpage
 	\section{College 22}
 		\subsection{Kettingregel}
-			\theorem Zij $g\: D \to E$ d'baar in $a \in D$, $D \subseteq \reals^n$ open, $f\: E \to \reals^k$ d'baar in $g(a)$, $g(D) \subseteq E$, $E \subseteq \reals^m$ open.
+			\theorem Zij $g\: D \to E$ differentieerbaar in $a \in D$, $D \subseteq \reals^n$ open, $f\: E \to \reals^k$ differentieerbaar in $g(a)$, $g(D) \subseteq E$, $E \subseteq \reals^m$ open.
 			
-			Dan $f\circ g\: D\to \reals^k$ is d'baar bij $a$, en \[ D(f \circ g)(a) = Df(g(a))\circ Dg(a). \]
+			Dan $f\circ g\: D\to \reals^k$ is differentieerbaar bij $a$, en \[ D(f \circ g)(a) = Df(g(a))\circ Dg(a). \]
 			
 			\begin{voorbeeld}[Onthouden]
 				Zij $f \: \reals^2 \to \reals$, differentieerbaar. Zij $g(t) = \vvec{x(t)\\y(t)}$. Dan
@@ -517,14 +513,14 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			
 			$S_c = \left\{ x\in D \middle| f(x)=c \right\}$ heet een \textbf{niveaulijn, niveauoppervlak, niveauverzameling}.
 			
-			Zij $I$ een interval, $g\:  I\to S_c$ d'baar, dan $f(g(t))=c \forall_{t \in I}$.
+			Zij $I$ een interval, $g\:  I\to S_c$ differentieerbaar, dan $f(g(t))=c \forall_{t \in I}$.
 			
-			\opm Kettingregel $\Rightarrow (\nabla f(g(t)),g'(t)) = 0$, ofwel de gradi\"ent $\bot$ raakvlak, niveauverzameling, niveaulijnen.
+			\opm Kettingregel $\implies (\nabla f(g(t)),g'(t)) = 0$, ofwel de gradi\"ent $\bot$ raakvlak, niveauverzameling, niveaulijnen.
 			
 		\subsection{Kettingregel en richtingsafgeleiden}
 			
 			\define \textbf{Richtingsafgeleide} (Ook als $|v|\neq 1$)
-			Zij $f$ voldoende vaak continu d'baar, $v=(v_1,...,v_d) \in \reals^d$ vast.
+			Zij $f$ voldoende vaak continu differentieerbaar, $v=(v_1,...,v_d) \in \reals^d$ vast.
 			
 			Dan is \[ D_v^2 f = (v_1 \partial_1 + ... + v_d \partial_d)(v_1 \partial_1 + ... + v_d \partial_d)f = \sum_{i,j=1}^{d} v_i v_j \partial_{ij}f \]
 			
@@ -537,22 +533,31 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			met $ \alpha_j = \#\{i_k | i_k = j\} $, $ v^\alpha = v_1^{\alpha_1} ,..., v_d^{\alpha_k} $, $ \partial^\alpha f = \partial_1^{\alpha_1},...,\partial_d^{\alpha_d} f $
 			
 		\subsection{Stelling van \indx{Taylor} met meerdere variabelen}
-			\theorem Zij  $D \subset \reals^d$ open, $x_0 \in D$ z.d.d. $B(x_0,n) \subset D$, $n\in \naturals$, $f\: D\to \reals$ $n+1$ keer continu d'baar.
+			\theorem Zij  $D \subset \reals^d$ open, $x_0 \in D$ z.d.d. $B(x_0,n) \subset D$, $n\in \naturals$, $f\: D\to \reals$ $n+1$ keer continu differentieerbaar.
 			
-			Dan als $h \in \reals^d$, $ |h|<n $ : ($\Rightarrow x_0+h \in B(x_0,n)$)
+			Dan als $h \in \reals^d$, $ |h|<n $ : ($\implies x_0+h \in B(x_0,n)$)
 			\[ \exists_{\Theta \in (0,1)}:f(x_0+h) = f(x_0) + D_h f(x_0) + \frac{1}{2} D_h^2 f(x_0) + \dots + \frac{1}{n!} D_h^n f(x_0) \]
 			($D_h$ is richtingsafgeleide richting $h$, $\Theta$ is tussenpunt)
 			met $R_{n+1} = \frac{1}{(n+1)!}D_h^{n+1} f(x_0 + \Theta h)$.
 		
 			\subsubsection{Taylor in multi-indexnotatie}
 				\[ T_{x_0} (x_0 + h) = \sum_{|\alpha|\le n} \frac{1}{\alpha !} \partial^\alpha f(x_0)h^\alpha \] met $ \alpha ! = \alpha_1 ! \cdot ... \cdot \alpha_d !$ .
+				
+			\begin{voorbeeld}
+				\begin{align*}
+					T_{(a,b)} (x,y) &= f(a,b) \\
+					&+ \partial_x f(a,b) (x-a) + \partial_y f(a,b) (y-b) \\
+					&+ \frac{1}{2} (\partial_{xx} f(a,b) (x-a)^2 + 2 \partial_{xy} f(a,b) (x-a)(y-b) + \partial_{yy} f(a,b)(y-b)^2 ) \\
+					& \ \, \vdots 
+				\end{align*}
+			\end{voorbeeld}
 		
 	\newpage
 	\section{College 23}
 		\subsection{\indx{Impliciete functiestelling}, impliciet differentieren}
 			Lokale oplosbaarheid van vergelijking in de vorm $ F(x,y)=0. \qquad (x,y) \in D \subset \reals^2. $
 			
-			\theorem[K 10.6.9 | Impliciete functiestelling voor twee variabelen] Zij $D \subset \reals^2$ open, $ (x_0 , y_0 ) \in D, F\: D \to \reals $ d'baar, partiele afgeleiden $ \partial_x F, \partial_y F $ continu op $ D $.
+			\theorem[K 10.6.9 | Impliciete functiestelling voor twee variabelen] Zij $D \subset \reals^2$ open, $ (x_0 , y_0 ) \in D, F\: D \to~\reals $ differentieerbaar, partiele afgeleiden $ \partial_x F, \partial_y F $ continu op $ D $.
 			
 			Veronderstel: $ F(x_0, y_0) = 0 \qquad \partial_y F(x_0, y_0)\neq 0 $.
 			
@@ -560,11 +565,11 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			\begin{itemize} 
 				\item[] een open omgeving $ U \subset D $ van $ (x_0,y_0) $
 				\item[] een open omgeving $ I \subset \reals $ van $ x_0 $
-				\item[] $ g\:  I \to \reals $ continu d'baar 
+				\item[] $ g\:  I \to \reals $ continu differentieerbaar 
 			\end{itemize}
 			z.d.d.
 			\[ (x,g(x)) \in U \qquad \forall_{x \in I} \]
-			\[ ((x,y) \in U \wedge F(x,y)=0) \Leftrightarrow y=g(x) \]
+			\[ ((x,y) \in U \wedge F(x,y)=0) \iff y=g(x) \]
 			
 			
 			\subsubsection{'Impliciete functies' in meer variabelen}
@@ -574,21 +579,21 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 				F_1(x_1,\dots,x_n,y_1,\dots,y_m)=0 \\
 				\vdots \\
 				F_m(x_1,\dots,x_n,y_1,\dots,y_m)=0
-				\end{rcases*} \Rightarrow \F (\x,\y)=\zero \text{ in } \reals^m \qquad D \subset \reals^{n+m}, F\:  D \to \reals^m
+				\end{rcases*} \implies \F (\x,\y)=\zero \text{ in } \reals^m \qquad D \subset \reals^{n+m}, F\:  D \to \reals^m
 				\]
 				
-				\theorem[Impliciete functiestelling algemeen] Zij $ D\subset \reals^{n+m} $ open, $ (x_0, y_0) \in D $ d'baar, alle parti\"ele afgeleiden continu. ($ \partial_{x_i}F_j , \partial_{y_k}F_j \quad i=1,\dots,n \quad j,k=1,\dots,m $). Zij ook $ F(x_0, y_0) = \zero$, $ \partial_y F(x_0,y_0) $ regulier, inverteerbaar ($ (m,m) $-Jacobimatrix).
+				\theorem[Impliciete functiestelling algemeen] Zij $ D\subset \reals^{n+m} $ open, $ (x_0, y_0) \in D $ differentieerbaar, alle parti\"ele afgeleiden continu. ($ \partial_{x_i}F_j , \partial_{y_k}F_j \quad i=1,\dots,n \quad j,k=1,\dots,m $). Zij ook $ F(x_0, y_0) = \zero$, $ \partial_y F(x_0,y_0) $ regulier, inverteerbaar ($ (m,m) $-Jacobimatrix).
 				
 				Dan is er \begin{itemize}
 					\item[] een omgeving $ U $ van $ (x_0,y_0) $ in $ \reals^{n+m} $
 					\item[] een open omgeving $V$ van $x_0$ in $\reals^n$
-					\item[] een afbeelding $ \phi \:  V\to \reals^m $ continu d'baar 
+					\item[] een afbeelding $ \phi \:  V\to \reals^m $ continu differentieerbaar 
 				\end{itemize}
-				z.d.d. $ ((\x,\y) \in U \wedge F(\x,\y)=0) \Leftrightarrow \y=\phi (\x). $
+				z.d.d. $ ((\x,\y) \in U \wedge F(\x,\y)=0) \iff \y=\phi (\x). $
 				
 			\subsubsection{'Impliciet differenti\"eren'}
 				$ F(x,\phi(x))=0 $. Differenti\"eren naar $ x\in \reals^n $:
-				\[ D_x F(x,\phi(x)) + D_y (x,\phi(x))D_x \phi(x) = 0 \Rightarrow D_x \phi(x) = -(D_y F(x,\phi(x)))^{-1} D_x F(x,\phi(x)). \]
+				\[ D_x F(x,\phi(x)) + D_y (x,\phi(x))D_x \phi(x) = 0 \implies D_x \phi(x) = -(D_y F(x,\phi(x)))^{-1} D_x F(x,\phi(x)). \]
 				
 		\subsection{Stellingen uit het huiswerk}
 			\theorem (Hogere differentieerbaarheid van impliciete functies)
@@ -693,7 +698,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			\begin{theorem}
 				Zij $ [c,d] \subseteq [a,b] $ en $ f \in R[a,b] $. Dan 
 				\[ 
-					f|_{[c,d]} \in R[c,d].
+					\restr{f}{[c,d]}  \in R[c,d].
 				 \]
 			\end{theorem}
 			
@@ -731,7 +736,7 @@ Veronderstel de situatie is zoals in de definitie hierboven Dan geldt
 			\begin{theorem}[\text{[K]} 6.3.3, deelintervallen]
 				Zij $f\: [a,b] \to \reals$ begrensd, $c\in [a,b]$, dan
 				\[ 
-					f \in R[a,b] \iff (f|_{[a,c]} \in R[a,c] \wedge f|_{[c,b]} \in R[c,b]) \text{ en }
+					f \in R[a,b] \iff (\restr{f}{[a,c]} \in R[a,c] \wedge \restr{f}{[c,b]} \in R[c,b]) \text{ en }
 				 \]
 				 \[ 
 					 \int_a^b f(x)\d x = \int_a^c f(x) \d x + \int_c^b f(x) \d x
@@ -1175,8 +1180,8 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			\item In plaats van \verb$|\x|$ type \verb$\abs{\x}$: $\abs{\x}$
 			\item In plaats van \verb$x^{(n)}$ type \verb$x\up{n}$: $x\up{n}$
 			\item In plaats van \verb$\x^{(n)}$ type \verb$\x\up{n}$: $\x\up{n}$
-			\item In plaats van \verb$\Leftrightarrow$ type \verb$\iff$: $\iff$
-			\item In plaats van \verb$\Rightarrow$ type \verb$\implies$: $\implies$
+			\item In plaats van \verb$\iff$ type \verb$\iff$: $\iff$
+			\item In plaats van \verb$\implies$ type \verb$\implies$: $\implies$
 			\item In plaats van \verb$\mathbb{R}$ type \verb$\reals$: $\reals$ (heb ik al vervangen)
 			\item In plaats van \verb$\mathbb{N}$ type \verb$\naturals$: $\naturals$ (heb ik al vervangen)
 			\item In plaats van \verb$:$ type \verb$\:$: $x\: y$

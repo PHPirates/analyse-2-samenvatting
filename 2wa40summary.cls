@@ -2,6 +2,8 @@
 \ProvidesClass{2wa40summary}[]
 
 %CHANGELOG
+%2016/06/18
+% Added better function restriction, \restr{f}{[a,b]}
 %2016/06/12
 % Added hyperlink setup
 %2016/06/08
@@ -32,6 +34,7 @@
 \RequirePackage{thmtools}
 \RequirePackage{xcolor}
 \RequirePackage{pdfpages}
+\RequirePackage{centernot} % \centernot \implies looks correct
 \RequirePackage{tikz} % Used for drawings
 \RequirePackage[nocenter]{qtree}
 \RequirePackage{imakeidx} % Used for index
@@ -85,6 +88,14 @@
 \newenvironment{inlinetoprove}
 {\enskip\textbf{Te bewijzen.\space}}% \begin{inlinetoprove}
 {\enskip}% \end{inlinetoprove}
+
+% Function restrictions
+\newcommand\restr[2]{{
+		\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+		#1 % the function
+		\vphantom{\big|} % pretend it's a little taller at normal size
+		\right|_{#2} % this is the delimiter
+	}}
 
 % Volume
 \DeclareMathOperator{\Vol}{Vol}
