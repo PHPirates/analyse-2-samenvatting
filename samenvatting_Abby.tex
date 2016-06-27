@@ -22,19 +22,19 @@
 	Voor alle $\x\in \reals^d$ en $c\in\reals$ moet gelden
 	\begin{enumerate}[(i)]
 		\item $|\x| \geq 0$
-		\item $\abs{\x=0 \iff \x=\zero}$
+		\item $\abs{\x}=0 \iff \x=\zero$
 		\item $|c\x|=|c||\x|$ ($|$norm$|$ = $|$absolute waarde$||$norm$|$)
 	\end{enumerate}
-	Als \verb#|.|# een norm is dan geldt voor alle $\x,\y\in \reals^d$ de:
+	Als \verb#|.|# een norm is dan geldt voor alle $\x,\y\in \reals^d$ de
 	\begin{enumerate}[(i)]
 		\item ongelijkheid van \indx{Cauchy-Schwartz}
-		\[\forall \x,\y \in \reals^d: \sum_{i=1}^{d}\x_i \y_i = (\x,\y)\]
+		\[\forall_{\x,\y \in \reals^d}: \sum_{i=1}^{d}\x_i \y_i = (\x,\y)\]
 		\[|(\x,\y)| \leq |\x||\y|\]
 		\item \indx{driehoeksongelijkheid}
-		\[\forall \x,\y \in \reals^d: |\x+\y|\leq |\x|+|\y|\]
+		\[\forall_{\x,\y \in \reals^d}: |\x+\y|\leq |\x|+|\y|\]
 	\end{enumerate}
 	\subsection{Afstand in $\reals^d$}
-	\begin{define}
+	\begin{define}[Afstandsfunctie]
 		Een afstandsfunctie $(\x,\y)\mapsto\dist(\x,\y)\in\reals$ heeft de eigenschap dat voor alle $\x,\y\in\reals^d$:
 		\begin{align*}
 		\dist(\x,\y) & \geq 0 \\
@@ -52,48 +52,49 @@
 		
 	\end{define}
 	\begin{define}[Inwendig punt] Zij $\x \in \reals^d$ and $A \subset \reals^d$. Dan is $\x$ een
-		\indx{inwendig punt}/(\textit{interior point}) van $A$
+		\indx{inwendig punt} (\textit{interior point}) van $A$
 		als er $\exists_{r>0}\: B(\x,r) \subset A$.
-		In dat geval heten $A$ en $\B(\x,r)$ een \indx{omgeving}/(\textit{neighbourhood}) van $\x$.
+		In dat geval heten $A$ en $B(\x,r)$ een \indx{omgeving} (\textit{neighbourhood}) van $\x$.
 	\end{define}
 	\begin{define}[Inwendige $\mathring{A}$, open verzameling $A$]
-		Het inwendige van $A$ is
-		\[\intr A=\mathring{A}=\left\lbrace x \in A \: \x \text{ inwendig punt van } A\right\rbrace\]
-		$A$ heet \indx{open verzameling}\ als $A=\mathring{A}$ oftewel als
+		Het \indx{inwendige} van $A$ is
+		\[\intr A=\mathring{A}=\left\lbrace x \in A \mid \x \text{ inwendig punt van } A\right\rbrace . \]
+		$A$ heet een \indx{open verzameling}\ als $A=\mathring{A}$ oftewel als
 		\[
-		\forall _{x \in A} \exists _{R \in (0,\infty)}\: B(x,R) \subset A,
+		\forall _{x \in A} \exists _{R >0}\: B(x,R) \subset A,
 		\]
 		oftewel elk punt van $A$ is een inwendig punt.
 	\end{define}
 	\begin{theorem}
 		\begin{enumerate}[(1)]
-			\item Zij $\left\lbrace A_\alpha \bigm| \alpha \in I \right\rbrace$ een familie van open verzamelingen $A_\alpha \subset \reals^d$. Dan is
+			\item Zij $\left\lbrace A_\alpha \bigm| \alpha \in I \right\rbrace$ een familie van open verzamelingen $A_\alpha \subset \reals^d$, met $I$ een indexverzameling. Dan is
 			\[
 			\bigcup_{\alpha \in I}A_\alpha
 			\]
 			open.
-			\item Zij $A_1,A_2,\dots,A_n \in \reals^d$ open. Dan is
+			\item Zij $A_1,A_2,\dots,A_n \subset \reals^d$ open. Dan is
 			\[
 			\bigcap_{i=1}^{n}A_i
 			\]
 			open.
 		\end{enumerate}
 	\end{theorem}
-	\begin{theorem}[Open]
-		Zij $A\in\reals^d$. Dan is
-		\item \[\intr A=\bigcup_{C \subset A, C \text{ open} }C=\bigcup \left\lbrace C \: C \subset A \wedge C \text{ is open}\right\rbrace\]
-		open. Volgt uit Kosmala 10.1.4
+	\begin{theorem}[Karakterisering voor het inwendige]
+		Zij $A\subset\reals^d$. Dan is
+		\item \[\intr A=\bigcup_{C \subset A, C \text{ open} }C=\bigcup \left\lbrace C \mid C \subset A \wedge C \text{ is open}\right\rbrace\]
+		open. Dit volgt uit Kosmala 10.1.4.
 	\end{theorem}
-	\begin{define}[Rand]
+	\begin{define}[\indx{Rand}]
 		Zij $A \subset \reals^d$. Dan
 		\[\partial A\coloneqq  \reals^d\backslash (\intr A \cup \intr (\reals^d\backslash A))\]
-		d.w.z: $x$ is een randpunt van $A \iff x$ is geen inwendig punt van $A$ en geen inwendig punt van het complement $\reals^d\backslash A$.
-		Equivalente definitie: Als $\x$ een randpunt is dan geldt voor alle $0<r\in\reals$ dat
-		$B(\x,r)$ zowel een punt van $A$ als van $\reals\backslash A$ bevat.
+		oftewel $x$ is een \indx{randpunt} van $A \iff x$ is geen inwendig punt van $A$ en geen inwendig punt van het complement $\reals^d\backslash A$.
+		
+		\textbf{Equivalente definitie.} Als $\x$ een randpunt is dan geldt voor alle $0<r\in\reals$ dat
+		$B(\x,r)$ zowel een punt van $A$ als van $\reals^d \backslash A$ bevat.
 	\end{define}
 	\begin{lemma}
-		Zij $A\in\reals^d$.
-		Elke $x \in \reals$ hoort precies in 1 (exclusive or) van de drie verzamelingen
+		Zij $A\subset\reals^d$.
+		Elke $\x \in \reals^d$ hoort precies in 1 (exclusive or) van de drie verzamelingen
 		\begin{enumerate}
 			\item $\intr A$
 			\item $\intr (\reals^d\backslash A)$
@@ -107,30 +108,30 @@
 	
 	\subsection{Stellingen uit het huiswerk}
 	\begin{theorem}
-		$\x \in \reals^d$, $0<r\in\reals$, dan is $B(\x,r)$ open.
+		Zij $\x \in \reals^d$, $0<r\in\reals$, dan is $B(\x,r)$ open.
 	\end{theorem}
 	\newpage
 	\section{College 16}
 	\subsection{Convergentie in $\reals^d$}
 	\begin{define}
 		Zij $(\x\up{n}) = (x\up{1}_1,x\up{1}_2,\ldots,x\up{1}_d), (x\up{2}_1,x\up{2}_2,\ldots,x\up{2}_d), \ldots$
-		een rij in $\reals^d$ en $\a =(a_1, \dots ,a_d ) \in \reals^d$. Dan heet $(\x^{(n)})$ convergent naar $\a$ als
+		een rij in $\reals^d$ en $\a =(a_1, \dots ,a_d ) \in \reals^d$. Dan heet $(\x^{(n)})$ \indx{convergent} naar $\a$ als
 		\begin{enumerate}[(i)]
 			\item $\abs{\x\up{n}-\a}\stackrel{n\to \infty}{\longrightarrow} 0$
-			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)}: \forall _{n\geq n_0} : \abs{\x\up{n} - a} < \epsilon$.
-			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)}: \forall _{n\geq n_0} : \x\up{n} \in B(\a,\epsilon )$
+			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)} \forall _{n\geq n_0} : \abs{\x\up{n} - \a} < \epsilon$.
+			\item $\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon)} \forall _{n\geq n_0} : \x\up{n} \in B(\a,\epsilon )$
 		\end{enumerate}
 	\end{define}		
-	\begin{theorem}
+	\begin{theorem}[Limieten voor rijtjes mogen componentsgewijs genomen worden]
 		$\lim_{n\to\infty}\x\up{n}=\a \iff \lim_{n\to\infty} x\up{n}_{i} = a_i$ voor alle $i=1,\ldots ,d$.
 	\end{theorem}
 	
-	\define[verdichtingspunt] Zij $A \subset \reals^d$. Een punt $x \in \reals^d$ heet \indx{verdichtingspunt} van $A$ als \[\forall _{R>0}:B(x,R)\cap  A \backslash\{x\} \neq \emptyset.\]
-	Dan $A'\coloneqq \big\{ x \in \reals^d \bigm| x \text{ verdichtingspunt van } A\big\}$ is de verzameling van
+	\define[verdichtingspunt] Zij $A \subset \reals^d$. Een punt $\x \in \reals^d$ heet \indx{verdichtingspunt} van $A$ als \[\forall _{R>0}:B(\x,R)\cap  A \backslash\{\x\} \neq \emptyset.\]
+	Dan $A'\coloneqq \big\{ \x \in \reals^d \bigm| \x \text{ verdichtingspunt van } A\big\}$ is de verzameling van
 	alle verdichtingspunten van $A$.
 	
 	\lemma Zij $A \subset \reals^d$. Dan $\partial A \subset A\cup A'$.
-	\define $A \subset \reals^d$ heet \textbf{gesloten} als haar \underline{complement open} is.
+	\define $A \subset \reals^d$ heet \indx{gesloten} als haar \underline{complement open} is.
 	\valkuil Een niet open/gesloten verzameling is in het algemeen niet gesloten/open.
 	Niet alle verzamelingen zijn open of gesloten. Sommige verzamelingen zoals $[0,1)$ zijn geen van beide
 	en sommige andere verzamelingen zoals $\reals$ zijn zowel open als gesloten.
@@ -146,14 +147,14 @@
 	
 	\theorem $\left[\text{K}\right]$ 10.1.6
 	\begin{enumerate}[(i)]
-		\item Zij $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ een familie gesloten verzamelingen $A_\alpha \subset \reals^d$. Dan $\bigcap_{\alpha \in I}A_\alpha$ gesloten.
+		\item Zij $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ een familie gesloten verzamelingen $A_\alpha \subset \reals^d$ met $I$ een indexverzameling. Dan $\bigcap_{\alpha \in I}A_\alpha$ gesloten.
 		\item Zij $A_1, \dots ,A_n$ gesloten. Dan $\bigcup_{i=1}^n A_i$ gesloten.
 	\end{enumerate}
 	
 	\define[afsluiting] Zij $A \subset \reals^d$. De verzameling $\overline{A}\coloneqq  \reals^d \backslash (\intr (\reals^d \backslash A))$ heet de \indx{afsluiting} (\textit{closure}) van $A$.
 	\theorem[Karakterisering  van de afsluiting]
 	Zij $A \subset \reals^d$. Dan
-	\[\overline{A}= A \cup \partial A = A \cup A'= \big\{\z \in \reals^d \bigm| \exists _{\text{rij } (\x\up{n}) \text{ in } A \text{ met } \x\up{n} \to \z} \big\}\]
+	\[\overline{A}= A \cup \partial A = A \cup A'= \big\{\z \in \reals^d \bigm| \exists _{\text{rij } (\x\up{n}) \text{ in } A \text{ met } \x\up{n} \to \z} \big\}.\]
 	
 	\subsection{Stellingen uit het huiswerk}
 	\theorem Zij $(\x\up{n})$ een rij in $\reals^d, \a \in \reals^d$. Dan $\x\up{n}\to \a \implies |\x\up{n}|\to |\a|.$
@@ -163,7 +164,7 @@
 	\section{College 17}
 	\subsection{Compacte verzamelingen in $\reals^d$}
 	\define Een verzameling $A\subset\reals^d$ heet \indx{begrensd} als \[\exists _{R>0}: A \subset B(\zero,R)\]
-	\[\forall _{\x\in A}: \abs{\x}<R.\]
+	\[\exists _{R>0} \forall _{\x\in A}: \abs{\x}<R.\]
 	
 	\theorem $\left[\text{K}\right]$ 10.1.7 (andere formulering)
 	Zij $A \subset \reals^d$. De volgende beweringen zijn equivalent:
@@ -172,7 +173,7 @@
 		\item $A$ begrensd en gesloten
 	\end{enumerate}
 	
-	\define[overdekking] Zij $A \subset \reals^d$. Een familie $\big\{A_\alpha \bigm| \alpha \in I \big\}$ van verzamelingen $A_\alpha \subset \reals^d$ heet een \indx{overdekking} (\textit{cover, covering}) van $A$ als \[A \subset \bigcup_{\alpha \in I}A_\alpha\]
+	\define[overdekking] Zij $A \subset \reals^d$. Een familie $\big\{A_\alpha \bigm| \alpha \in I \big\}$ van verzamelingen $A_\alpha \subset \reals^d$ heet een \indx{overdekking} (\textit{cover, covering}) van $A$ als \[A \subset \bigcup_{\alpha \in I}A_\alpha.\]
 	
 	\begin{itemize}
 		\item Een overdekking $\big\{ A_\alpha \bigm| \alpha \in I \big\}$ heet \textit{open} als alle $A_\alpha$ open zijn in $\reals^d$.
@@ -201,7 +202,7 @@
 	
 	\theorem Zij $A \subset \reals^d$. Dan \[A \text{ begrensd} \iff \overline{A} \text{ begrensd} \iff \overline{A}\text{ compact}.\]
 	
-	\define[Cauchyrij] Een Cauchyrij $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon )\in \naturals}\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \epsilon.\]
+	\define[Cauchyrij] Een \indx{Cauchyrij} $(\x\up{n})$ in $\reals^d$ is een rij waarvoor geldt dat\[\forall _{\epsilon >0} \exists _{n_0=n_0(\epsilon )\in \naturals}\forall _{n,m \geq n_0}: |\x\up{n}-\x\up{m}| < \epsilon.\]
 	\theorem Elke Cauchyrij $(\x\up{n})\subset\reals^d$ is convergent in $\reals^d$.
 	
 	\newpage
@@ -209,14 +210,14 @@
 	\subsection{Functies $\reals^d \to \reals$: limieten en continu\"{\i}teit}
 	\define[Limiet] Zij $D \subset \reals^d, f\: D\to \reals, \a \in D', L\in\reals$.
 	De \indx{limiet} (\textit{limit}) van $f(\x)$ voor $\x\to\a$:
-	\[ \lim_{x\to a}f(x)=L \iff \left( \forall _{\epsilon >0} \exists _{\delta >0} \forall _{x \in D}: 0<|x-a|<\delta \implies |f(x)-L|<\epsilon \right) \]
+	\[ \lim_{\x\to \a}f(x)=L \iff \left( \forall _{\epsilon >0} \exists _{\delta >0} \forall _{\x \in D}: 0<|\x-\a|<\delta \implies |f(\x)-L|<\epsilon \right). \]
 	
 	\theorem Zij $D \subset \reals^d, f\: D\to \reals, \a \in D', L \in \reals$. Dan geldt
-	\[ \lim_{x \to a} f(x)=L \iff \text{voor elke rij } (\x\up{n}) \text{ in } D\backslash\{a\} \text{ met } \x\up{n}\to \a \text{ geldt } f(\x\up{n}) \to L.\]
+	\[ \lim_{\x \to \a} f(\x)=L \iff \text{voor elke rij } (\x\up{n}) \text{ in } D\backslash\{\a\} \text{ met } \x\up{n}\to \a \text{ geldt } f(\x\up{n}) \to L.\]
 	
 	\opm ($\left[\text{K}\right]$ 10.2.5) De limietstellingen zijn analoog aan 1D.
 	
-	\define[\indx{continu te $\a$ voor $f$}] Zij $D \subset \reals^d, \a\in D\cap D',f\: D\to \reals$. $f$ heet continu te $\a$ als \[\lim_{x\to a}f(\x)=f(\a) \text{ oftewel als}\]
+	\define[\indx{continu te $\a$ voor $f$}] Zij $D \subset \reals^d, \a\in D\cap D',f\: D\to \reals$. $f$ heet continu te $\a$ als \[\lim_{\x\to \a}f(\x)=f(\a) \text{ oftewel als}\]
 	\[\forall _{\epsilon >0} \exists _{\delta >0}: \x \in B(\a,\delta)\cap D \implies |f(\x)-f(\a)|<\epsilon.\]
 	
 	\theorem ($\left[\text{K}\right]$ 10.2.7)
@@ -230,20 +231,20 @@
 		\item $fg$
 		\item $\dfrac{f}{g}$
 	\end{itemize}
-	continu te $a$.
+	continu te $\a$.
 	
 	\define[\indx{Vectorwaardige functies}]
 	Zij $D \subset \reals^d, \f\: D\to \reals^m, m \in \naturals_+$. Dat wil zeggen
-	\[\f(x)=\f(x_1,\dots , x_d) =
+	\[\f(\x)=\f(x_1,\dots , x_d) =
 	\begin{bmatrix}
 	f_1(x_1,\dots , x_d) \\
 	\vdots \\
 	f_m(x_1,\dots , x_d) \\
-	\end{bmatrix}\in\reals^d, \qquad f_i\:D\to \reals.\]
+	\end{bmatrix}\in\reals^m, \qquad f_i\:D\to \reals.\]
 	
-	\theorem[Limieten mogen componentsgewijs genomen worden] Zij $\a \in D'$.
+	\theorem[Limieten voor functies mogen componentsgewijs genomen worden] Zij $\a \in D'$.
 	\begin{align*}
-	\lim_{\x\to\a}\f(\x)=L \in \reals^m  &\iff \lim_{\x\to\a}f_i(\x)=L_i (i=1,\ldots ,m) \\
+	\lim_{\x\to\a}\f(\x)=L \in \reals^m  &\iff \lim_{\x\to\a}f_i(\x)=L_i \ (i=1,\ldots ,m) \\
 	&\iff \forall _{\epsilon >0} \exists _{\delta >0}: 0<|\x-\a|<\delta, \x\in D \implies \abs{\f(\x)-L}<\epsilon.
 	\end{align*}
 	
@@ -258,25 +259,14 @@
 	\begin{enumerate}[(i)]
 		\item $\f$ continu te $\a$
 		\item $f_i$ continu te $\a$ voor $i=1,\ldots,m$
-		\item voor elke rij $(\x\up{n})$ in $D$ met $\x\up{n}\to\a$ geldt $f_i(\x\up{n}) \to f_i(\a),\quad\forall i=1,\ldots,m$
+		\item voor elke rij $(\x\up{n})$ in $D$ met $\x\up{n}\to\a$ geldt $f_i(\x\up{n}) \to f_i(\a),\quad i=1,\ldots,m$
 		\item voor elke rij $(\x\up{n})$ in $D$ met $\x\up{n}\to\a$ geldt $\f(\x\up{n})\to\f(\a)$
 	\end{enumerate}
 	
-	\define[continue te $D\subset\reals^d$ voor $\f$]
+	\define[\indx{continu te $D\subset\reals^d$ voor $\f$}]
 	Laat $D \subset \reals^d$. Dan is $\f\: D \to \reals^m$ continu $\iff$ $\f$ is continu te elke $\a\in D\cap D'$.
-	\opm Zij $\f\: D\to \reals^m$ continu en $(\x\up{n})$ rij in $D$ met $\x^{(n)} \to \x^* \in D$.
+	\opm Zij $\f\: D\to \reals^m$ continu en $(\x\up{n})$ een rij in $D$ met $\x^{(n)} \to \x^* \in D$.
 	Dan $\f(\x\up{n}) \to \f(\x^*).$
-	\subsection{Stellingen uit het huiswerk}
-	\theorem Zij $D \subset \reals^d, \a \in D', L \in \reals, f\: D \to \reals$. Dan
-	\[
-	\lim_{\x\to\a}f(x)=L \iff
-	\]
-	voor elke rij $(\x\up{n})$ in $D\backslash\set{\a}$ met $\x\up{n}\to\a$ geldt dat
-	\[
-	\lim_{n\to\infty} f(\x\up{n}) = L \,.
-	\]
-	Zij ook $\a \in D \cap D'$. Dan
-	\[f \text{ continu te } \a \iff \text{ elke rij }(\x\up{n}) \text{ in } D \text{ met } \x\up{n}\to\a \text{ geldt } f(\x\up{n}) \to\a \,.\]
 	
 	\newpage
 	\section{College 19}
@@ -285,14 +275,16 @@
 		Zij $D \subset \reals^d$ compact, $\f\: D\to\reals^m$ continu. Dan is
 		\begin{enumerate}[(1)]
 			\item $\f(D)$ compact (continue functies beelden compacte verzamelingen af op compacte verzamelingen)
-			\item $\f$ uniform continu, dwz
+			\item $\f$ \indx{uniform continu}, oftewel
 			\[\forall_{\epsilon > 0} \exists_{\delta = \delta(\epsilon)}\forall_{\x,\z\in D}:
 			\abs{\x-\z}<\delta \implies |\f(\x)-\f(\z)|<\epsilon.
 			\]
 		\end{enumerate}
+		\opm Merk op dat bij uniforme continu\"iteit $\delta$ niet af mag hangen van $\x$ of $\z$, maar er moet zo'n $\delta$ te vinden zijn voor de hele verzameling.
 	\end{theorem}
+	
 	\gevolg[continue functies op compacte verzamelingen nemen een minimum en maximum aan]
-	Stel $f\: D\subset\reals\to\reals$ is continu
+	Stel $f\: D\subset~\reals\to~\reals$ is continu
 	en $D$ is compact. Dan is $f$ begrensd en $\exists_{\x^* \in D}:f(\x^*)=\max_{\x\in D}\set{f(\x)}$.
 	
 	\subsection{Compositie van continue functies}
@@ -302,11 +294,11 @@
 	\begin{theorem}
 		Zij $D \subset \reals^d$.
 		Een afbeelding $\F\: D \to \reals^d$ heet \indx{contraherend} (\textit{contracting}) als
-		\[\forall _{x,y\in D}\exists _{q \in (0,1)}:\abs{F(x)-F(y)}_{\reals^d} \leq q\abs{x-y}_{\reals^d}. \]
+		\[\forall _{\x,\y\in D}\exists _{q \in (0,1)}:\abs{\F(\x)-\F(\y)}_{\reals^d} \leq q\abs{\x-\y}_{\reals^d}. \]
 	\end{theorem}
 	
 	
-	\gevolg $F$ contraherend of $D\subset\reals^d\implies\F$ continu op $D$.
+	\gevolg $\F$ contraherend op $D\subset\reals^d\implies\F$ continu op $D$.
 	
 	
 	\begin{define}[iteratierij]
@@ -321,7 +313,7 @@
 	
 	%			Stel $F:D\to D$, oftewel $F(D) \subset D$. Elke rij $(x_n)$ met $F(x_n) = x_{n+1}$ heet \textbf{iteratierij} (met startvoorwaarde $x_0 \in D$).
 	
-	\theorem[vastepuntstelling van Banach \index{Banach, vastepuntstelling van}]
+	\theorem[vastepuntstelling van Banach\index{Banach, vastepuntstelling van}]
 	Zij $D \subset \reals^d, \F\: D\to \reals^d$. Veronderstel
 	\begin{enumerate}[(i)]
 		\item $D$ gesloten
@@ -330,14 +322,14 @@
 	\end{enumerate}
 	Dan
 	\begin{enumerate}[(1)]
-		\item $\exists_{\text{precies \'e\'en } \x^* \in D}$ met $\F(\x^*)=\x^*$.
+		\item $\exists!_{\x^* \in D}$ met $\F(\x^*)=\x^*$.
 		\item Voor elke $\x_0 \in D$ convergeert de iteratierij naar $\x^*$.
 	\end{enumerate}
 	
 	\subsection{Differentieerbare functies van meerdere variabelen}
 	\subsubsection{Parti\"ele functies en parti\"ele afgeleiden}
 	
-	\begin{define}[\indx{parti\"ele functies}]
+	\begin{define}[parti\"ele functies]
 		Zij $D \subset \reals^2$ open. $F\: D \to \reals$, $(a,b) \in D$.
 		De functies
 		\begin{enumerate}
@@ -348,15 +340,15 @@
 		Alternatieve notatie:
 		\begin{enumerate}
 			\item $p_b\coloneqq f(\cdot, b)$
-			\item $q_a\coloneqq f(\red{a},\cdot)$
+			\item $q_a\coloneqq f(a,\cdot)$
 		\end{enumerate}
 		
 	\end{define}
 	\red{Let op: $S_b$ en $T_a$ zijn niet gedefinieerd. Voor de hand ligt $S_b = \set{b\in\reals\:(x,b)\in D}$.}
 	
 	\begin{define}[parti\"eel differentieerbaar]
-		Als $p_b, q_a$ differentieerbaar is in $x=a,y=b$ dan heet $f$ \indx{partieel differentieerbaar} naar $x,y$ in $(a,b)$
-		en definieren we
+		Als $p_b/q_a$ differentieerbaar is in $x=a/y=b$ dan heet $f$ \indx{partieel differentieerbaar} naar $x/y$ in $(a,b)$
+		en defini\"eren we
 		\begin{itemize}
 			\item $\partial_x f(a,b) \coloneqq  p_b'(a)$
 			\item $\partial_y f(a,b) \coloneqq  q_a'(b) $
@@ -377,29 +369,29 @@
 	
 	
 	\subsection{Stellingen uit het huiswerk}
-	\theorem Zij $D \subset \reals^d$. Een functie $f\: D \to \reals^m$ heet \indx{Lipschitz-continu} als er een $L>0$ is zodanig dat
-	\[\forall _{x,y \in D}: |f(x)-f(y)|_{\reals^m} \leq L|x-y|_{\reals^d}.\]
+	\theorem Zij $D \subset \reals^d$. Een functie $\f\: D \to \reals^m$ heet \indx{Lipschitz-continu} als er een $L>0$ is zodanig dat
+	\[\forall _{\x,\y \in D}: |\f(\x)-\f(\y)|_{\reals^m} \leq L|\x-\y|_{\reals^d}.\]
 	Elke Lipschitz-continue functie is uniform continu op $D$.
 	\newpage
 	\section{College 20}
 	\subsection{Hogere orde parti\"ele afgeleiden}
 	\define[inductief] Parti\"ele afgeleiden van orde $k+1$ zijn de parti\"ele afgeleiden van de parti\"ele afgeleiden van orde $k$.
-	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open. Als $f\: D \to \reals$ twee keer continu partieel differentieerbaar in $D$
+	\theorem[Schwarz of Clairaut] Neem $D \subset \reals^d$ open. Als $f\: D \to \reals$ twee keer continu partieel differentieerbaar in $D$ is
         dan geldt $\partial_i \partial_j f(\a) = \partial_j \partial_i f(\a) \quad i,j=1,\dots ,d$ voor alle $\a \in D$.
 	\subsection{Totale differentieerbaarheid}
-	\define [Fr\`echet-differentieerbaar] Zij $D \subset \reals^d$ open en $\a \in D$. Als
+	\define [Fr\'echet-differentieerbaar] Zij $D \subset \reals^d$ open en $\a \in D$. Als
  er is een lineaire afbeelding $L_{\a}\:\reals^d \to~\reals$ bestaat zodanig dat
-	\[f(\a+\h)=f(\a)+ L_{\a} \h +\mathrm{o}(\abs{\h})\iff\lim_{\h\to0}\frac{\abs{f(\a+\h)-f(\a)-L_{\a} \h}}{\abs{h}} = 0\]
- dan heet $f\: D \to \reals$ \indx{differentieerbaar} (\indx{totaal differentieerbaar}, \indx{Fr\`echet' differentieerbaar}) te $\a \in D$
+	\[f(\a+\h)=f(\a)+ L_{\a} \h +\mathrm{o}(\abs{\h})\iff\lim_{\h\to0}\frac{\abs{f(\a+\h)-f(\a)-L_{\a} \h}}{\abs{\h}} = 0\]
+ dan heet $f\: D \to \reals$ \indx{differentieerbaar} (\indx{totaal differentieerbaar}, \indx{Fr\'echet-differentieerbaar}) te $\a \in D$
 	en heet $L_{\a}$ \textbf{afgeleide van} $f$ \textbf{te} $\a$.
 	\nota $L_{\a} = f'(\a) = [\partial_1 f,\ldots,\partial_m f](\a)\in\reals^{1\times d}$
 	\subsection{De gradi\"ent}
-	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $f\:  D \to \reals^d$, differentieerbaar te $a \in D$. Dan $f$ partieel differentieerbaar te $a$, en
-\[\nabla f(a)= \begin{bmatrix}
-\partial_1 f(\a) \\
+	\theorem[linearisering, gradi\"ent en parti\"ele afgeleide] Zij $D \subset \reals^d$ open, $\f\:  D \to \reals^d$, differentieerbaar te $\a \in D$. Dan $f$ partieel differentieerbaar te $\a$, en
+\[\nabla \f(\a)= \begin{bmatrix}
+\partial_1 \f(\a) \\
 \vdots \\
-\partial_d f(\a)
-\end{bmatrix} = f'(\a)^{T}\in\reals^{d\times 1}.
+\partial_d \f(\a)
+\end{bmatrix} = \f' \fallingdotseq \f^\prime (\a)^{T}\in\reals^{d\times 1}.
 \]
 
 	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f\: D \to \reals$ differentieerbaar te $\a \in D$ dan is $f$ ook continu te $\a$.
