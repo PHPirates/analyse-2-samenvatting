@@ -391,7 +391,7 @@
 \partial_1 \f(\a) \\
 \vdots \\
 \partial_d \f(\a)
-\end{bmatrix} = \f' (\a)^{T}\in\reals^{d\times 1}.
+\end{bmatrix} = \f\,' (\a)^{T}\in\reals^{d\times 1}.
 \]
 
 	\theorem Zij $D \subset \reals^d$, $D$ open. Als $f\: D \to \reals$ differentieerbaar te $\a \in D$ dan is $f$ ook continu te $\a$.
@@ -587,8 +587,8 @@ Veronderstel de situatie zoals in de definitie hierboven. Dan geldt
 				z.d.d. $ ((\x,\y) \in U \wedge \F(\x,\y)=0) \iff \y=\phi (\x). $
 				
 			\subsubsection{'Impliciet differenti\"eren'}
-				$ \F(x,\phi(x))=\zero  $. Differenti\"eren naar $ \x\in \reals^n $:
-				\[ D_x \F(x,\phi(x)) + D_y \F (x,\phi(x))D_x \phi(x) = 0 \implies D_x \phi(x) = -(D_y \F(x,\phi(x)))^{-1} D_x \F(x,\phi(x)). \]
+				$ \F(\x,\phi(\x))=\zero  $. Differenti\"eren naar $ \x\in \reals^n $:
+				\[ D_\x \F(\x,\phi(\x)) + D_\y \F (\x,\phi(\x))D_\x \phi(\x) = 0 \implies D_\x \phi(\x) = -(D_\y \F(\x,\phi(\x)))^{-1} D_\x \F(\x,\phi(\x)). \]
 				
 		\subsection{Stellingen uit het huiswerk}
 			\theorem (Hogere differentieerbaarheid van impliciete functies)
@@ -720,7 +720,7 @@ Veronderstel de situatie zoals in de definitie hierboven. Dan geldt
 				 \]
 			\end{theorem}
 			\begin{theorem}[\text{[K]} 6.3.1]
-				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\\:  R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
+				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\:  R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
 				\begin{gevolg}
 					\begin{align*}
 						f,g \in R[a,b] &\implies f+g \in R[a,b] \\
@@ -821,7 +821,7 @@ Veronderstel de situatie zoals in de definitie hierboven. Dan geldt
 		\newpage
 		\section{College 26}
 		\subsection{Integraalrekening in $\reals^d$}
-			We bekijken hier de $\reals^2$, voor hogere dimensies gaat dit analoog.
+			We bekijken in de volgende colleges de $\reals^2$, voor hogere dimensies gaat dit analoog.
 			\begin{define}
 				Het \indx{volume} van de \indx{rechthoek} $R =[a,b]\times[c,d]$ is  $\text{Vol}(R) = (b-a)(d-c)$.
 			\end{define}
@@ -830,10 +830,10 @@ Zij $P_1$ de partitie $x_0,\ldots x_n$ van $[a,b]$ en
 $P_2$ de partitie $x_0,\ldots x_m$ van $[c,d]$.
 Dan bestaat de \indx{partitie van $R$} $P=P_1 \times P_2$ bestaande uit de \indx{deelrechthoeken}
 \[
-R = \cup_{i=1,j=1}^{i=n,j=m} A_{ij}
+R = \bigcup_{i=1,j=1}^{i=n,j=m} A_{ij}
 \]
 waar $A_{ij}=[x_{i-1},x_i] \times [y_{j-1},y_j]$.
-Volgens de vorige definitie is $\text{Vol}(A_{ij})=\text{opp}(A_{ij})=(x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x_i \Delta x_j$.
+Volgens de vorige definitie is $\text{Vol}(A_{ij})=\text{opp}(A_{ij})=(x_i-x_{i-1})(y_j-y_{j-1}) = \Delta x_i \Delta y_j$.
 \end{theorem}
 			\begin{define}
 				De \indx{fijnheid in $\reals^2$} van een partitie $P$ is de maximale \indx{diameter}
@@ -972,7 +972,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 		\begin{theorem}[\text{[K] 11.2.7a}]
 			Zij $f\: [a, b] \to \reals$ en $g\: [c, d] \to \reals$ beide Riemann-integreerbaar. Zij verder gegeven de rechthoek $R = [a, b] \times [c, d]$. Dan
 			\[ 
-				\iint_R f(x) g(y) = \left[ \int_a^b f \right] \left[ \int_c^d g \right]\,.
+				\iint_R f(x) g(y) = \left( \int_a^b f \right) \left( \int_c^d g \right)\,.
 			 \]
 		\end{theorem}
 		\begin{theorem}
@@ -1009,11 +1009,11 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 		\end{define}
 		
 	    \begin{theorem}[Differentieerbare krommen hebben Jordaninhoud nul]
-	    	Zij $ I=[a,b] $ een compact interval, $ \phi \: I \to~\reals^2 $ Lipschitz-continu, d.w.z
+	    	Zij $ I=[a,b] $ een compact interval, $ \phi \: I \to~\reals^2 $ Lipschitz-continu, oftewel
 	    	\[ 
-		    	\exists_{L>o} \forall_{s,t \in I} \: \abs{\phi (s) - \phi (t)} \leq L \abs{s-t} 
+		    	\exists_{L>o} \forall_{s,t \in I} \: \abs{\phi (s) - \phi (t)} \leq L \abs{s-t} ,
 	    	 \]
-	    	 Dan heeft $ C = \set{\phi (t) \mid t \in I} $ Jordaninhoud nul.
+	    	 dan heeft $ C = \set{\phi (t) \mid t \in I} $ Jordaninhoud nul.
 	    \end{theorem}
 	    
 	    \begin{opm}
@@ -1021,11 +1021,11 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 	    \end{opm}
 	    
 	    \begin{theorem}[\text{[K] 11.3.3}]
-	    	Zij $ R=[a,] \times [c,d] $ een rechthoekgebied, $ f \: R \to \reals $ begrensd. Veronderstel dat $f$ discontinu is op een verzameling van Jordaninhoud nul. Dan is $f$ Riemann-integreerbaar op $R$.
+	    	Zij $ R=[a,b] \times [c,d] $ een rechthoekgebied, $ f \: R \to \reals $ begrensd. Veronderstel dat $f$ discontinu is op een verzameling van Jordaninhoud nul. Dan is $f$ Riemann-integreerbaar op $R$.
 	    \end{theorem}
 	    
 	    \begin{define}
-	    	Een verzameling $ D \subset \reals^d $ heet \indx{Jordan-meetbaar} (of \indx{Jordanverzameling}) als 
+	    	Een verzameling $ D \subset \reals^d $ heet \indx{Jordan-meetbaar} (\textit{Jordan measurable}) of een \indx{Jordanverzameling} als 
 	    	\begin{itemize}
 	    		\item $D$ is begrensd
 	    		\item $\partial D$ heeft Jordaninhoud nul.
@@ -1050,7 +1050,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 	    	Elke cirkelschijf in $\reals^2$ is een Jordanverzameling.
 	    \end{theorem}
 	    \begin{theorem}
-	    	Een begrensde, gesloten verzameling $P \subset \reals^2$ zodanig dat $\partial P$ de vereniging is van eindig veel lijnstukken heet een polygoongebied.  
+	    	Een begrensde, gesloten verzameling $P \subset \reals^2$ zodanig dat $\partial P$ de vereniging is van eindig veel (rechte) lijnstukken heet een polygoongebied.  
 	    	Elk polygoongebied in $\reals^2$ is een Jordanverzameling.
 	    \end{theorem}
 	    \begin{theorem}
