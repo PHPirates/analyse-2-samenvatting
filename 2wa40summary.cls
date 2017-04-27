@@ -42,6 +42,8 @@
 \RequirePackage{hyperref} % should make index clickable
 \RequirePackage{bookmark} % Used for pdf bookmarks, needs to be loaded after hyperref
 
+\let\emptyset\varnothing
+
 \title{\textbf{Samenvatting Analyse 2}}
 \author{Abby Berkers \\ Thomas Schouten \\ Verbeteringen door Jos Maubach}
 \date{\today}

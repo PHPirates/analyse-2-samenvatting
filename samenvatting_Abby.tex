@@ -47,7 +47,7 @@
 	\begin{define}[Bol]
 		Laat $\x\in\reals^d$ en laat $0<r\in\reals$. Dan is de \indx{bol\ om $\x$ met straal $r$} de verzameling
 		\[
-		B(x,r)=\set{y \in \reals^d \: \abs{y-x}<r}.
+		B(\x,r)=\set{\y \in \reals^d \: \abs{\y-\x}<r}.
 		\]
 		
 	\end{define}
@@ -1185,9 +1185,9 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			\item Voor groene tekst gebruik \verb$\grn{word 1 and 2}$ type \verb$\grn{word 1 and 2}$: \grn{word 1 and 2}
 			\item Voor blauwe tekst gebruik \verb$\blu{word 1 and 2}$ type \verb$\blu{word 1 and 2}$: \blu{word 1 and 2}
 			\item \blu{Het} \verb$\blu{...}$ \blu{kleuren commando kan geen} \verb#\verb$...$# \blu{constructie bevatten.}
-			\item De langere variant \verb$\{\color{blue}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
-			\item De langere variant \verb$\{\color{red}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
-			\item De langere variant \verb$\{\color{green}...}$ kan wel \verb#\verb$...$# in de \dots bevatten!
+			\item De langere variant \verb$\{\color{blue}...\}$ kan wel \verb#\verb$...$# in de \dots bevatten!
+			\item De langere variant \verb$\{\color{red}...\}$ kan wel \verb#\verb$...$# in de \dots bevatten!
+			\item De langere variant \verb$\{\color{green}...\}$ kan wel \verb#\verb$...$# in de \dots bevatten!
 			\item In plaats van \verb$\define$ type \verb$\begin{define}[onderwerp] ..... \end{define}$: zie voorbeelden in dit \verb$.tex$ bestand
 			\item Om een \verb$woord$ in de index te plaatsen, type \verb$\indx{woord}$ -- het verschijnt dan ``slanted'' in de \verb$.pdf$
 			\item In \LaTeX\ zijn de braces \verb${...}$ de \LaTeX\ groep-open en \LaTeX\ groep-sluit operatoren -- en daarom niet zichtbaar in de tekst. Om ze zichtbaar te maken moet je \verb$\lbrace$ resp.{} \verb$\rbrace$ typen of -- minder slim als je \LaTeX\ beter kent type je \verb$\{$ resp.{} \verb$\}$.
@@ -1203,7 +1203,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 			om $\mathring{A}$ te geven
 			\item In plaats van \verb$\lim_{n\to\infty}$ type de kortere \LaTeX\ standaard \verb$\lim_{n\to\infty}$: $\lim_{n\to\infty}$
 			\item De bold -- vetgedrukte -- vectoren veranderen in underline vectoren door 1 regel te wijzigen!
-			\item In math mode -- tussen dollars en \verb$\[\]$ gebruik \verb$\ldots$ voor enumeraties zoals \verb$1,2,\ldots,d$: $1,2,\ldots,d$ -- gebruik \verb$\dots$ alleen in text mode, of bij enumeraties met symbolen zoals $+$ of $<$: \verb$1+2+\dots+d$: $1+2+\dots+d$. 
+			\item In math mode -- tussen dollars en \verb|\[\]| gebruik \verb$\ldots$ voor enumeraties zoals \verb$1,2,\ldots,d$: $1,2,\ldots,d$ -- gebruik \verb$\dots$ alleen in text mode, of bij enumeraties met symbolen zoals $+$ of $<$: \verb$1+2+\dots+d$: $1+2+\dots+d$.
 		\end{itemize}
 		Ik stel voor dat jullie deze tips verhuizen naar de appendix voor de volgende generatie -- die appendix heb ik toegevoegd.
 		
