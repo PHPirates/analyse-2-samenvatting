@@ -633,15 +633,15 @@ Veronderstel de situatie zoals in de definitie hierboven. Dan geldt
 				 \end{split}
 				 \]
 				 
-				 Zij $C_k \in [x_1,\ldots,x_k]$ met $k=1,\ldots,n$, $c=(c_k)$,
+				 Zij $c_k \in [x_1,\ldots,x_k]$ met $k=1,\ldots,n$, $\c=(c_k)$,
 				 \[ 
-					 S(p,f,c) = \sum_{k=1}^{n} f(c_k) \Delta x_k \text{ is \indx{Riemannsom}.}
+					 S(P,f,\c) = \sum_{k=1}^{n} f(c_k) \Delta x_k \text{ is \indx{Riemannsom}.}
 				  \]
 			\end{define}
 			\begin{lemma}
-				Zij $ f,g\: [a,b] \to \reals $ begrensd, $P$, $c$ als boven, dan
+				Zij $ f,g\: [a,b] \to \reals $ begrensd, $P$, $\c$ als boven, dan
 				\begin{enumerate}[(i)]
-					\item $\displaystyle \inf_{x\in [a,b]} f(x) (b-a) \le L(P,f) \le S(p,f,c) \le U(p,f) \le \sup_{x \in [a,b]} f(x) (b-a) $
+					\item $\displaystyle \inf_{x\in [a,b]} f(x) (b-a) \le L(P,f) \le S(P,f,\c) \le U(P,f) \le \sup_{x \in [a,b]} f(x) (b-a) $
 					\item $L(P,f+g) \ge L(P,f) + L(P,g)$ \\
 					$U(P,f+g) \le U(P,f) + U(P,g)$
 					\item Zij $Q \supseteq P$ een fijnere partitie, $ j = \#Q -\#P $ (waarbij $\#P$ het aantal elementen aanduidt), dan 
@@ -716,11 +716,11 @@ Veronderstel de situatie zoals in de definitie hierboven. Dan geldt
 			\begin{theorem}[Riemannsommen approximeren integralen]
 				Zij $ f \in R[a,b] $, dan
 				\[ 
-					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies \abs{S(P,f,c) - \int_a^b f(x) \d x} < \epsilon.
+					\forall_{\epsilon >0} \exists_{\delta = \delta (\epsilon,f)>0}: P \text{ partitie, } \abs{P}<\delta \implies \abs{S(P,f,\c) - \int_a^b f(x) \d x} < \epsilon.
 				 \]
 			\end{theorem}
 			\begin{theorem}[\text{[K]} 6.3.1]
-				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathop{Int}\:  R[a,b] \to \reals $ gegeven door $ \mathop{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
+				De verzameling $R[a,b]$ vormt een vectorruimte t.o.v. puntsgewijze optelling en vermenigvuldiging met scalairen, en $ \mathrm{Int}\:  R[a,b] \to \reals $ gegeven door $ \mathrm{Int}(f) = \int_a^b f(x)\d x $ is een lineaire afbeelding.
 				\begin{gevolg}
 					\begin{align*}
 						f,g \in R[a,b] &\implies f+g \in R[a,b] \\
@@ -854,9 +854,9 @@ waar voor een rechthoek $A_{ij}$ we defini\"eren $\diam(A_{ij}) = \max\set{x_k-x
 				\]
 			\end{define}
 			\begin{define}
-				Kies $c_{ij} \in A_{ij}$, $c=(c_{ij})$, $i=1 \ldots n$, $j=1 \ldots m$. Dan is 
+				Kies $c_{ij} \in A_{ij}$, $\c=(c_{ij})$, $i=1 \ldots n$, $j=1 \ldots m$. Dan is
 				\[ 
-					S(P,f,c) \coloneqq  \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta y_j
+					S(P,f,\c) \coloneqq  \sum_i \sum_j f(c_{ij}) \Delta x_i \Delta y_j
 				 \]
 				 een \indx{Riemannsom in $\reals^2$}.
 Verder kan met behulp van bovenstaande definities aangetoond worden dat:
@@ -876,7 +876,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 				 \]
 				 met de deelrechthoeken $A_{ij} \subset P$ en $D_{ij} \subset Q$. $Q$ heet \indx{fijner dan (in $\reals^2$)} $P$ als 
 				 \[ 
-					 \forall_{D_{ij}}\exists{A_{kl}}: D_{ij} \subset A_{kl}.
+					 \forall_{D_{ij}}\exists_{A_{kl}}: D_{ij} \subset A_{kl}.
 				  \]
 			\end{define}
 			\begin{theorem}
@@ -906,7 +906,7 @@ Verder kan met behulp van bovenstaande definities aangetoond worden dat:
 				\end{enumerate}
 				Als deze waar zijn, dan
 				\[ 
-					\forall_{\epsilon >0} \exists_{\delta(\epsilon,f)}: \text{Als $P$ partitie met $\abs{P}<\delta$ dan } \abs{S(P,f,c)-\iint_R f} < \epsilon
+					\forall_{\epsilon >0} \exists_{\delta(\epsilon,f)}: \text{Als $P$ partitie met $\abs{P}<\delta$ dan } \abs{S(P,f,\c)-\iint_R f} < \epsilon
 				 \]
 				 voor alle Riemannsommen van $P$.
 			\end{theorem}
